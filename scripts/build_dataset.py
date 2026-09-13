@@ -26,8 +26,10 @@ import json
 import os
 import re
 import sys
+import multiprocessing as mp
 from collections import Counter, defaultdict
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, TimeoutError
+from concurrent.futures.process import BrokenProcessPool
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -36,6 +38,12 @@ from metrics import analyze_with_pos, clean_inline, split_markdown  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
 OUT = ROOT / "data" / "processed"
+
+# この長さを超える記事は、形態素解析を使い捨てのプロセスに隔離して行う。
+# 短い記事まで隔離するとプロセス起動のコストで極端に遅くなるため、
+# 落ちる可能性がある長い記事だけを対象にする。
+# 実際に落ちたのは 533,563字 の記事だが、余裕を持って低めに設定する。
+ISOLATE_OVER_CHARS = 50_000
 
 MIN_BODY_CHARS = 300  # 逆瀬川氏の基準に合わせる
 MIN_SENTENCES = 5     # burstiness は文数が少ないと意味を成さない
@@ -103,6 +111,36 @@ def exclusion_reason(item: dict) -> str | None:
     return None
 
 
+def _run_one(item: dict) -> dict | None:
+    """1記事を解析する。子プロセスの中で呼ばれる。"""
+    return analyze_with_pos(item["body"])
+
+
+def analyze_isolated(item: dict, timeout: float = 60.0) -> tuple[dict | None, str]:
+    """記事1本を別プロセスで解析する。落ちても呼び出し側は生き残る。
+
+    fugashi(libmecab の C 拡張)は、解析中に MeCab が NULL を返したのを
+    チェックせず参照するため SIGSEGV でプロセスごと落ちることがある。
+    Python の例外にならないので try/except では捕まらない。
+    実際に 2019-07-20 の記事1本でプール全体が BrokenProcessPool になり、
+    その月の処理が丸ごと失敗した。
+
+    そこで1本ずつ使い捨てのプロセスに隔離する。死んだらその記事だけ
+    諦めて次に進む。戻り値は (結果, 理由)。
+    """
+    ctx = mp.get_context("spawn")
+    with ProcessPoolExecutor(max_workers=1, mp_context=ctx) as ex:
+        fut = ex.submit(_run_one, item)
+        try:
+            return fut.result(timeout=timeout), ""
+        except BrokenProcessPool:
+            return None, "segfault(morphological_analyzer)"
+        except TimeoutError:
+            return None, "timeout(morphological_analyzer)"
+        except Exception as e:  # 通常の例外はここで拾う
+            return None, f"error:{e.__class__.__name__}"
+
+
 def process_file(path: Path) -> tuple[list[dict], list[dict]]:
     kept: list[dict] = []
     dropped: list[dict] = []
@@ -116,11 +154,20 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
             dropped.append({"id": item.get("id"), "created_at": item.get("created_at"),
                             "reason": reason})
             continue
-        try:
-            m = analyze_with_pos(item["body"])
-        except Exception as e:  # 1本のせいで全体を止めない
+        # まず素直に解析する。ほとんどの記事はこれで通る。
+        # 失敗した(あるいは形態素解析器が落ちうる長さの)ものだけ隔離して再試行する。
+        m = None
+        reason = ""
+        if len(item.get("body") or "") > ISOLATE_OVER_CHARS:
+            m, reason = analyze_isolated(item)
+        else:
+            try:
+                m = analyze_with_pos(item["body"])
+            except Exception as e:
+                m, reason = None, f"error:{e.__class__.__name__}"
+        if m is None:
             dropped.append({"id": item.get("id"), "created_at": item.get("created_at"),
-                            "reason": f"error:{e.__class__.__name__}"})
+                            "reason": reason or "analyze_failed"})
             continue
         if (m.get("n_sentences") or 0) < MIN_SENTENCES:
             dropped.append({"id": item.get("id"), "created_at": item.get("created_at"),

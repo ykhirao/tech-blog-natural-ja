@@ -281,6 +281,14 @@ def analyze(md: str) -> dict:
     return m
 
 
+# fugashi(MeCab の C 拡張)に渡す地の文の上限。
+# これを超える入力でセグフォ(exit 139)する個体があり、Python の例外にならない
+# ためプロセスごと落ちる。実際に 2019-07-20 の 533,563字 の記事で
+# ProcessPoolExecutor が BrokenProcessPool になり、その月の処理が丸ごと失敗した。
+# 文体の指標は先頭部分で十分安定するので、超過分は切って解析する。
+MAX_POS_CHARS = 100_000
+
+
 def analyze_with_pos(md: str) -> dict:
     """形態素解析を伴う指標。fugashi が要るので分けてある。"""
     m = analyze(md)
@@ -288,6 +296,11 @@ def analyze_with_pos(md: str) -> dict:
     body = clean_inline("\n".join(parts["body_lines"]))
     if not body.strip():
         return m
+    if len(body) > MAX_POS_CHARS:
+        # 文の途中で切らないよう、直前の句点まで戻す
+        cut = body.rfind("。", 0, MAX_POS_CHARS)
+        body = body[: cut + 1] if cut > MAX_POS_CHARS // 2 else body[:MAX_POS_CHARS]
+        m["pos_truncated"] = True
     tg = tagger()
     words = [w for w in tg(body)]
     lemmas = [getattr(w.feature, "lemma", None) or w.surface for w in words]
