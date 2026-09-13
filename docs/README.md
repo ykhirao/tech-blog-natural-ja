@@ -11,6 +11,7 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [vocabulary-shift.md](vocabulary-shift.md) | 語彙の変化。どの語が増えて減ったか |
 | [robustness.md](robustness.md) | **交絡の検証。対抗仮説を3つ潰した記録** |
 | [nominal-ending.md](nominal-ending.md) | 体言止めの実際の用法。「短く切る」は誤りだった |
+| [prompt-evaluation.md](prompt-evaluation.md) | **変換プロンプトの効果検証。1回目は失敗した** |
 
 成果物は [`../src/`](../src/) にある(プロファイル・textlintルール・プロンプト)。
 
