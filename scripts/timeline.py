@@ -48,6 +48,23 @@ def median_of(rows: list[dict], field: str) -> float | None:
     return statistics.median(vals) if vals else None
 
 
+def days_in(year: int, month: int) -> int:
+    import calendar
+
+    return calendar.monthrange(year, month)[1]
+
+
+def coverage(label: str, rows: list[dict]) -> tuple[int, int]:
+    """その月の何日分が入っているかを返す (収録日数, 月の日数)。
+
+    パイロットで2日だけ取った月などが、月全体のデータと同じ顔で
+    推移の表に並ぶと誤解を招く。実際 2024-12 は2日分しかない。
+    """
+    got = {r.get("created_at", "")[:10] for r in rows if r.get("created_at")}
+    y, m = int(label[:4]), int(label[5:7])
+    return len(got), days_in(y, m)
+
+
 def load_months(pattern: str = "metrics_*.jsonl") -> dict[str, list[dict]]:
     out: dict[str, list[dict]] = {}
     for p in sorted(PROC.glob(pattern)):
@@ -123,12 +140,20 @@ def main() -> int:
     hdr = f"{'月':<{w}}{'記事数':>8}" + "".join(f"{l:>13}" for _, l, _ in FIELDS)
     print(hdr)
     print("-" * len(hdr))
+    partial: list[str] = []
     for m in months:
-        line = f"{m:<{w}}{len(data[m]):>8,}"
+        got, total = coverage(m, data[m])
+        mark = "" if got >= total else " *"
+        if mark:
+            partial.append(f"{m} ({got}/{total}日)")
+        line = f"{m + mark:<{w}}{len(data[m]):>8,}"
         for f, _, fmt in FIELDS:
             v = stats[m].get(f)
             line += f"{fmt.format(v):>13}" if v is not None else f"{'—':>13}"
         print(line)
+    if partial:
+        print(f"\n* 月の一部しか取得していない: {', '.join(partial)}")
+        print("  月全体のデータと同じようには比較できない。")
 
     if args.chart:
         print(f"\n{'指標':<14}{'推移':<{len(months)+2}}  最小 → 最大")
