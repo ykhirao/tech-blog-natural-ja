@@ -34,16 +34,23 @@ const DEFAULT_OPTIONS = {
   // 参照分布のどこから外れたら指摘するか(既定の基準点)
   lower: "p10",
   upper: "p90",
-  // 指標ごとの上書き。実測で誤検知が多かったものを緩める。
+  /**
+   * 指標ごとの閾値。AI以前(2020年8月)の実記事200本を実際にlintにかけて
+   * 測った分布の裾から決めている。各指標が単独で誤検知2%程度になる位置。
+   *
+   * 実測値(n=172、10文以上の記事):
+   *   bold_per_1k       p95=7.72  p97=8.11  p99=13.58
+   *   kanji_ratio       p95=0.264 p97=0.288 p99=0.304
+   *   ten_per_sentence  p95=1.333 p97=1.489 p99=1.646
+   *   burstiness_mora   p01=-0.470 p03=-0.427 p05=-0.396
+   *   cv_sentence_chars p01=0.359  p03=0.401  p05=0.431
+   */
   thresholds: {
-    // 読点は裾が長い。p90(1.105)では人間の記事が大量に引っかかったので
-    // 実測の最大付近まで引き上げる
-    ten_per_sentence: { upper: 1.8 },
-    // 太字も 2020年時点で中央値0のため p90(4.329)は厳しい
-    bold_per_1k: { upper: 8.0 },
-    // 漢字比率は p90(0.249)だと硬めの技術記事が普通に超える
-    kanji_ratio: { upper: 0.32 },
-    // burstiness は p10(-0.377)より下だけを見る(既定どおり)
+    ten_per_sentence: { upper: 1.65 },   // p99
+    bold_per_1k: { upper: 13.0 },        // p99 付近
+    kanji_ratio: { upper: 0.305 },       // p99
+    burstiness_mora: { lower: -0.45 },   // p01〜p03 の間
+    cv_sentence_chars: { lower: 0.38 },  // p01〜p03 の間
   },
   // 個別に無効化したい指標
   disable: [],
