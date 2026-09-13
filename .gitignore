@@ -1,0 +1,25 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# data (API から取得した生データ・中間生成物)
+# processed/ も再生成できるうえ巨大になるので追跡しない。
+# 指標そのものではなく、集計結果(docs/ 配下)を成果物として残す。
+data/raw/
+data/interim/
+data/processed/
+data/*.log
+*.jsonl.gz
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# node
+node_modules/
+
+# os
+.DS_Store
