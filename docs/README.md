@@ -16,6 +16,7 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [domain-differences.md](domain-differences.md) | 分野で文体は違うか。**時代差が分野差の2倍** |
 | [monthly-baseline.md](monthly-baseline.md) | **AI以前の月次変動。漢字率は6か月で0.001しか動かない** |
 | [when-did-it-change.md](when-did-it-change.md) | **変化はいつ始まったか。2021年はまだAI以前と区別がつかない** |
+| [monthly-2022.md](monthly-2022.md) | **2022年を月次で見たら年次の見立てが崩れた。指標で時期が違う** |
 
 成果物は [`../src/`](../src/) にある(プロファイル・textlintルール・プロンプト)。
 
