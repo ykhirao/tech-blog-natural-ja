@@ -207,6 +207,34 @@ const reporter = (context, userOptions = {}) => {
         }
       }
 
+      // --- 翻訳調の骨組み ---
+      // 英語の構文をそのまま日本語に移した型。実測で増えているものだけ。
+      //   「という点です」 0.57% → 4.68% (8倍)   the point that X
+      //   「重要なのは」   0.75% → 10.79% (14倍)  What matters is
+      //   「一方で」       0.009 → 0.064/千字 (7倍) On the other hand
+      // 自動修正はしない。prh で置換を試したところ、文の後半を落とす
+      // 危険な置換になったため(詳細は prh/qiita-tech-style.yml のコメント)。
+      if (!opts.disable.includes("translationese")) {
+        const checks = [
+          { re: /という点です/g, name: "「〜という点です」",
+            hint: "英語 the point that の直訳。「ことです」で足りることが多い" },
+          { re: /重要なのは/g, name: "「重要なのは〜」",
+            hint: "英語 What matters is の型。主語を立てて言い切れないか" },
+          { re: /ここで重要(?:なのは|になる)/g, name: "「ここで重要なのは」",
+            hint: "英語 Here, it is important の型" },
+        ];
+        for (const c of checks) {
+          const hits = fullText.match(c.re);
+          // 1回なら文章の癖として許容する。2回以上で癖として指摘。
+          if (hits && hits.length >= 2) {
+            findings.push(
+              `${c.name}が${hits.length}回。${c.hint}。` +
+                `実測では2020年より大きく増えている型。`
+            );
+          }
+        }
+      }
+
       // --- 太字 ---
       if (!opts.disable.includes("boldDensity")) {
         const body = fullText.replace(/\s/g, "");
