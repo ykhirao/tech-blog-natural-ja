@@ -19,14 +19,19 @@ Qiita の記事を実測して作った、**日本語技術記事のための文
 いま作られている多くのコーパス(note や Zenn を含むもの)と違い
 AI生成文の混入がない。この時期のデータは後から取り直せない。
 
+> **迷ったら [CAPABILITIES.md](CAPABILITIES.md) を見る。**
+> 何ができて何ができないか、AI判定が可能かどうかが1分で分かる。
+
 ## 中身
 
 | パス | 内容 |
 |------|------|
+| `CAPABILITIES.md` | **できること・できないこと・作れるデータの一覧** |
 | `profile/qiita-tech-2020.json` | AI以前の技術記事6,952本から測った参照分布(10指標の分位点) |
 | `textlint/textlint-rule-qiita-tech-style.js` | 参照分布と照らして指摘する textlint ルール |
 | `prompts/qiita-tech-writing.md` | 執筆・推敲用のプロンプト |
 | `prh/qiita-tech-style.yml` | 表記の言い換え辞書(prh形式、自動修正対応) |
+| `prompts/ai-to-qiita.md` | AI文章をQiitaらしく直すプロンプト |
 
 ## 使い方
 
