@@ -150,23 +150,39 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--months", help="例: 2024-06,2024-12")
     ap.add_argument("--all", action="store_true", help="data/raw の全月")
+    ap.add_argument("--files", nargs="+",
+                    help="任意の JSONL を直接指定する(部分集合の分析用)")
+    ap.add_argument("--label", help="--files のときの出力名")
     ap.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 4) - 1))
     args = ap.parse_args()
 
-    files = sorted(RAW.glob("qiita_*.jsonl"))
-    if args.months:
-        want = {m.strip() for m in args.months.split(",")}
-        files = [f for f in files if f.stem.replace("qiita_", "")[:7] in want]
-    elif not args.all:
-        ap.error("--months か --all を指定してください")
-    if not files:
-        print("対象ファイルがありません")
-        return 1
-
     OUT.mkdir(parents=True, exist_ok=True)
     by_month: dict[str, list[Path]] = defaultdict(list)
-    for f in files:
-        by_month[f.stem.replace("qiita_", "")[:7]].append(f)
+
+    if args.files:
+        # 任意のファイルを1グループとして扱う。AI話題を除いた部分集合のように、
+        # 月名の規約に乗らないデータを分析するため。
+        if not args.label:
+            ap.error("--files には --label が要ります")
+        paths = [Path(x) for x in args.files]
+        missing = [p for p in paths if not p.exists()]
+        if missing:
+            print(f"存在しないファイル: {missing}")
+            return 1
+        by_month[args.label] = paths
+        files = paths
+    else:
+        files = sorted(RAW.glob("qiita_*.jsonl"))
+        if args.months:
+            want = {m.strip() for m in args.months.split(",")}
+            files = [f for f in files if f.stem.replace("qiita_", "")[:7] in want]
+        elif not args.all:
+            ap.error("--months / --all / --files のいずれかを指定してください")
+        if not files:
+            print("対象ファイルがありません")
+            return 1
+        for f in files:
+            by_month[f.stem.replace("qiita_", "")[:7]].append(f)
 
     print(f"対象 {len(files)} 日分 / {len(by_month)} か月 (workers={args.workers})")
     total_kept = 0

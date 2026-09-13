@@ -23,3 +23,7 @@ node_modules/
 
 # os
 .DS_Store
+
+# node (textlint の試用でできるもの)
+package.json
+package-lock.json
