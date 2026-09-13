@@ -272,6 +272,12 @@ def analyze(md: str) -> dict:
     m["has_matome_heading"] = any(
         re.search(r"(まとめ|おわりに|終わりに|最後に|結論)", h) for h in parts["headings"]
     )
+
+    # 画像・リンクの数。文体そのものではないが、記事の作り方の変化を見るため。
+    # 画像は元の Markdown 全体から数える(地の文抽出で落ちる位置にもあるため)。
+    m["n_images"] = len(IMAGE.findall(md))
+    m["n_links"] = len(LINK.findall(md)) - m["n_images"]
+    m["images_per_1k"] = per_k(m["n_images"])
     return m
 
 

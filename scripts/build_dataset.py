@@ -39,13 +39,39 @@ OUT = ROOT / "data" / "processed"
 
 MIN_BODY_CHARS = 300  # 逆瀬川氏の基準に合わせる
 MIN_SENTENCES = 5     # burstiness は文数が少ないと意味を成さない
+# 日本語率は「日本語の記事か」の判定なので比率で見る。英語1万字に日本語3千字が
+# 混ざった記事は、比率30%でも英語記事。
+# ただし比率が同じでも日本語の絶対量が少ない記事は指標が不安定になるため、
+# 絶対量の下限を別に設ける(1000字中300字と1万字中3千字を同列に扱わない)。
+MIN_JA_RATIO = 0.30
+MIN_JA_CHARS = 200    # 日本語文字そのものの下限
+# コード量による除外は入れない。
+# 指標はもともと split_markdown() がコードフェンス・表・箇条書きを落とした
+# 「地の文」だけに対して計算している。コードがいくら多くても本文の分析は歪まず、
+# 本文が痩せている記事は short_body が既に捕まえる。
+# 実測: code_dominant で落ちた66件は地の文300〜597字あり、
+# 「〜を作りました」「〜できるようにする」という解説記事だった。二重に切るのは誤り。
+MIN_KANA_RATIO = 0.12 # かなが極端に少ない = 単語の羅列や設定ファイルの説明
 
 # 日本語が主でない記事を弾く。英語記事や翻訳記事が混ざると文体分析が壊れる。
 JA_CHARS = re.compile(r"[぀-ゟ゠-ヿ一-鿿]")
+KANA = re.compile(r"[぀-ゟ゠-ヿ]")
+
+# メモ書き・告知系。文体分析の母集団に入れると平均を歪める。
+MEMO_TITLE = re.compile(
+    r"(備忘録?|自分用メモ|個人用メモ|メモ$|メモ書き|ハンズオン記録|"
+    r"日報|週報|学習記録|作業ログ|やったことリスト)",
+)
 
 
 def exclusion_reason(item: dict) -> str | None:
-    """除外すべきなら理由を返す。分析対象なら None。"""
+    """除外すべきなら理由を返す。分析対象なら None。
+
+    Qiita には「コードを貼っただけ」「英語のみ」「備忘録」が相当数ある。
+    これらは文体分析の対象ではないので落とす。実測した境界例では
+    「地の文301字・コード426行」のような記事が通過していたため、
+    文字数の絶対値だけでなく地の文とコードの比率も見る。
+    """
     if item.get("private"):
         return "private"
     if item.get("slide"):
@@ -59,9 +85,21 @@ def exclusion_reason(item: dict) -> str | None:
     chars = len(re.sub(r"\s", "", text))
     if chars < MIN_BODY_CHARS:
         return f"short_body(<{MIN_BODY_CHARS})"
+
     ja = len(JA_CHARS.findall(text))
-    if chars and ja / chars < 0.3:
+    if ja / chars < MIN_JA_RATIO:
         return "not_japanese"
+    if ja < MIN_JA_CHARS:
+        return f"too_little_japanese(<{MIN_JA_CHARS})"
+
+    # かな比率が低い = 名詞の羅列やコマンド説明で、文になっていない
+    if len(KANA.findall(text)) / chars < MIN_KANA_RATIO:
+        return "low_kana(word_list)"
+
+    title = item.get("title") or ""
+    if MEMO_TITLE.search(title):
+        return "memo_post"
+
     return None
 
 
@@ -88,6 +126,12 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
             dropped.append({"id": item.get("id"), "created_at": item.get("created_at"),
                             "reason": f"few_sentences(<{MIN_SENTENCES})"})
             continue
+        # 指標の信頼度を記事ごとに持たせる。短い記事の burstiness は
+        # 長い記事と同じ確からしさでは扱えないので、集計時に重みとして使う。
+        # 除外ではなく重みにするのは、切り捨てると母集団が偏るため。
+        n_sent = m.get("n_sentences") or 0
+        weight = min(1.0, n_sent / 30)  # 30文で満点。それ未満は線形に減衰
+
         kept.append({
             "id": item.get("id"),
             "user_id": item.get("user_id"),
@@ -96,6 +140,7 @@ def process_file(path: Path) -> tuple[list[dict], list[dict]]:
             "likes": item.get("likes_count"),
             "tags": item.get("tags"),
             "user_items_count": item.get("user_items_count"),
+            "weight": round(weight, 4),
             **m,
         })
     return kept, dropped

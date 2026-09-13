@@ -26,6 +26,7 @@ import argparse
 import calendar
 import json
 import os
+import re
 import sys
 import time
 from datetime import date, timedelta
@@ -84,8 +85,40 @@ def parse_targets(args: argparse.Namespace) -> list[tuple[int, int]]:
     return sorted(set(out))
 
 
+LAST_PAGE = re.compile(r'[?&]page=(\d+)[^>]*>;\s*rel="last"')
+
+
+def throttle(r: httpx.Response, log, reserve: int = 50) -> None:
+    """rate-remaining を見てペースを落とす。
+
+    429 が返ってから待つのでは遅い(最大1時間止まる)。残量とリセットまでの
+    秒数から1リクエストあたりの必要間隔を逆算し、事前に間隔を空ける。
+    reserve は使い切らずに残す予備枠。
+    """
+    try:
+        remaining = int(r.headers.get("rate-remaining", -1))
+        reset = int(r.headers.get("rate-reset", 0))
+    except ValueError:
+        return
+    if remaining < 0 or not reset:
+        return
+
+    left = reset - int(time.time())
+    if left <= 0:
+        return
+    usable = remaining - reserve
+    if usable <= 0:
+        log(f"    ! 残枠 {remaining} (予備 {reserve})。リセットまで {left}s 待機")
+        time.sleep(min(left + 5, 3700))
+        return
+    # 残り時間を残枠で割った間隔を空ければ、リセットまで枠が保つ
+    need = left / usable
+    if need > 0.25:
+        time.sleep(min(need, 30))
+
+
 def fetch_day(
-    client: httpx.Client, day: date, log
+    client: httpx.Client, day: date, log, base_sleep: float, reserve: int = 50
 ) -> tuple[list[dict], int, bool]:
     """1日分を全ページ取得する。
 
@@ -95,6 +128,7 @@ def fetch_day(
     query = f"created:>={day.isoformat()} created:<={day.isoformat()}"
     items: list[dict] = []
     total = -1
+    last_page = None  # link ヘッダーの rel="last" から取る
     page = 1
     while page <= MAX_PAGE:
         for attempt in range(5):
@@ -128,13 +162,24 @@ def fetch_day(
 
         if total < 0:
             total = int(r.headers.get("total-count", -1))
+        if last_page is None:
+            m = LAST_PAGE.search(r.headers.get("link", ""))
+            if m:
+                last_page = int(m.group(1))
+
         batch = r.json()
         if not batch:
             break
         items.extend(batch)
         if len(batch) < PER_PAGE:
             break
+        # link の rel="last" を見て、最終ページまで来たら空振りの1回を省く。
+        # これが無いと件数がちょうど100の倍数の日で毎回1回無駄に投げる。
+        if last_page is not None and page >= last_page:
+            break
         page += 1
+        throttle(r, log, reserve)
+        time.sleep(base_sleep)
 
     # page が MAX_PAGE を超えて打ち切られた場合も取りこぼし扱いにする
     complete = page <= MAX_PAGE and (total < 0 or len(items) >= total)
@@ -207,6 +252,8 @@ def main() -> int:
     p.add_argument("--limit-days", type=int, help="各月の先頭N日だけ取る(パイロット用)")
     p.add_argument("--force", action="store_true", help="取得済みでも再取得")
     p.add_argument("--sleep", type=float, default=0.2, help="リクエスト間の待機秒")
+    p.add_argument("--reserve", type=int, default=50,
+                   help="使い切らずに残すレート枠 (既定50)")
     args = p.parse_args()
 
     targets = parse_targets(args)
@@ -246,7 +293,9 @@ def main() -> int:
                 if mf and not mf.get("complete"):
                     log(f"  {day} 前回未完了のため再取得")
 
-                items, total, complete = fetch_day(client, day, log)
+                items, total, complete = fetch_day(
+                    client, day, log, args.sleep, args.reserve
+                )
                 if total >= 10000:
                     w = f"{day}: total-count={total} が 10,000 以上。取りこぼしの可能性"
                     warnings.append(w)
