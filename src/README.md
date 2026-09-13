@@ -26,6 +26,7 @@ AI生成文の混入がない。この時期のデータは後から取り直せ
 | `profile/qiita-tech-2020.json` | AI以前の技術記事6,952本から測った参照分布(10指標の分位点) |
 | `textlint/textlint-rule-qiita-tech-style.js` | 参照分布と照らして指摘する textlint ルール |
 | `prompts/qiita-tech-writing.md` | 執筆・推敲用のプロンプト |
+| `prh/qiita-tech-style.yml` | 表記の言い換え辞書(prh形式、自動修正対応) |
 
 ## 使い方
 
@@ -63,6 +64,30 @@ npx textlint --rulesdir ./src/textlint --config .textlintrc.json 記事.md
   }
 }
 ```
+
+### prh 辞書(表記の言い換え)
+
+```bash
+npm install --no-save textlint textlint-rule-prh
+npx textlint --config .textlintrc.json 記事.md
+npx textlint --config .textlintrc.json --fix 記事.md   # 自動修正
+```
+
+`.textlintrc.json`:
+
+```json
+{ "rules": { "prh": { "rulePaths": ["./src/prh/qiita-tech-style.yml"] } } }
+```
+
+収録語は実測で大きく動いたものだけ。たとえば「下記」は 17.4% → 4.7%(0.27倍)、
+「とりあえず」は 9.4% → 3.1%(0.33倍)。
+
+ただし **「減ったから直す」ではなく、技術文書として書き換える理由が
+説明できる語だけ**を入れている。実際、当初入れた「ことにより → ため」
+「する際に → するとき」は、意味が変わる・正当な用法があるため削除した。
+
+textlint ルールと違い、これは**表記の提案**なので指摘率が高くても問題ない
+(2020年の記事200本で35%)。AIっぽさの判定ではない。
 
 ### プロファイル単体
 
