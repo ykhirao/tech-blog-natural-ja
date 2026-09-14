@@ -1,0 +1,34 @@
+I had been aware of it for a while now,
+
+and though I had seen it somewhere, I hadn't been able to get started on it for quite some time. Now that I have some time, I finally managed to get off my ass and deal with it, so I'll write down the steps I took.
+
+This is the official page about Android App Bundle.
+Taking a quick look, there's nothing but good things here!!
+
+But a 43.9% size reduction... I should have just done it already.
+※ Note that once you enable it, it apparently cannot be disabled, so be careful.
+
+I'll create this in advance since I'll need it later.
+The official page has detailed steps, but I'll write them out here anyway.
+
+It looks like it worked, so the generation of the upload key is done.
+For this one, you just run the command.
+The advance preparation is now complete.
+
+I'll generate an AAB file with the upload key created here so I can confirm whether I can properly upload it as an AAB.
+(You don't need to check "Export encrypted key for ~".)
+
+That's it for uploading the secret key for app signing.
+
+It isn't strictly required, but this one is also worth doing.
+
+With this, "Manage, protect your app signing key using Google" is now enabled! 🎉
+Good work!
+
+Just to be safe, I'll confirm that I can upload properly.
+The upload method is the same as with APK!
+
+Since Google is doing its thing with the app signing, I feel like uploading now takes a bit longer. (Though it's only a negligible amount.)
+
+Uploaded successfully!
+The app size was cut roughly in half too!

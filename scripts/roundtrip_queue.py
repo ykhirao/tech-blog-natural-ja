@@ -142,15 +142,32 @@ def claim_jobs(n: int) -> list[dict]:
 
 # --- pid の呼び出し -------------------------------------------------------
 
-def run_pid(prompt: str, timeout: int = 180) -> str | None:
-    try:
-        r = subprocess.run(
-            ["zsh", "-ic", "pid " + json.dumps(prompt, ensure_ascii=False)],
-            capture_output=True, text=True, timeout=timeout)
-    except subprocess.TimeoutExpired:
-        return None
-    out = (r.stdout or "").strip()
-    return out or None
+def run_pid(prompt: str, timeout: int = 180, retries: int = 6) -> str | None:
+    """pid に問い合わせる。429 のときは待って再試行する。
+
+    ollama-cloud には同時接続の制限がある。実測すると5並列でも
+    4つが `429 "too many concurrent requests"` で弾かれ、
+    実質1リクエストずつしか通らなかった。
+    並列を上げるほど失敗が増えるので、待って順番待ちする。
+    """
+    delay = 3.0
+    for attempt in range(retries):
+        try:
+            r = subprocess.run(
+                ["zsh", "-ic", "pid " + json.dumps(prompt, ensure_ascii=False)],
+                capture_output=True, text=True, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            return None
+        out = (r.stdout or "").strip()
+        err = (r.stderr or "")
+        blob = out + err
+        if "429" in blob or "too many concurrent" in blob.lower():
+            # 待ち時間をずらして、複数ワーカーが同時に再開しないようにする
+            time.sleep(delay + random.random() * 2)
+            delay = min(delay * 1.8, 45)
+            continue
+        return out or None
+    return None
 
 
 def translate_roundtrip(ja: str, mode: str = "sentence") -> tuple[str | None, str | None]:
@@ -183,74 +200,88 @@ def build(count: int, years: list[str], seed: int, mode: str = "sentence",
     翻訳器の入力上限と、1件あたりの所要時間を抑えるため。
     """
     rng = random.Random(seed)
-    files = []
+
+    # 年ごとに均等に配分する。全ファイルをまとめてシャッフルすると、
+    # 上限に達した時点で残りの年が丸ごと欠ける(実際 2019-2022 がゼロになった)。
+    per_year = max(1, count // max(1, len(years)))
+    files_by_year: dict[str, list] = {}
     for y in years:
-        files.extend(sorted(RAW.glob(f"qiita_{y}-08-*.jsonl")))
-    rng.shuffle(files)
+        fs = sorted(RAW.glob(f"qiita_{y}-08-*.jsonl"))
+        rng.shuffle(fs)
+        if fs:
+            files_by_year[y] = fs
 
     seen: set[str] = set()
     jobs: list[dict] = []
-    for f in files:
-        if len(jobs) >= count:
-            break
-        year = f.stem.replace("qiita_", "")[:4]
-        for line in f.open(encoding="utf-8"):
-            if len(jobs) >= count:
+    for y, fs in files_by_year.items():
+        year_start = len(jobs)
+        for f in fs:
+            if len(jobs) - year_start >= per_year or len(jobs) >= count:
                 break
-            item = json.loads(line)
-            body = item.get("body") or ""
-            if len(body) < 1000 or item.get("slide"):
-                continue
-            text = clean_inline("\n".join(split_markdown(body)["body_lines"]))
+            year = f.stem.replace("qiita_", "")[:4]
+            for line in f.open(encoding="utf-8"):
+                # 年あたりの上限は内側でも見る。外側(ファイル単位)だけだと
+                # 1ファイルの中で上限を大きく超えてしまい、後ろの年が
+                # 丸ごと欠ける(実際 2019年が143件になり 2023/2026 がゼロだった)。
+                if len(jobs) - year_start >= per_year or len(jobs) >= count:
+                    break
+                item = json.loads(line)
+                body = item.get("body") or ""
+                if len(body) < 1000 or item.get("slide"):
+                    continue
+                text = clean_inline("\n".join(split_markdown(body)["body_lines"]))
 
-            if mode == "article":
-                # 地の文をまるごと。長すぎるものは句点で切り詰める。
-                t = re.sub(r"\n{3,}", "\n\n", text).strip()
-                if len(t) < 300:
+                if mode == "article":
+                    # 地の文をまるごと。長すぎるものは句点で切り詰める。
+                    t = re.sub(r"\n{3,}", "\n\n", text).strip()
+                    if len(t) < 300:
+                        continue
+                    if len(t) > max_chars:
+                        cut = t.rfind("。", 0, max_chars)
+                        t = t[: cut + 1] if cut > max_chars // 2 else t[:max_chars]
+                    hits = sorted({w for w in ALL_WORDS if w in t})
+                    if not hits:
+                        continue
+                    jobs.append({
+                        "id": f"{item['id']}_a",
+                        "year": year,
+                        "article_id": item["id"],
+                        "mode": "article",
+                        "raw": t,
+                        "target_word": hits[0],
+                        "target_words": hits,
+                        "group": ALL_WORDS[hits[0]],
+                        "chars": len(t),
+                    })
+                    # ここで break すると1ファイル(=1日)あたり1件しか取れない。
+                    # 実際そうなっていて、31日×6年=186件で頭打ちになった。
+                    # article モードは1記事が1件なので、次の記事へ進めばよい。
                     continue
-                if len(t) > max_chars:
-                    cut = t.rfind("。", 0, max_chars)
-                    t = t[: cut + 1] if cut > max_chars // 2 else t[:max_chars]
-                hits = sorted({w for w in ALL_WORDS if w in t})
-                if not hits:
-                    continue
-                jobs.append({
-                    "id": f"{item['id']}_a",
-                    "year": year,
-                    "article_id": item["id"],
-                    "mode": "article",
-                    "raw": t,
-                    "target_word": hits[0],
-                    "target_words": hits,
-                    "group": ALL_WORDS[hits[0]],
-                    "chars": len(t),
-                })
-                break
 
-            for s in split_sentences(text):
-                s = s.strip()
-                if not (25 <= len(s) <= 90):
-                    continue
-                hits = [w for w in ALL_WORDS if w in s]
-                if len(hits) != 1:
-                    continue
-                # コードや記号が多い文は翻訳が荒れるので避ける
-                if len(re.findall(r"[A-Za-z0-9_./`]", s)) > len(s) * 0.3:
-                    continue
-                if s in seen:
-                    continue
-                seen.add(s)
-                jobs.append({
-                    "id": f"{item['id']}_{len(jobs)}",
-                    "year": year,
-                    "article_id": item["id"],
-                    "mode": "sentence",
-                    "raw": s,
-                    "target_word": hits[0],
-                    "target_words": hits,
-                    "group": ALL_WORDS[hits[0]],
-                })
-                break  # 1記事1文まで
+                for s in split_sentences(text):
+                    s = s.strip()
+                    if not (25 <= len(s) <= 90):
+                        continue
+                    hits = [w for w in ALL_WORDS if w in s]
+                    if len(hits) != 1:
+                        continue
+                    # コードや記号が多い文は翻訳が荒れるので避ける
+                    if len(re.findall(r"[A-Za-z0-9_./`]", s)) > len(s) * 0.3:
+                        continue
+                    if s in seen:
+                        continue
+                    seen.add(s)
+                    jobs.append({
+                        "id": f"{item['id']}_{len(jobs)}",
+                        "year": year,
+                        "article_id": item["id"],
+                        "mode": "sentence",
+                        "raw": s,
+                        "target_word": hits[0],
+                        "target_words": hits,
+                        "group": ALL_WORDS[hits[0]],
+                    })
+                    break  # 1記事1文まで
 
     QDIR.mkdir(parents=True, exist_ok=True)
     with JOBS.open("w", encoding="utf-8") as f:
