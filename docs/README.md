@@ -28,6 +28,7 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [roundtrip-translation.md](roundtrip-translation.md) | 往復翻訳の仕組み。並行処理しても壊れない設計 |
 | [roundtrip-1332.md](roundtrip-1332.md) | **往復翻訳1,332件の結果。生き残り率で語が2層に分かれる** |
 | [izon-context.md](izon-context.md) | 「依存」は何の話で増えたか。用法の構成比は変わっていない |
+| [survival-vs-dictionary.md](survival-vs-dictionary.md) | **生き残り率と AI語彙辞書は役割が重ならない。併用が正しい** |
 
 成果物は [`../src/`](../src/) にある(プロファイル・textlintルール・プロンプト)。
 
