@@ -176,7 +176,7 @@ def main() -> int:
     payload = {"years": years, "article_counts": counts, "words": rows}
     (OUT / ("word_timeline_norm.json" if args.normalize else "word_timeline.json")).write_text(
         json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"\n保存: data/processed/word_timeline.json ({len(rows)}語)", file=sys.stderr)
+    print(f"\n保存: {OUT.name}/ ({len(rows)}語)", file=sys.stderr)
 
     # AI以後に急増した語 / 急減した語
     surge = sorted(rows, key=lambda r: -(r["post_slope"] - r["pre_slope"]))[:25]
