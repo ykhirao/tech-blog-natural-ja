@@ -10,6 +10,8 @@ data/raw/
 data/interim/
 data/processed/
 data/*.log
+# 往復翻訳の入出力。記事の本文(最大1,500字)がそのまま入るので追跡しない
+data/roundtrip/
 *.jsonl.gz
 
 # python
@@ -27,3 +29,9 @@ node_modules/
 # node (textlint の試用でできるもの)
 package.json
 package-lock.json
+
+# 誤って混入した作業ファイル
+prevState
+{processing}
+typescript
+translation.txt
