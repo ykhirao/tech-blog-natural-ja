@@ -100,6 +100,9 @@ def main() -> int:
     ap.add_argument("--field", help="この指標だけ詳しく出す")
     ap.add_argument("--md", action="store_true", help="Markdown 表で出力")
     ap.add_argument("--chart", action="store_true", help="推移を記号で表示")
+    ap.add_argument("--min-articles", type=int, default=0,
+                    help="この件数に満たない月を隠す(空の月が並ぶのを防ぐ)")
+    ap.add_argument("--from", dest="since", help="この月以降だけ (例: 2015-01)")
     args = ap.parse_args()
 
     data = load_months()
@@ -108,6 +111,15 @@ def main() -> int:
         return 1
 
     months = list(data)
+    # 182か月あると 2011年の空の月が延々と並ぶので、絞り込めるようにする
+    if args.since:
+        months = [m for m in months if m >= args.since]
+    if args.min_articles:
+        months = [m for m in months if len(data[m]) >= args.min_articles]
+    if not months:
+        print("条件に合う月がありません")
+        return 1
+
     stats = {m: {f: median_of(rows, f) for f, _, _ in FIELDS} for m, rows in data.items()}
 
     if args.field:
