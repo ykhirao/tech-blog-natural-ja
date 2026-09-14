@@ -1,0 +1,26 @@
+{
+  "name": "code-natural-ja",
+  "version": "1.0.0",
+  "description": "Qiita の技術記事を実測して作った、日本語技術記事のための文体プロファイルと textlint ルール",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "lint": "textlint --rulesdir ./src/textlint",
+    "lint:article": "textlint --rulesdir ./src/textlint article/draft.md"
+  },
+  "keywords": [
+    "textlint",
+    "textlintrule",
+    "japanese",
+    "qiita"
+  ],
+  "author": "ykhirao",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "textlint": "^15.8.0",
+    "textlint-rule-preset-ai-words-ja": "^1.0.0",
+    "textlint-rule-prh": "^6.0.0"
+  }
+}

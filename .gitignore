@@ -26,9 +26,9 @@ node_modules/
 # os
 .DS_Store
 
-# node (textlint の試用でできるもの)
-package.json
-package-lock.json
+# node
+# package.json / package-lock.json は追跡する。
+# textlint ルールを配る以上、依存とそのバージョンは再現できないと困る。
 
 # 誤って混入した作業ファイル
 prevState

@@ -159,7 +159,7 @@ const reporter = (context, userOptions = {}) => {
         const spec = M.burstiness_mora;
         if (b !== null && b < limitOf(opts, "burstiness_mora", spec, "lower")) {
           findings.push(
-            `文の長短のメリハリが乏しい (burstiness=${b.toFixed(3)}、` +
+            `文の長短のメリハリが乏しい (文長のばらつき=${b.toFixed(3)}、` +
               `技術記事の参照分布で${describePosition(b, spec)}。` +
               `中央値は${spec.p50})。短い文と長い文を混ぜると読みやすくなる。`
           );

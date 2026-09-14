@@ -1,1 +1,7 @@
-{ "rules": { "no-mix-dearu-desumasu": true } }
+{
+  "rules": {
+    "qiita-tech-style": true,
+    "preset-ai-words-ja": true,
+    "prh": { "rulePaths": ["./src/prh/qiita-tech-style.yml"] }
+  }
+}

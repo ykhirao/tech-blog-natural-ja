@@ -45,14 +45,41 @@ scripts/            資産。すべて uv 単体実行(PEP 723)で依存を自�
   metrics.py           指標計算(ライブラリ兼CLI)。指標定義の唯一の置き場
   build_dataset.py     除外基準をかけて分析用データセットを作る
   inspect_outliers.py  分布と外れ値の診断。スクリプト改善のための道具
+  timeline.py          月をまたいだ推移。形態素解析を使わないので軽い
+  roundtrip_queue.py   往復翻訳のジョブキュー。並行実行しても壊れない
+  check_repo.py        公開前の点検。リンク・コマンド・混入を機械で見る
 data/
   raw/         API の生データ。qiita_YYYY-MM-DD.jsonl + .manifest.json
   interim/     試行錯誤の中間物
   processed/   metrics_YYYY-MM.jsonl / excluded_YYYY-MM.jsonl
+  roundtrip/   往復翻訳の入出力。記事本文が入る
 docs/          調査メモ
+src/           公開成果物(textlint ルール・プロンプト・集計値)
+article/       Qiita 投稿用の記事
 ```
 
-`data/` は `.gitignore` 済み(raw/interim)。`.env` も除外済み。
+**`data/` は丸ごと `.gitignore` 済み。** 中身は他人の記事本文なので、
+追跡すると公開リポジトリに著作物が混入する。`.env` も除外済み。
+
+公開していいのは `src/data/` の集計値だけ(428KB、本文を含まない)。
+
+## 公開前の点検
+
+commit の前ではなく、**公開の前に** `./scripts/check_repo.py` を通す。
+
+```
+入口のファイル / Markdown のリンク / 追跡外への参照 /
+ドキュメントのコマンド / 大きい追跡ファイル
+```
+
+過去にここで実際に見つかった問題:
+
+- `data/roundtrip/` が `.gitignore` から漏れ、記事本文30MBが追跡されていた
+- README に `--from` と書いたが、実際の引数は `--months` だった
+- `prevState` `typescript` など、`git add -A` で拾った無関係なファイル
+
+**未追跡のファイルも点検の対象にしている。** commit すれば公開されるものは
+同じ扱いにしないと、書いたばかりの README の誤りが素通りする。
 
 ## 取得の設計
 
