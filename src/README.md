@@ -32,6 +32,7 @@ AI生成文の混入がない。この時期のデータは後から取り直せ
 | `prompts/qiita-tech-writing.md` | 執筆・推敲用のプロンプト |
 | `prh/qiita-tech-style.yml` | 表記の言い換え辞書(prh形式、自動修正対応) |
 | `prompts/ai-to-qiita.md` | AI文章をQiitaらしく直すプロンプト |
+| `data/` | 集計済みデータ(424KB)。記事本文は含まない |
 
 ## 使い方
 

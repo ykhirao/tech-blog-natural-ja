@@ -1,0 +1,62 @@
+{
+ "base": {
+  "chars_body": {
+   "mean": 968.8333333333334,
+   "min": 943.0,
+   "max": 990.0,
+   "range": 47.0
+  },
+  "kanji_ratio": {
+   "mean": 0.17206666666666667,
+   "min": 0.1715,
+   "max": 0.173,
+   "range": 0.0014999999999999736
+  },
+  "burstiness_mora": {
+   "mean": -0.23469166666666666,
+   "min": -0.2374,
+   "max": -0.2328,
+   "range": 0.004599999999999993
+  },
+  "nominal_ending_ratio": {
+   "mean": 0.1523,
+   "min": 0.15,
+   "max": 0.1553,
+   "range": 0.005299999999999999
+  },
+  "ten_per_sentence": {
+   "mean": 0.5011666666666666,
+   "min": 0.492,
+   "max": 0.515,
+   "range": 0.02300000000000002
+  },
+  "mtld": {
+   "mean": 43.79833333333334,
+   "min": 43.68,
+   "max": 43.94,
+   "range": 0.259999999999998
+  },
+  "list_ratio": {
+   "mean": 0.03596666666666667,
+   "min": 0.0222,
+   "max": 0.0536,
+   "range": 0.0314
+  },
+  "has_matome_heading": {
+   "mean": 0.0,
+   "min": 0.0,
+   "max": 0.0,
+   "range": 0.0
+  }
+ },
+ "threshold": {
+  "chars_body": 141.0,
+  "kanji_ratio": 0.004499999999999921,
+  "burstiness_mora": 0.013799999999999979,
+  "nominal_ending_ratio": 0.015899999999999997,
+  "ten_per_sentence": 0.06900000000000006,
+  "mtld": 0.8759666666666668,
+  "list_ratio": 0.09419999999999999,
+  "has_matome_heading": 0.0
+ }
+}

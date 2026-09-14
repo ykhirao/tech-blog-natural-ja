@@ -1,0 +1,4002 @@
+[
+ {
+  "word": "為る",
+  "z": -106.048,
+  "doc_ratio_a": 0.9926,
+  "doc_ratio_b": 0.97631,
+  "freq_a": 221840,
+  "freq_b": 525103
+ },
+ {
+  "word": "作成",
+  "z": -86.809,
+  "doc_ratio_a": 0.42349,
+  "doc_ratio_b": 0.32282,
+  "freq_a": 12061,
+  "freq_b": 11666
+ },
+ {
+  "word": "以下",
+  "z": -81.678,
+  "doc_ratio_a": 0.49799,
+  "doc_ratio_b": 0.42976,
+  "freq_a": 12552,
+  "freq_b": 13671
+ },
+ {
+  "word": "インストール-install",
+  "z": -75.863,
+  "doc_ratio_a": 0.23232,
+  "doc_ratio_b": 0.1368,
+  "freq_a": 6322,
+  "freq_b": 4110
+ },
+ {
+  "word": "思う",
+  "z": -66.365,
+  "doc_ratio_a": 0.51992,
+  "doc_ratio_b": 0.4411,
+  "freq_a": 10839,
+  "freq_b": 13846
+ },
+ {
+  "word": "使用",
+  "z": -66.305,
+  "doc_ratio_a": 0.35224,
+  "doc_ratio_b": 0.25737,
+  "freq_a": 7700,
+  "freq_b": 7959
+ },
+ {
+  "word": "参考",
+  "z": -65.624,
+  "doc_ratio_a": 0.31953,
+  "doc_ratio_b": 0.15468,
+  "freq_a": 4407,
+  "freq_b": 2564
+ },
+ {
+  "word": "下記",
+  "z": -61.129,
+  "doc_ratio_a": 0.17729,
+  "doc_ratio_b": 0.04222,
+  "freq_a": 3221,
+  "freq_b": 1242
+ },
+ {
+  "word": "コマンド-command",
+  "z": -59.024,
+  "doc_ratio_a": 0.234,
+  "doc_ratio_b": 0.2064,
+  "freq_a": 6434,
+  "freq_b": 6900
+ },
+ {
+  "word": "メソッド-method",
+  "z": -58.765,
+  "doc_ratio_a": 0.12148,
+  "doc_ratio_b": 0.04904,
+  "freq_a": 3183,
+  "freq_b": 1499
+ },
+ {
+  "word": "クリック-click",
+  "z": -56.384,
+  "doc_ratio_a": 0.13615,
+  "doc_ratio_b": 0.08794,
+  "freq_a": 3783,
+  "freq_b": 2726
+ },
+ {
+  "word": "関数",
+  "z": -55.706,
+  "doc_ratio_a": 0.16976,
+  "doc_ratio_b": 0.14906,
+  "freq_a": 5748,
+  "freq_b": 6175
+ },
+ {
+  "word": "設定",
+  "z": -54.752,
+  "doc_ratio_a": 0.42103,
+  "doc_ratio_b": 0.46267,
+  "freq_a": 12455,
+  "freq_b": 20004
+ },
+ {
+  "word": "指定",
+  "z": -53.63,
+  "doc_ratio_a": 0.29111,
+  "doc_ratio_b": 0.27065,
+  "freq_a": 5972,
+  "freq_b": 6910
+ },
+ {
+  "word": "設計",
+  "z": 51.371,
+  "doc_ratio_a": 0.05607,
+  "doc_ratio_b": 0.40662,
+  "freq_a": 952,
+  "freq_b": 15917
+ },
+ {
+  "word": "上記",
+  "z": -51.12,
+  "doc_ratio_a": 0.21467,
+  "doc_ratio_b": 0.08665,
+  "freq_a": 2542,
+  "freq_b": 1346
+ },
+ {
+  "word": "クラス-class",
+  "z": -50.79,
+  "doc_ratio_a": 0.10746,
+  "doc_ratio_b": 0.07577,
+  "freq_a": 3282,
+  "freq_b": 2553
+ },
+ {
+  "word": "行う",
+  "z": -50.765,
+  "doc_ratio_a": 0.3451,
+  "doc_ratio_b": 0.35509,
+  "freq_a": 6395,
+  "freq_b": 8191
+ },
+ {
+  "word": "出来る",
+  "z": -49.747,
+  "doc_ratio_a": 0.79896,
+  "doc_ratio_b": 0.86523,
+  "freq_a": 27657,
+  "freq_b": 58002
+ },
+ {
+  "word": "方法",
+  "z": -48.771,
+  "doc_ratio_a": 0.36976,
+  "doc_ratio_b": 0.32024,
+  "freq_a": 5946,
+  "freq_b": 7644
+ },
+ {
+  "word": "感じ",
+  "z": -48.748,
+  "doc_ratio_a": 0.18611,
+  "doc_ratio_b": 0.07743,
+  "freq_a": 2415,
+  "freq_b": 1386
+ },
+ {
+  "word": "表示",
+  "z": -48.398,
+  "doc_ratio_a": 0.34886,
+  "doc_ratio_b": 0.3349,
+  "freq_a": 7993,
+  "freq_b": 11884
+ },
+ {
+  "word": "変数",
+  "z": -47.21,
+  "doc_ratio_a": 0.14562,
+  "doc_ratio_b": 0.12915,
+  "freq_a": 3693,
+  "freq_b": 3655
+ },
+ {
+  "word": "ファイル-file",
+  "z": -46.46,
+  "doc_ratio_a": 0.35938,
+  "doc_ratio_b": 0.38367,
+  "freq_a": 10713,
+  "freq_b": 18266
+ },
+ {
+  "word": "行く",
+  "z": -45.315,
+  "doc_ratio_a": 0.46022,
+  "doc_ratio_b": 0.48903,
+  "freq_a": 8310,
+  "freq_b": 13204
+ },
+ {
+  "word": "記述",
+  "z": -45.301,
+  "doc_ratio_a": 0.16132,
+  "doc_ratio_b": 0.10186,
+  "freq_a": 2641,
+  "freq_b": 2079
+ },
+ {
+  "word": "用いる",
+  "z": -44.458,
+  "doc_ratio_a": 0.1329,
+  "doc_ratio_b": 0.07319,
+  "freq_a": 2236,
+  "freq_b": 1509
+ },
+ {
+  "word": "エージェント-agent",
+  "z": 44.353,
+  "doc_ratio_a": 0.00701,
+  "doc_ratio_b": 0.17865,
+  "freq_a": 201,
+  "freq_b": 11501
+ },
+ {
+  "word": "見る",
+  "z": -41.867,
+  "doc_ratio_a": 0.59766,
+  "doc_ratio_b": 0.68022,
+  "freq_a": 14813,
+  "freq_b": 29212
+ },
+ {
+  "word": "良い",
+  "z": -41.458,
+  "doc_ratio_a": 0.46022,
+  "doc_ratio_b": 0.4964,
+  "freq_a": 8148,
+  "freq_b": 13678
+ },
+ {
+  "word": "場合",
+  "z": -40.909,
+  "doc_ratio_a": 0.53056,
+  "doc_ratio_b": 0.58084,
+  "freq_a": 12190,
+  "freq_b": 23183
+ },
+ {
+  "word": "下さる",
+  "z": -40.385,
+  "doc_ratio_a": 0.35432,
+  "doc_ratio_b": 0.38827,
+  "freq_a": 6620,
+  "freq_b": 10525
+ },
+ {
+  "word": "モデル-model",
+  "z": 40.045,
+  "doc_ratio_a": 0.08877,
+  "doc_ratio_b": 0.2748,
+  "freq_a": 2719,
+  "freq_b": 18852
+ },
+ {
+  "word": "判断",
+  "z": 39.66,
+  "doc_ratio_a": 0.04439,
+  "doc_ratio_b": 0.32909,
+  "freq_a": 526,
+  "freq_b": 9349
+ },
+ {
+  "word": "ボタン-button",
+  "z": -39.616,
+  "doc_ratio_a": 0.11564,
+  "doc_ratio_b": 0.09642,
+  "freq_a": 2413,
+  "freq_b": 2247
+ },
+ {
+  "word": "記載",
+  "z": -39.065,
+  "doc_ratio_a": 0.14354,
+  "doc_ratio_b": 0.09052,
+  "freq_a": 1995,
+  "freq_b": 1596
+ },
+ {
+  "word": "引数",
+  "z": -38.792,
+  "doc_ratio_a": 0.09903,
+  "doc_ratio_b": 0.07043,
+  "freq_a": 2053,
+  "freq_b": 1715
+ },
+ {
+  "word": "インスタンス-instance",
+  "z": -37.997,
+  "doc_ratio_a": 0.07437,
+  "doc_ratio_b": 0.04545,
+  "freq_a": 1893,
+  "freq_b": 1519
+ },
+ {
+  "word": "コンテナ-container",
+  "z": -37.553,
+  "doc_ratio_a": 0.05191,
+  "doc_ratio_b": 0.05743,
+  "freq_a": 2216,
+  "freq_b": 2101
+ },
+ {
+  "word": "頂く",
+  "z": -36.728,
+  "doc_ratio_a": 0.17158,
+  "doc_ratio_b": 0.112,
+  "freq_a": 1996,
+  "freq_b": 1798
+ },
+ {
+  "word": "ディレクトリー-directory",
+  "z": -36.598,
+  "doc_ratio_a": 0.12395,
+  "doc_ratio_b": 0.10343,
+  "freq_a": 2431,
+  "freq_b": 2571
+ },
+ {
+  "word": "検証",
+  "z": 36.384,
+  "doc_ratio_a": 0.06411,
+  "doc_ratio_b": 0.30605,
+  "freq_a": 1005,
+  "freq_b": 10214
+ },
+ {
+  "word": "ダウンロード-download",
+  "z": -36.272,
+  "doc_ratio_a": 0.11019,
+  "doc_ratio_b": 0.07983,
+  "freq_a": 1883,
+  "freq_b": 1646
+ },
+ {
+  "word": "アクセス-access",
+  "z": -35.604,
+  "doc_ratio_a": 0.18793,
+  "doc_ratio_b": 0.20354,
+  "freq_a": 3864,
+  "freq_b": 5465
+ },
+ {
+  "word": "色々",
+  "z": -35.52,
+  "doc_ratio_a": 0.1146,
+  "doc_ratio_b": 0.03457,
+  "freq_a": 1117,
+  "freq_b": 470
+ },
+ {
+  "word": "つく",
+  "z": -35.078,
+  "doc_ratio_a": 0.33939,
+  "doc_ratio_b": 0.36394,
+  "freq_a": 5431,
+  "freq_b": 8893
+ },
+ {
+  "word": "実際",
+  "z": 34.936,
+  "doc_ratio_a": 0.20117,
+  "doc_ratio_b": 0.55909,
+  "freq_a": 2516,
+  "freq_b": 16214
+ },
+ {
+  "word": "整理",
+  "z": 34.474,
+  "doc_ratio_a": 0.03128,
+  "doc_ratio_b": 0.30162,
+  "freq_a": 304,
+  "freq_b": 6788
+ },
+ {
+  "word": "プログラム-program",
+  "z": -34.319,
+  "doc_ratio_a": 0.1207,
+  "doc_ratio_b": 0.09771,
+  "freq_a": 2292,
+  "freq_b": 2541
+ },
+ {
+  "word": "オプション-option",
+  "z": -33.977,
+  "doc_ratio_a": 0.0915,
+  "doc_ratio_b": 0.06213,
+  "freq_a": 1439,
+  "freq_b": 1093
+ },
+ {
+  "word": "因み",
+  "z": -33.939,
+  "doc_ratio_a": 0.10941,
+  "doc_ratio_b": 0.04351,
+  "freq_a": 1117,
+  "freq_b": 587
+ },
+ {
+  "word": "人間",
+  "z": 33.361,
+  "doc_ratio_a": 0.02323,
+  "doc_ratio_b": 0.18335,
+  "freq_a": 292,
+  "freq_b": 6375
+ },
+ {
+  "word": "選択",
+  "z": -33.256,
+  "doc_ratio_a": 0.19014,
+  "doc_ratio_b": 0.26982,
+  "freq_a": 4604,
+  "freq_b": 7383
+ },
+ {
+  "word": "使う",
+  "z": -33.22,
+  "doc_ratio_a": 0.65399,
+  "doc_ratio_b": 0.74843,
+  "freq_a": 17715,
+  "freq_b": 39530
+ },
+ {
+  "word": "運用",
+  "z": 32.962,
+  "doc_ratio_a": 0.0462,
+  "doc_ratio_b": 0.29425,
+  "freq_a": 663,
+  "freq_b": 7676
+ },
+ {
+  "word": "配列",
+  "z": -32.23,
+  "doc_ratio_a": 0.06645,
+  "doc_ratio_b": 0.06259,
+  "freq_a": 1799,
+  "freq_b": 1839
+ },
+ {
+  "word": "オブジェクト-object",
+  "z": -32.028,
+  "doc_ratio_a": 0.09345,
+  "doc_ratio_b": 0.07753,
+  "freq_a": 2166,
+  "freq_b": 2528
+ },
+ {
+  "word": "追加",
+  "z": -31.913,
+  "doc_ratio_a": 0.28955,
+  "doc_ratio_b": 0.35859,
+  "freq_a": 5466,
+  "freq_b": 9537
+ },
+ {
+  "word": "旨い",
+  "z": -31.528,
+  "doc_ratio_a": 0.12459,
+  "doc_ratio_b": 0.07614,
+  "freq_a": 1345,
+  "freq_b": 1114
+ },
+ {
+  "word": "取り敢えず",
+  "z": -31.356,
+  "doc_ratio_a": 0.09409,
+  "doc_ratio_b": 0.0354,
+  "freq_a": 932,
+  "freq_b": 467
+ },
+ {
+  "word": "コンポーネント-component",
+  "z": -31.201,
+  "doc_ratio_a": 0.04724,
+  "doc_ratio_b": 0.04729,
+  "freq_a": 1461,
+  "freq_b": 1332
+ },
+ {
+  "word": "アプリケーション-application",
+  "z": -30.667,
+  "doc_ratio_a": 0.11201,
+  "doc_ratio_b": 0.11956,
+  "freq_a": 2541,
+  "freq_b": 3394
+ },
+ {
+  "word": "残る",
+  "z": 30.474,
+  "doc_ratio_a": 0.0353,
+  "doc_ratio_b": 0.25378,
+  "freq_a": 313,
+  "freq_b": 5531
+ },
+ {
+  "word": "プロパティー",
+  "z": -30.282,
+  "doc_ratio_a": 0.05464,
+  "doc_ratio_b": 0.03079,
+  "freq_a": 1039,
+  "freq_b": 702
+ },
+ {
+  "word": "要素",
+  "z": -30.034,
+  "doc_ratio_a": 0.09747,
+  "doc_ratio_b": 0.1238,
+  "freq_a": 2406,
+  "freq_b": 3193
+ },
+ {
+  "word": "始め",
+  "z": -29.729,
+  "doc_ratio_a": 0.09241,
+  "doc_ratio_b": 0.02802,
+  "freq_a": 783,
+  "freq_b": 330
+ },
+ {
+  "word": "画像",
+  "z": -29.558,
+  "doc_ratio_a": 0.12576,
+  "doc_ratio_b": 0.1238,
+  "freq_a": 3781,
+  "freq_b": 6146
+ },
+ {
+  "word": "見える",
+  "z": 29.272,
+  "doc_ratio_a": 0.06308,
+  "doc_ratio_b": 0.31637,
+  "freq_a": 695,
+  "freq_b": 6810
+ },
+ {
+  "word": "一方",
+  "z": 29.194,
+  "doc_ratio_a": 0.04322,
+  "doc_ratio_b": 0.2995,
+  "freq_a": 461,
+  "freq_b": 5768
+ },
+ {
+  "word": "先程",
+  "z": -29.03,
+  "doc_ratio_a": 0.09656,
+  "doc_ratio_b": 0.05559,
+  "freq_a": 1131,
+  "freq_b": 929
+ },
+ {
+  "word": "関する",
+  "z": -28.89,
+  "doc_ratio_a": 0.12265,
+  "doc_ratio_b": 0.09725,
+  "freq_a": 1489,
+  "freq_b": 1555
+ },
+ {
+  "word": "定義",
+  "z": -28.766,
+  "doc_ratio_a": 0.17339,
+  "doc_ratio_b": 0.2311,
+  "freq_a": 3725,
+  "freq_b": 6138
+ },
+ {
+  "word": "デフォルト-default",
+  "z": -28.756,
+  "doc_ratio_a": 0.14354,
+  "doc_ratio_b": 0.10638,
+  "freq_a": 1810,
+  "freq_b": 2158
+ },
+ {
+  "word": "安全",
+  "z": 28.725,
+  "doc_ratio_a": 0.02816,
+  "doc_ratio_b": 0.2418,
+  "freq_a": 378,
+  "freq_b": 5298
+ },
+ {
+  "word": "パッケージ-package",
+  "z": -28.723,
+  "doc_ratio_a": 0.0841,
+  "doc_ratio_b": 0.0814,
+  "freq_a": 1724,
+  "freq_b": 1999
+ },
+ {
+  "word": "バージョン-version",
+  "z": -28.7,
+  "doc_ratio_a": 0.13809,
+  "doc_ratio_b": 0.14639,
+  "freq_a": 2512,
+  "freq_b": 3552
+ },
+ {
+  "word": "分かる",
+  "z": -28.666,
+  "doc_ratio_a": 0.356,
+  "doc_ratio_b": 0.43409,
+  "freq_a": 5605,
+  "freq_b": 10466
+ },
+ {
+  "word": "失敗",
+  "z": 28.45,
+  "doc_ratio_a": 0.05152,
+  "doc_ratio_b": 0.23101,
+  "freq_a": 661,
+  "freq_b": 6453
+ },
+ {
+  "word": "取得",
+  "z": -28.382,
+  "doc_ratio_a": 0.21285,
+  "doc_ratio_b": 0.24143,
+  "freq_a": 4311,
+  "freq_b": 7513
+ },
+ {
+  "word": "仕組み",
+  "z": 28.167,
+  "doc_ratio_a": 0.07307,
+  "doc_ratio_b": 0.31794,
+  "freq_a": 896,
+  "freq_b": 7413
+ },
+ {
+  "word": "プロンプト-prompt",
+  "z": 27.701,
+  "doc_ratio_a": 0.01791,
+  "doc_ratio_b": 0.15468,
+  "freq_a": 256,
+  "freq_b": 4562
+ },
+ {
+  "word": "追記",
+  "z": -27.682,
+  "doc_ratio_a": 0.08021,
+  "doc_ratio_b": 0.0401,
+  "freq_a": 937,
+  "freq_b": 696
+ },
+ {
+  "word": "利く",
+  "z": 27.671,
+  "doc_ratio_a": 0.01999,
+  "doc_ratio_b": 0.20114,
+  "freq_a": 179,
+  "freq_b": 4339
+ },
+ {
+  "word": "扱う",
+  "z": 27.6,
+  "doc_ratio_a": 0.09864,
+  "doc_ratio_b": 0.34642,
+  "freq_a": 1163,
+  "freq_b": 8420
+ },
+ {
+  "word": "余り",
+  "z": -27.419,
+  "doc_ratio_a": 0.09461,
+  "doc_ratio_b": 0.0531,
+  "freq_a": 938,
+  "freq_b": 713
+ },
+ {
+  "word": "格納",
+  "z": -27.245,
+  "doc_ratio_a": 0.06204,
+  "doc_ratio_b": 0.03309,
+  "freq_a": 915,
+  "freq_b": 686
+ },
+ {
+  "word": "部分",
+  "z": -27.157,
+  "doc_ratio_a": 0.2183,
+  "doc_ratio_b": 0.26244,
+  "freq_a": 3141,
+  "freq_b": 5076
+ },
+ {
+  "word": "仕舞う",
+  "z": -27.14,
+  "doc_ratio_a": 0.30902,
+  "doc_ratio_b": 0.36993,
+  "freq_a": 4444,
+  "freq_b": 8023
+ },
+ {
+  "word": "レビュー-review",
+  "z": 27.046,
+  "doc_ratio_a": 0.01324,
+  "doc_ratio_b": 0.125,
+  "freq_a": 193,
+  "freq_b": 4194
+ },
+ {
+  "word": "実行",
+  "z": -27.009,
+  "doc_ratio_a": 0.38663,
+  "doc_ratio_b": 0.49198,
+  "freq_a": 10017,
+  "freq_b": 21753
+ },
+ {
+  "word": "ツール-tool",
+  "z": 26.795,
+  "doc_ratio_a": 0.11447,
+  "doc_ratio_b": 0.3148,
+  "freq_a": 1748,
+  "freq_b": 10640
+ },
+ {
+  "word": "遣る",
+  "z": -26.771,
+  "doc_ratio_a": 0.27774,
+  "doc_ratio_b": 0.29139,
+  "freq_a": 3999,
+  "freq_b": 7057
+ },
+ {
+  "word": "押す",
+  "z": -26.716,
+  "doc_ratio_a": 0.09916,
+  "doc_ratio_b": 0.09642,
+  "freq_a": 1702,
+  "freq_b": 2130
+ },
+ {
+  "word": "変わる",
+  "z": 26.695,
+  "doc_ratio_a": 0.12187,
+  "doc_ratio_b": 0.36938,
+  "freq_a": 1291,
+  "freq_b": 8733
+ },
+ {
+  "word": "サンプル-sample",
+  "z": -26.086,
+  "doc_ratio_a": 0.10344,
+  "doc_ratio_b": 0.08389,
+  "freq_a": 1496,
+  "freq_b": 1788
+ },
+ {
+  "word": "ノード-node",
+  "z": -25.999,
+  "doc_ratio_a": 0.03011,
+  "doc_ratio_b": 0.04102,
+  "freq_a": 1516,
+  "freq_b": 1833
+ },
+ {
+  "word": "イン-in",
+  "z": -25.951,
+  "doc_ratio_a": 0.14666,
+  "doc_ratio_b": 0.15966,
+  "freq_a": 3040,
+  "freq_b": 5013
+ },
+ {
+  "word": "エラー-error",
+  "z": -25.866,
+  "doc_ratio_a": 0.2109,
+  "doc_ratio_b": 0.24889,
+  "freq_a": 3864,
+  "freq_b": 6888
+ },
+ {
+  "word": "適当",
+  "z": -25.831,
+  "doc_ratio_a": 0.06113,
+  "doc_ratio_b": 0.01751,
+  "freq_a": 578,
+  "freq_b": 226
+ },
+ {
+  "word": "迚も",
+  "z": -25.814,
+  "doc_ratio_a": 0.06982,
+  "doc_ratio_b": 0.03641,
+  "freq_a": 755,
+  "freq_b": 510
+ },
+ {
+  "word": "勉強",
+  "z": -25.807,
+  "doc_ratio_a": 0.09033,
+  "doc_ratio_b": 0.05061,
+  "freq_a": 1153,
+  "freq_b": 1178
+ },
+ {
+  "word": "セッション-session",
+  "z": 25.801,
+  "doc_ratio_a": 0.01518,
+  "doc_ratio_b": 0.11578,
+  "freq_a": 256,
+  "freq_b": 4081
+ },
+ {
+  "word": "生成",
+  "z": 25.621,
+  "doc_ratio_a": 0.14341,
+  "doc_ratio_b": 0.34864,
+  "freq_a": 2684,
+  "freq_b": 14011
+ },
+ {
+  "word": "判定",
+  "z": 25.331,
+  "doc_ratio_a": 0.03829,
+  "doc_ratio_b": 0.17948,
+  "freq_a": 548,
+  "freq_b": 5222
+ },
+ {
+  "word": "評価",
+  "z": 25.268,
+  "doc_ratio_a": 0.03829,
+  "doc_ratio_b": 0.17423,
+  "freq_a": 734,
+  "freq_b": 6023
+ },
+ {
+  "word": "指示",
+  "z": 25.255,
+  "doc_ratio_a": 0.01752,
+  "doc_ratio_b": 0.14039,
+  "freq_a": 162,
+  "freq_b": 3642
+ },
+ {
+  "word": "確認",
+  "z": 25.0,
+  "doc_ratio_a": 0.3599,
+  "doc_ratio_b": 0.60029,
+  "freq_a": 7304,
+  "freq_b": 30662
+ },
+ {
+  "word": "記録",
+  "z": 24.998,
+  "doc_ratio_a": 0.0501,
+  "doc_ratio_b": 0.21313,
+  "freq_a": 604,
+  "freq_b": 5395
+ },
+ {
+  "word": "コスト-cost",
+  "z": 24.973,
+  "doc_ratio_a": 0.03348,
+  "doc_ratio_b": 0.18501,
+  "freq_a": 488,
+  "freq_b": 4879
+ },
+ {
+  "word": "業務",
+  "z": 24.93,
+  "doc_ratio_a": 0.03452,
+  "doc_ratio_b": 0.15865,
+  "freq_a": 489,
+  "freq_b": 4874
+ },
+ {
+  "word": "全体",
+  "z": 24.875,
+  "doc_ratio_a": 0.08942,
+  "doc_ratio_b": 0.32845,
+  "freq_a": 1004,
+  "freq_b": 7092
+ },
+ {
+  "word": "決める",
+  "z": 24.856,
+  "doc_ratio_a": 0.0488,
+  "doc_ratio_b": 0.23553,
+  "freq_a": 561,
+  "freq_b": 5175
+ },
+ {
+  "word": "モジュール-module",
+  "z": -24.848,
+  "doc_ratio_a": 0.06243,
+  "doc_ratio_b": 0.05577,
+  "freq_a": 1256,
+  "freq_b": 1432
+ },
+ {
+  "word": "読む",
+  "z": 24.848,
+  "doc_ratio_a": 0.15276,
+  "doc_ratio_b": 0.37205,
+  "freq_a": 2124,
+  "freq_b": 11624
+ },
+ {
+  "word": "トークン-token",
+  "z": 24.807,
+  "doc_ratio_a": 0.02466,
+  "doc_ratio_b": 0.12629,
+  "freq_a": 606,
+  "freq_b": 5362
+ },
+ {
+  "word": "無い",
+  "z": 24.761,
+  "doc_ratio_a": 0.60454,
+  "doc_ratio_b": 0.81185,
+  "freq_a": 13010,
+  "freq_b": 50233
+ },
+ {
+  "word": "経路",
+  "z": 24.45,
+  "doc_ratio_a": 0.00766,
+  "doc_ratio_b": 0.12011,
+  "freq_a": 109,
+  "freq_b": 3356
+ },
+ {
+  "word": "直す",
+  "z": 24.301,
+  "doc_ratio_a": 0.04348,
+  "doc_ratio_b": 0.20179,
+  "freq_a": 428,
+  "freq_b": 4470
+ },
+ {
+  "word": "持つ",
+  "z": 24.176,
+  "doc_ratio_a": 0.18715,
+  "doc_ratio_b": 0.42708,
+  "freq_a": 2426,
+  "freq_b": 12616
+ },
+ {
+  "word": "分ける",
+  "z": 24.138,
+  "doc_ratio_a": 0.06009,
+  "doc_ratio_b": 0.2418,
+  "freq_a": 619,
+  "freq_b": 5275
+ },
+ {
+  "word": "メニュー-menu",
+  "z": -23.946,
+  "doc_ratio_a": 0.05308,
+  "doc_ratio_b": 0.03826,
+  "freq_a": 922,
+  "freq_b": 890
+ },
+ {
+  "word": "全部",
+  "z": 23.944,
+  "doc_ratio_a": 0.04672,
+  "doc_ratio_b": 0.19681,
+  "freq_a": 434,
+  "freq_b": 4421
+ },
+ {
+  "word": "選ぶ",
+  "z": 23.877,
+  "doc_ratio_a": 0.06671,
+  "doc_ratio_b": 0.26927,
+  "freq_a": 869,
+  "freq_b": 6297
+ },
+ {
+  "word": "ビルド-build",
+  "z": -23.86,
+  "doc_ratio_a": 0.07138,
+  "doc_ratio_b": 0.08296,
+  "freq_a": 1773,
+  "freq_b": 2530
+ },
+ {
+  "word": "対象",
+  "z": 23.747,
+  "doc_ratio_a": 0.11149,
+  "doc_ratio_b": 0.32992,
+  "freq_a": 1456,
+  "freq_b": 8695
+ },
+ {
+  "word": "ルール-rule",
+  "z": 23.74,
+  "doc_ratio_a": 0.03907,
+  "doc_ratio_b": 0.17773,
+  "freq_a": 682,
+  "freq_b": 5465
+ },
+ {
+  "word": "仮想",
+  "z": -23.631,
+  "doc_ratio_a": 0.04049,
+  "doc_ratio_b": 0.04664,
+  "freq_a": 1019,
+  "freq_b": 1081
+ },
+ {
+  "word": "押下",
+  "z": -23.53,
+  "doc_ratio_a": 0.01921,
+  "doc_ratio_b": 0.00608,
+  "freq_a": 450,
+  "freq_b": 112
+ },
+ {
+  "word": "条件",
+  "z": 23.514,
+  "doc_ratio_a": 0.09461,
+  "doc_ratio_b": 0.2865,
+  "freq_a": 1526,
+  "freq_b": 8921
+ },
+ {
+  "word": "正解",
+  "z": 23.443,
+  "doc_ratio_a": 0.01804,
+  "doc_ratio_b": 0.08555,
+  "freq_a": 338,
+  "freq_b": 3896
+ },
+ {
+  "word": "実務",
+  "z": 23.397,
+  "doc_ratio_a": 0.00896,
+  "doc_ratio_b": 0.14666,
+  "freq_a": 89,
+  "freq_b": 3079
+ },
+ {
+  "word": "チュートリアル-tutorial",
+  "z": -23.334,
+  "doc_ratio_a": 0.03128,
+  "doc_ratio_b": 0.01291,
+  "freq_a": 524,
+  "freq_b": 271
+ },
+ {
+  "word": "コラム-column",
+  "z": -23.298,
+  "doc_ratio_a": 0.03245,
+  "doc_ratio_b": 0.02627,
+  "freq_a": 718,
+  "freq_b": 581
+ },
+ {
+  "word": "公開",
+  "z": 23.067,
+  "doc_ratio_a": 0.10604,
+  "doc_ratio_b": 0.2972,
+  "freq_a": 1594,
+  "freq_b": 9086
+ },
+ {
+  "word": "備忘",
+  "z": -23.065,
+  "doc_ratio_a": 0.05983,
+  "doc_ratio_b": 0.01816,
+  "freq_a": 489,
+  "freq_b": 228
+ },
+ {
+  "word": "フォルダー-folder",
+  "z": -22.91,
+  "doc_ratio_a": 0.08929,
+  "doc_ratio_b": 0.07697,
+  "freq_a": 1742,
+  "freq_b": 2555
+ },
+ {
+  "word": "ページ-page",
+  "z": -22.782,
+  "doc_ratio_a": 0.18105,
+  "doc_ratio_b": 0.1899,
+  "freq_a": 3450,
+  "freq_b": 6395
+ },
+ {
+  "word": "問い",
+  "z": 22.765,
+  "doc_ratio_a": 0.00311,
+  "doc_ratio_b": 0.06195,
+  "freq_a": 33,
+  "freq_b": 3258
+ },
+ {
+  "word": "自体",
+  "z": 22.728,
+  "doc_ratio_a": 0.08267,
+  "doc_ratio_b": 0.31388,
+  "freq_a": 782,
+  "freq_b": 5683
+ },
+ {
+  "word": "構成",
+  "z": 22.697,
+  "doc_ratio_a": 0.12732,
+  "doc_ratio_b": 0.35804,
+  "freq_a": 1970,
+  "freq_b": 10471
+ },
+ {
+  "word": "担当",
+  "z": 22.644,
+  "doc_ratio_a": 0.01687,
+  "doc_ratio_b": 0.125,
+  "freq_a": 229,
+  "freq_b": 3269
+ },
+ {
+  "word": "以外",
+  "z": -22.618,
+  "doc_ratio_a": 0.13212,
+  "doc_ratio_b": 0.13182,
+  "freq_a": 1379,
+  "freq_b": 1839
+ },
+ {
+  "word": "但し",
+  "z": 22.575,
+  "doc_ratio_a": 0.08825,
+  "doc_ratio_b": 0.30752,
+  "freq_a": 908,
+  "freq_b": 6183
+ },
+ {
+  "word": "増える",
+  "z": 22.549,
+  "doc_ratio_a": 0.06009,
+  "doc_ratio_b": 0.24797,
+  "freq_a": 629,
+  "freq_b": 4990
+ },
+ {
+  "word": "続ける",
+  "z": 22.486,
+  "doc_ratio_a": 0.0475,
+  "doc_ratio_b": 0.23331,
+  "freq_a": 507,
+  "freq_b": 4446
+ },
+ {
+  "word": "承認",
+  "z": 22.482,
+  "doc_ratio_a": 0.00701,
+  "doc_ratio_b": 0.07946,
+  "freq_a": 103,
+  "freq_b": 2843
+ },
+ {
+  "word": "一寸",
+  "z": -22.433,
+  "doc_ratio_a": 0.0902,
+  "doc_ratio_b": 0.0566,
+  "freq_a": 878,
+  "freq_b": 902
+ },
+ {
+  "word": "出す",
+  "z": 22.314,
+  "doc_ratio_a": 0.07631,
+  "doc_ratio_b": 0.26189,
+  "freq_a": 791,
+  "freq_b": 5636
+ },
+ {
+  "word": "準備",
+  "z": -22.098,
+  "doc_ratio_a": 0.09396,
+  "doc_ratio_b": 0.08121,
+  "freq_a": 1113,
+  "freq_b": 1358
+ },
+ {
+  "word": "会話",
+  "z": 22.096,
+  "doc_ratio_a": 0.00623,
+  "doc_ratio_b": 0.09209,
+  "freq_a": 83,
+  "freq_b": 2743
+ },
+ {
+  "word": "アニメーション-animation",
+  "z": -22.082,
+  "doc_ratio_a": 0.01687,
+  "doc_ratio_b": 0.01208,
+  "freq_a": 502,
+  "freq_b": 294
+ },
+ {
+  "word": "イメージ-image",
+  "z": -21.969,
+  "doc_ratio_a": 0.10032,
+  "doc_ratio_b": 0.12952,
+  "freq_a": 1771,
+  "freq_b": 2706
+ },
+ {
+  "word": "段階",
+  "z": 21.944,
+  "doc_ratio_a": 0.04452,
+  "doc_ratio_b": 0.20437,
+  "freq_a": 507,
+  "freq_b": 4340
+ },
+ {
+  "word": "若しくは",
+  "z": -21.74,
+  "doc_ratio_a": 0.04114,
+  "doc_ratio_b": 0.01115,
+  "freq_a": 398,
+  "freq_b": 138
+ },
+ {
+  "word": "行列",
+  "z": -21.64,
+  "doc_ratio_a": 0.01467,
+  "doc_ratio_b": 0.01973,
+  "freq_a": 823,
+  "freq_b": 850
+ },
+ {
+  "word": "ビュー-view",
+  "z": -21.614,
+  "doc_ratio_a": 0.02206,
+  "doc_ratio_b": 0.01945,
+  "freq_a": 610,
+  "freq_b": 487
+ },
+ {
+  "word": "データ-data",
+  "z": -21.589,
+  "doc_ratio_a": 0.28228,
+  "doc_ratio_b": 0.44672,
+  "freq_a": 10875,
+  "freq_b": 25584
+ },
+ {
+  "word": "構造",
+  "z": 21.587,
+  "doc_ratio_a": 0.06632,
+  "doc_ratio_b": 0.27231,
+  "freq_a": 1225,
+  "freq_b": 7274
+ },
+ {
+  "word": "サイト-site",
+  "z": -21.563,
+  "doc_ratio_a": 0.16353,
+  "doc_ratio_b": 0.14639,
+  "freq_a": 2441,
+  "freq_b": 4227
+ },
+ {
+  "word": "最初",
+  "z": 21.562,
+  "doc_ratio_a": 0.16522,
+  "doc_ratio_b": 0.39565,
+  "freq_a": 1810,
+  "freq_b": 9575
+ },
+ {
+  "word": "ユーザー-user",
+  "z": -21.53,
+  "doc_ratio_a": 0.17287,
+  "doc_ratio_b": 0.25645,
+  "freq_a": 4098,
+  "freq_b": 8147
+ },
+ {
+  "word": "固定",
+  "z": 21.501,
+  "doc_ratio_a": 0.03335,
+  "doc_ratio_b": 0.1792,
+  "freq_a": 418,
+  "freq_b": 3865
+ },
+ {
+  "word": "起きる",
+  "z": 21.455,
+  "doc_ratio_a": 0.04244,
+  "doc_ratio_b": 0.21322,
+  "freq_a": 437,
+  "freq_b": 3940
+ },
+ {
+  "word": "止まる",
+  "z": 21.298,
+  "doc_ratio_a": 0.01986,
+  "doc_ratio_b": 0.14712,
+  "freq_a": 185,
+  "freq_b": 2822
+ },
+ {
+  "word": "パラメーター-parameter",
+  "z": -21.259,
+  "doc_ratio_a": 0.07385,
+  "doc_ratio_b": 0.10039,
+  "freq_a": 1702,
+  "freq_b": 2627
+ },
+ {
+  "word": "境界",
+  "z": 21.173,
+  "doc_ratio_a": 0.00844,
+  "doc_ratio_b": 0.1085,
+  "freq_a": 121,
+  "freq_b": 2578
+ },
+ {
+  "word": "ライブラリー-library",
+  "z": -21.165,
+  "doc_ratio_a": 0.11603,
+  "doc_ratio_b": 0.11661,
+  "freq_a": 1890,
+  "freq_b": 3043
+ },
+ {
+  "word": "プログラミング-programming",
+  "z": -21.106,
+  "doc_ratio_a": 0.06905,
+  "doc_ratio_b": 0.05605,
+  "freq_a": 1029,
+  "freq_b": 1265
+ },
+ {
+  "word": "代入",
+  "z": -21.092,
+  "doc_ratio_a": 0.03387,
+  "doc_ratio_b": 0.02065,
+  "freq_a": 544,
+  "freq_b": 404
+ },
+ {
+  "word": "基準",
+  "z": 21.056,
+  "doc_ratio_a": 0.01635,
+  "doc_ratio_b": 0.13818,
+  "freq_a": 202,
+  "freq_b": 2843
+ },
+ {
+  "word": "分布",
+  "z": -20.834,
+  "doc_ratio_a": 0.01518,
+  "doc_ratio_b": 0.02987,
+  "freq_a": 880,
+  "freq_b": 1001
+ },
+ {
+  "word": "一応",
+  "z": -20.758,
+  "doc_ratio_a": 0.04309,
+  "doc_ratio_b": 0.01429,
+  "freq_a": 386,
+  "freq_b": 168
+ },
+ {
+  "word": "測る",
+  "z": 20.741,
+  "doc_ratio_a": 0.00701,
+  "doc_ratio_b": 0.08803,
+  "freq_a": 69,
+  "freq_b": 2421
+ },
+ {
+  "word": "知れる",
+  "z": -20.682,
+  "doc_ratio_a": 0.16184,
+  "doc_ratio_b": 0.17026,
+  "freq_a": 1830,
+  "freq_b": 2961
+ },
+ {
+  "word": "既存",
+  "z": 20.539,
+  "doc_ratio_a": 0.04633,
+  "doc_ratio_b": 0.19893,
+  "freq_a": 550,
+  "freq_b": 4262
+ },
+ {
+  "word": "メモ-memo",
+  "z": -20.512,
+  "doc_ratio_a": 0.1072,
+  "doc_ratio_b": 0.07135,
+  "freq_a": 1158,
+  "freq_b": 1560
+ },
+ {
+  "word": "環境",
+  "z": -20.47,
+  "doc_ratio_a": 0.28384,
+  "doc_ratio_b": 0.41326,
+  "freq_a": 6185,
+  "freq_b": 13590
+ },
+ {
+  "word": "壊れる",
+  "z": 20.464,
+  "doc_ratio_a": 0.00675,
+  "doc_ratio_b": 0.11329,
+  "freq_a": 71,
+  "freq_b": 2353
+ },
+ {
+  "word": "纏め",
+  "z": -20.284,
+  "doc_ratio_a": 0.07086,
+  "doc_ratio_b": 0.03761,
+  "freq_a": 610,
+  "freq_b": 550
+ },
+ {
+  "word": "動く",
+  "z": 20.272,
+  "doc_ratio_a": 0.12979,
+  "doc_ratio_b": 0.33785,
+  "freq_a": 1621,
+  "freq_b": 8546
+ },
+ {
+  "word": "サーバー-server",
+  "z": -20.254,
+  "doc_ratio_a": 0.15587,
+  "doc_ratio_b": 0.22871,
+  "freq_a": 4233,
+  "freq_b": 8700
+ },
+ {
+  "word": "回答",
+  "z": 20.205,
+  "doc_ratio_a": 0.01843,
+  "doc_ratio_b": 0.10269,
+  "freq_a": 335,
+  "freq_b": 3263
+ },
+ {
+  "word": "状態",
+  "z": 20.182,
+  "doc_ratio_a": 0.18222,
+  "doc_ratio_b": 0.43068,
+  "freq_a": 3006,
+  "freq_b": 13710
+ },
+ {
+  "word": "クラスター-cluster",
+  "z": -20.13,
+  "doc_ratio_a": 0.01986,
+  "doc_ratio_b": 0.0201,
+  "freq_a": 763,
+  "freq_b": 827
+ },
+ {
+  "word": "落ちる",
+  "z": 20.119,
+  "doc_ratio_a": 0.01713,
+  "doc_ratio_b": 0.12426,
+  "freq_a": 157,
+  "freq_b": 2487
+ },
+ {
+  "word": "候補",
+  "z": 20.083,
+  "doc_ratio_a": 0.01285,
+  "doc_ratio_b": 0.09642,
+  "freq_a": 189,
+  "freq_b": 2608
+ },
+ {
+  "word": "動作",
+  "z": -20.067,
+  "doc_ratio_a": 0.16145,
+  "doc_ratio_b": 0.20861,
+  "freq_a": 2252,
+  "freq_b": 3975
+ },
+ {
+  "word": "価値",
+  "z": 19.993,
+  "doc_ratio_a": 0.01402,
+  "doc_ratio_b": 0.14215,
+  "freq_a": 241,
+  "freq_b": 2813
+ },
+ {
+  "word": "品質",
+  "z": 19.961,
+  "doc_ratio_a": 0.01506,
+  "doc_ratio_b": 0.10905,
+  "freq_a": 217,
+  "freq_b": 2704
+ },
+ {
+  "word": "コントローラー-controller",
+  "z": -19.892,
+  "doc_ratio_a": 0.02907,
+  "doc_ratio_b": 0.01567,
+  "freq_a": 517,
+  "freq_b": 413
+ },
+ {
+  "word": "コンパイル-compile",
+  "z": -19.846,
+  "doc_ratio_a": 0.04413,
+  "doc_ratio_b": 0.03724,
+  "freq_a": 762,
+  "freq_b": 841
+ },
+ {
+  "word": "正しい",
+  "z": 19.822,
+  "doc_ratio_a": 0.0706,
+  "doc_ratio_b": 0.23553,
+  "freq_a": 787,
+  "freq_b": 5130
+ },
+ {
+  "word": "結構",
+  "z": -19.816,
+  "doc_ratio_a": 0.05373,
+  "doc_ratio_b": 0.02922,
+  "freq_a": 515,
+  "freq_b": 413
+ },
+ {
+  "word": "調査",
+  "z": 19.796,
+  "doc_ratio_a": 0.03193,
+  "doc_ratio_b": 0.13357,
+  "freq_a": 346,
+  "freq_b": 3240
+ },
+ {
+  "word": "文書",
+  "z": 19.77,
+  "doc_ratio_a": 0.00986,
+  "doc_ratio_b": 0.06849,
+  "freq_a": 175,
+  "freq_b": 2494
+ },
+ {
+  "word": "詳しい",
+  "z": -19.653,
+  "doc_ratio_a": 0.09786,
+  "doc_ratio_b": 0.08721,
+  "freq_a": 989,
+  "freq_b": 1285
+ },
+ {
+  "word": "基盤",
+  "z": 19.603,
+  "doc_ratio_a": 0.00896,
+  "doc_ratio_b": 0.10656,
+  "freq_a": 131,
+  "freq_b": 2295
+ },
+ {
+  "word": "上限",
+  "z": 19.583,
+  "doc_ratio_a": 0.01285,
+  "doc_ratio_b": 0.09624,
+  "freq_a": 165,
+  "freq_b": 2420
+ },
+ {
+  "word": "役割",
+  "z": 19.431,
+  "doc_ratio_a": 0.03556,
+  "doc_ratio_b": 0.18059,
+  "freq_a": 427,
+  "freq_b": 3532
+ },
+ {
+  "word": "難易",
+  "z": 19.4,
+  "doc_ratio_a": 0.00973,
+  "doc_ratio_b": 0.02305,
+  "freq_a": 110,
+  "freq_b": 2188
+ },
+ {
+  "word": "早速",
+  "z": -19.369,
+  "doc_ratio_a": 0.03387,
+  "doc_ratio_b": 0.00802,
+  "freq_a": 309,
+  "freq_b": 93
+ },
+ {
+  "word": "理由",
+  "z": 19.327,
+  "doc_ratio_a": 0.0806,
+  "doc_ratio_b": 0.26337,
+  "freq_a": 839,
+  "freq_b": 5251
+ },
+ {
+  "word": "こう",
+  "z": 19.295,
+  "doc_ratio_a": 0.11136,
+  "doc_ratio_b": 0.2913,
+  "freq_a": 1204,
+  "freq_b": 6710
+ },
+ {
+  "word": "入力",
+  "z": -19.281,
+  "doc_ratio_a": 0.20454,
+  "doc_ratio_b": 0.27683,
+  "freq_a": 4289,
+  "freq_b": 9013
+ },
+ {
+  "word": "詰まり",
+  "z": 19.236,
+  "doc_ratio_a": 0.11123,
+  "doc_ratio_b": 0.3054,
+  "freq_a": 1298,
+  "freq_b": 7067
+ },
+ {
+  "word": "リスト-list",
+  "z": -19.232,
+  "doc_ratio_a": 0.07346,
+  "doc_ratio_b": 0.09264,
+  "freq_a": 1497,
+  "freq_b": 2374
+ },
+ {
+  "word": "変更",
+  "z": -19.212,
+  "doc_ratio_a": 0.27761,
+  "doc_ratio_b": 0.3443,
+  "freq_a": 4999,
+  "freq_b": 10821
+ },
+ {
+  "word": "デプロイ-deploy",
+  "z": -19.143,
+  "doc_ratio_a": 0.05853,
+  "doc_ratio_b": 0.07725,
+  "freq_a": 1436,
+  "freq_b": 2250
+ },
+ {
+  "word": "足す",
+  "z": 19.122,
+  "doc_ratio_a": 0.0148,
+  "doc_ratio_b": 0.10776,
+  "freq_a": 145,
+  "freq_b": 2259
+ },
+ {
+  "word": "ウィー-we",
+  "z": -19.12,
+  "doc_ratio_a": 0.00402,
+  "doc_ratio_b": 0.00535,
+  "freq_a": 312,
+  "freq_b": 115
+ },
+ {
+  "word": "文字",
+  "z": -19.089,
+  "doc_ratio_a": 0.17469,
+  "doc_ratio_b": 0.24198,
+  "freq_a": 4150,
+  "freq_b": 8699
+ },
+ {
+  "word": "恐らく",
+  "z": -18.998,
+  "doc_ratio_a": 0.04153,
+  "doc_ratio_b": 0.01908,
+  "freq_a": 384,
+  "freq_b": 237
+ },
+ {
+  "word": "前提",
+  "z": 18.993,
+  "doc_ratio_a": 0.07463,
+  "doc_ratio_b": 0.24604,
+  "freq_a": 724,
+  "freq_b": 4716
+ },
+ {
+  "word": "現場",
+  "z": 18.976,
+  "doc_ratio_a": 0.01337,
+  "doc_ratio_b": 0.09412,
+  "freq_a": 178,
+  "freq_b": 2367
+ },
+ {
+  "word": "任せる",
+  "z": 18.95,
+  "doc_ratio_a": 0.01064,
+  "doc_ratio_b": 0.11329,
+  "freq_a": 98,
+  "freq_b": 2068
+ },
+ {
+  "word": "範囲",
+  "z": 18.941,
+  "doc_ratio_a": 0.07346,
+  "doc_ratio_b": 0.24253,
+  "freq_a": 905,
+  "freq_b": 5447
+ },
+ {
+  "word": "カスタマイズ-customize",
+  "z": -18.903,
+  "doc_ratio_a": 0.02894,
+  "doc_ratio_b": 0.02037,
+  "freq_a": 421,
+  "freq_b": 299
+ },
+ {
+  "word": "本番",
+  "z": 18.872,
+  "doc_ratio_a": 0.03206,
+  "doc_ratio_b": 0.14786,
+  "freq_a": 477,
+  "freq_b": 3653
+ },
+ {
+  "word": "瞬間",
+  "z": 18.872,
+  "doc_ratio_a": 0.00753,
+  "doc_ratio_b": 0.12408,
+  "freq_a": 61,
+  "freq_b": 2001
+ },
+ {
+  "word": "気付く",
+  "z": 18.855,
+  "doc_ratio_a": 0.04153,
+  "doc_ratio_b": 0.17671,
+  "freq_a": 387,
+  "freq_b": 3260
+ },
+ {
+  "word": "スキル-skill",
+  "z": 18.853,
+  "doc_ratio_a": 0.01311,
+  "doc_ratio_b": 0.06471,
+  "freq_a": 233,
+  "freq_b": 2583
+ },
+ {
+  "word": "アプリ-application",
+  "z": -18.785,
+  "doc_ratio_a": 0.16716,
+  "doc_ratio_b": 0.22871,
+  "freq_a": 3945,
+  "freq_b": 8239
+ },
+ {
+  "word": "黄な粉",
+  "z": 18.727,
+  "doc_ratio_a": 0.0,
+  "doc_ratio_b": 0.0036,
+  "freq_a": 0,
+  "freq_b": 2832
+ },
+ {
+  "word": "アドレス-address",
+  "z": -18.659,
+  "doc_ratio_a": 0.07839,
+  "doc_ratio_b": 0.07743,
+  "freq_a": 1541,
+  "freq_b": 2523
+ },
+ {
+  "word": "自動",
+  "z": 18.63,
+  "doc_ratio_a": 0.17508,
+  "doc_ratio_b": 0.39712,
+  "freq_a": 2570,
+  "freq_b": 11715
+ },
+ {
+  "word": "コンテキスト-context",
+  "z": 18.613,
+  "doc_ratio_a": 0.0122,
+  "doc_ratio_b": 0.0849,
+  "freq_a": 169,
+  "freq_b": 2268
+ },
+ {
+  "word": "コンソール-console",
+  "z": -18.611,
+  "doc_ratio_a": 0.05711,
+  "doc_ratio_b": 0.04775,
+  "freq_a": 817,
+  "freq_b": 1016
+ },
+ {
+  "word": "調べる",
+  "z": -18.609,
+  "doc_ratio_a": 0.15003,
+  "doc_ratio_b": 0.14998,
+  "freq_a": 1643,
+  "freq_b": 2754
+ },
+ {
+  "word": "起動",
+  "z": -18.582,
+  "doc_ratio_a": 0.17703,
+  "doc_ratio_b": 0.22308,
+  "freq_a": 3730,
+  "freq_b": 7737
+ },
+ {
+  "word": "残す",
+  "z": 18.511,
+  "doc_ratio_a": 0.06334,
+  "doc_ratio_b": 0.20114,
+  "freq_a": 553,
+  "freq_b": 3916
+ },
+ {
+  "word": "ジェット-jet",
+  "z": -18.501,
+  "doc_ratio_a": 0.00402,
+  "doc_ratio_b": 0.00618,
+  "freq_a": 313,
+  "freq_b": 144
+ },
+ {
+  "word": "メッセージ-message",
+  "z": -18.4,
+  "doc_ratio_a": 0.08073,
+  "doc_ratio_b": 0.11283,
+  "freq_a": 1521,
+  "freq_b": 2503
+ },
+ {
+  "word": "明示",
+  "z": 18.384,
+  "doc_ratio_a": 0.02713,
+  "doc_ratio_b": 0.16077,
+  "freq_a": 289,
+  "freq_b": 2753
+ },
+ {
+  "word": "企業",
+  "z": 18.357,
+  "doc_ratio_a": 0.02401,
+  "doc_ratio_b": 0.09246,
+  "freq_a": 419,
+  "freq_b": 3317
+ },
+ {
+  "word": "外部",
+  "z": 18.344,
+  "doc_ratio_a": 0.06204,
+  "doc_ratio_b": 0.20133,
+  "freq_a": 816,
+  "freq_b": 4976
+ },
+ {
+  "word": "組織",
+  "z": 18.335,
+  "doc_ratio_a": 0.01856,
+  "doc_ratio_b": 0.09034,
+  "freq_a": 306,
+  "freq_b": 2820
+ },
+ {
+  "word": "仕事",
+  "z": 18.325,
+  "doc_ratio_a": 0.03543,
+  "doc_ratio_b": 0.12804,
+  "freq_a": 452,
+  "freq_b": 3454
+ },
+ {
+  "word": "専用",
+  "z": 18.285,
+  "doc_ratio_a": 0.02803,
+  "doc_ratio_b": 0.15579,
+  "freq_a": 289,
+  "freq_b": 2737
+ },
+ {
+  "word": "履歴",
+  "z": 18.242,
+  "doc_ratio_a": 0.02103,
+  "doc_ratio_b": 0.10831,
+  "freq_a": 264,
+  "freq_b": 2620
+ },
+ {
+  "word": "便利",
+  "z": -18.232,
+  "doc_ratio_a": 0.12356,
+  "doc_ratio_b": 0.13274,
+  "freq_a": 1323,
+  "freq_b": 2085
+ },
+ {
+  "word": "ゼロ-zero",
+  "z": 18.155,
+  "doc_ratio_a": 0.01869,
+  "doc_ratio_b": 0.13081,
+  "freq_a": 213,
+  "freq_b": 2382
+ },
+ {
+  "word": "パイ-pie",
+  "z": -18.149,
+  "doc_ratio_a": 0.00934,
+  "doc_ratio_b": 0.00323,
+  "freq_a": 269,
+  "freq_b": 74
+ },
+ {
+  "word": "必ず",
+  "z": 18.149,
+  "doc_ratio_a": 0.05672,
+  "doc_ratio_b": 0.22152,
+  "freq_a": 540,
+  "freq_b": 3800
+ },
+ {
+  "word": "報告",
+  "z": 18.147,
+  "doc_ratio_a": 0.01661,
+  "doc_ratio_b": 0.10841,
+  "freq_a": 237,
+  "freq_b": 2486
+ },
+ {
+  "word": "割愛",
+  "z": -18.138,
+  "doc_ratio_a": 0.03141,
+  "doc_ratio_b": 0.00913,
+  "freq_a": 287,
+  "freq_b": 115
+ },
+ {
+  "word": "一致",
+  "z": 18.113,
+  "doc_ratio_a": 0.03855,
+  "doc_ratio_b": 0.16058,
+  "freq_a": 472,
+  "freq_b": 3505
+ },
+ {
+  "word": "グラフ-graph",
+  "z": -18.102,
+  "doc_ratio_a": 0.03855,
+  "doc_ratio_b": 0.05301,
+  "freq_a": 1113,
+  "freq_b": 1648
+ },
+ {
+  "word": "実測",
+  "z": 18.047,
+  "doc_ratio_a": 0.00078,
+  "doc_ratio_b": 0.08167,
+  "freq_a": 8,
+  "freq_b": 2337
+ },
+ {
+  "word": "規模",
+  "z": 17.978,
+  "doc_ratio_a": 0.02193,
+  "doc_ratio_b": 0.13108,
+  "freq_a": 271,
+  "freq_b": 2609
+ },
+ {
+  "word": "御覧",
+  "z": -17.963,
+  "doc_ratio_a": 0.04828,
+  "doc_ratio_b": 0.03171,
+  "freq_a": 461,
+  "freq_b": 402
+ },
+ {
+  "word": "参照",
+  "z": -17.957,
+  "doc_ratio_a": 0.19805,
+  "doc_ratio_b": 0.21986,
+  "freq_a": 2714,
+  "freq_b": 5334
+ },
+ {
+  "word": "推論",
+  "z": 17.95,
+  "doc_ratio_a": 0.01298,
+  "doc_ratio_b": 0.08306,
+  "freq_a": 250,
+  "freq_b": 2512
+ },
+ {
+  "word": "守る",
+  "z": 17.938,
+  "doc_ratio_a": 0.0087,
+  "doc_ratio_b": 0.0967,
+  "freq_a": 91,
+  "freq_b": 1862
+ },
+ {
+  "word": "成果",
+  "z": 17.912,
+  "doc_ratio_a": 0.01233,
+  "doc_ratio_b": 0.08472,
+  "freq_a": 147,
+  "freq_b": 2061
+ },
+ {
+  "word": "考える",
+  "z": 17.879,
+  "doc_ratio_a": 0.19844,
+  "doc_ratio_b": 0.42257,
+  "freq_a": 3072,
+  "freq_b": 13337
+ },
+ {
+  "word": "毎回",
+  "z": 17.856,
+  "doc_ratio_a": 0.03115,
+  "doc_ratio_b": 0.15275,
+  "freq_a": 281,
+  "freq_b": 2634
+ },
+ {
+  "word": "ポート-port",
+  "z": -17.829,
+  "doc_ratio_a": 0.04919,
+  "doc_ratio_b": 0.04711,
+  "freq_a": 902,
+  "freq_b": 1233
+ },
+ {
+  "word": "検査",
+  "z": 17.828,
+  "doc_ratio_a": 0.00636,
+  "doc_ratio_b": 0.04941,
+  "freq_a": 158,
+  "freq_b": 2093
+ },
+ {
+  "word": "再度",
+  "z": -17.807,
+  "doc_ratio_a": 0.04932,
+  "doc_ratio_b": 0.02913,
+  "freq_a": 453,
+  "freq_b": 395
+ },
+ {
+  "word": "直接",
+  "z": 17.807,
+  "doc_ratio_a": 0.09215,
+  "doc_ratio_b": 0.283,
+  "freq_a": 969,
+  "freq_b": 5492
+ },
+ {
+  "word": "並べる",
+  "z": 17.761,
+  "doc_ratio_a": 0.01882,
+  "doc_ratio_b": 0.1286,
+  "freq_a": 192,
+  "freq_b": 2228
+ },
+ {
+  "word": "名前",
+  "z": -17.702,
+  "doc_ratio_a": 0.15003,
+  "doc_ratio_b": 0.18584,
+  "freq_a": 2365,
+  "freq_b": 4528
+ },
+ {
+  "word": "下図",
+  "z": -17.697,
+  "doc_ratio_a": 0.01687,
+  "doc_ratio_b": 0.00507,
+  "freq_a": 260,
+  "freq_b": 83
+ },
+ {
+  "word": "届く",
+  "z": 17.692,
+  "doc_ratio_a": 0.01778,
+  "doc_ratio_b": 0.11292,
+  "freq_a": 179,
+  "freq_b": 2161
+ },
+ {
+  "word": "強い",
+  "z": 17.644,
+  "doc_ratio_a": 0.02738,
+  "doc_ratio_b": 0.13708,
+  "freq_a": 314,
+  "freq_b": 2746
+ },
+ {
+  "word": "事実",
+  "z": 17.58,
+  "doc_ratio_a": 0.01025,
+  "doc_ratio_b": 0.09559,
+  "freq_a": 98,
+  "freq_b": 1821
+ },
+ {
+  "word": "移動",
+  "z": -17.574,
+  "doc_ratio_a": 0.08332,
+  "doc_ratio_b": 0.09062,
+  "freq_a": 1255,
+  "freq_b": 1993
+ },
+ {
+  "word": "本文",
+  "z": 17.543,
+  "doc_ratio_a": 0.01311,
+  "doc_ratio_b": 0.09126,
+  "freq_a": 183,
+  "freq_b": 2155
+ },
+ {
+  "word": "回す",
+  "z": 17.521,
+  "doc_ratio_a": 0.01661,
+  "doc_ratio_b": 0.11219,
+  "freq_a": 161,
+  "freq_b": 2057
+ },
+ {
+  "word": "顧客",
+  "z": 17.482,
+  "doc_ratio_a": 0.01181,
+  "doc_ratio_b": 0.06315,
+  "freq_a": 234,
+  "freq_b": 2369
+ },
+ {
+  "word": "まあ",
+  "z": -17.466,
+  "doc_ratio_a": 0.03634,
+  "doc_ratio_b": 0.01825,
+  "freq_a": 358,
+  "freq_b": 253
+ },
+ {
+  "word": "契約",
+  "z": 17.463,
+  "doc_ratio_a": 0.00831,
+  "doc_ratio_b": 0.06997,
+  "freq_a": 165,
+  "freq_b": 2065
+ },
+ {
+  "word": "証明",
+  "z": 17.381,
+  "doc_ratio_a": 0.0257,
+  "doc_ratio_b": 0.06093,
+  "freq_a": 745,
+  "freq_b": 4518
+ },
+ {
+  "word": "フロー-flow",
+  "z": 17.372,
+  "doc_ratio_a": 0.02648,
+  "doc_ratio_b": 0.1285,
+  "freq_a": 475,
+  "freq_b": 3398
+ },
+ {
+  "word": "言う",
+  "z": 17.324,
+  "doc_ratio_a": 0.65944,
+  "doc_ratio_b": 0.81278,
+  "freq_a": 20890,
+  "freq_b": 72333
+ },
+ {
+  "word": "止める",
+  "z": 17.318,
+  "doc_ratio_a": 0.0379,
+  "doc_ratio_b": 0.15634,
+  "freq_a": 365,
+  "freq_b": 2918
+ },
+ {
+  "word": "御座る",
+  "z": -17.296,
+  "doc_ratio_a": 0.06749,
+  "doc_ratio_b": 0.05006,
+  "freq_a": 612,
+  "freq_b": 700
+ },
+ {
+  "word": "コード-code",
+  "z": -17.293,
+  "doc_ratio_a": 0.34886,
+  "doc_ratio_b": 0.47631,
+  "freq_a": 7999,
+  "freq_b": 19136
+ },
+ {
+  "word": "能力",
+  "z": 17.249,
+  "doc_ratio_a": 0.01311,
+  "doc_ratio_b": 0.07412,
+  "freq_a": 158,
+  "freq_b": 2002
+ },
+ {
+  "word": "そして",
+  "z": 17.229,
+  "doc_ratio_a": 0.11629,
+  "doc_ratio_b": 0.27904,
+  "freq_a": 1365,
+  "freq_b": 6919
+ },
+ {
+  "word": "立ち上げる",
+  "z": -17.228,
+  "doc_ratio_a": 0.03478,
+  "doc_ratio_b": 0.02185,
+  "freq_a": 391,
+  "freq_b": 315
+ },
+ {
+  "word": "マシン-machine",
+  "z": -17.081,
+  "doc_ratio_a": 0.03855,
+  "doc_ratio_b": 0.04701,
+  "freq_a": 762,
+  "freq_b": 1000
+ },
+ {
+  "word": "笑い",
+  "z": -16.988,
+  "doc_ratio_a": 0.02635,
+  "doc_ratio_b": 0.01198,
+  "freq_a": 308,
+  "freq_b": 191
+ },
+ {
+  "word": "作業",
+  "z": 16.949,
+  "doc_ratio_a": 0.11382,
+  "doc_ratio_b": 0.28982,
+  "freq_a": 1732,
+  "freq_b": 8242
+ },
+ {
+  "word": "右上",
+  "z": -16.933,
+  "doc_ratio_a": 0.02985,
+  "doc_ratio_b": 0.01383,
+  "freq_a": 310,
+  "freq_b": 196
+ },
+ {
+  "word": "依頼",
+  "z": 16.91,
+  "doc_ratio_a": 0.00831,
+  "doc_ratio_b": 0.07402,
+  "freq_a": 105,
+  "freq_b": 1735
+ },
+ {
+  "word": "編集",
+  "z": -16.868,
+  "doc_ratio_a": 0.09721,
+  "doc_ratio_b": 0.10961,
+  "freq_a": 1499,
+  "freq_b": 2598
+ },
+ {
+  "word": "アイコン-icon",
+  "z": -16.858,
+  "doc_ratio_a": 0.0353,
+  "doc_ratio_b": 0.02821,
+  "freq_a": 539,
+  "freq_b": 587
+ },
+ {
+  "word": "ググる",
+  "z": -16.835,
+  "doc_ratio_a": 0.02609,
+  "doc_ratio_b": 0.00277,
+  "freq_a": 241,
+  "freq_b": 35
+ },
+ {
+  "word": "面倒",
+  "z": -16.796,
+  "doc_ratio_a": 0.0745,
+  "doc_ratio_b": 0.06545,
+  "freq_a": 714,
+  "freq_b": 922
+ },
+ {
+  "word": "最も",
+  "z": 16.778,
+  "doc_ratio_a": 0.04685,
+  "doc_ratio_b": 0.16132,
+  "freq_a": 491,
+  "freq_b": 3372
+ },
+ {
+  "word": "独立",
+  "z": 16.748,
+  "doc_ratio_a": 0.01817,
+  "doc_ratio_b": 0.11532,
+  "freq_a": 219,
+  "freq_b": 2193
+ },
+ {
+  "word": "文脈",
+  "z": 16.735,
+  "doc_ratio_a": 0.00519,
+  "doc_ratio_b": 0.07706,
+  "freq_a": 64,
+  "freq_b": 1585
+ },
+ {
+  "word": "再現",
+  "z": 16.657,
+  "doc_ratio_a": 0.01908,
+  "doc_ratio_b": 0.12629,
+  "freq_a": 210,
+  "freq_b": 2140
+ },
+ {
+  "word": "研究",
+  "z": 16.65,
+  "doc_ratio_a": 0.02297,
+  "doc_ratio_b": 0.06729,
+  "freq_a": 285,
+  "freq_b": 2469
+ },
+ {
+  "word": "既定",
+  "z": 16.61,
+  "doc_ratio_a": 0.00389,
+  "doc_ratio_b": 0.06877,
+  "freq_a": 34,
+  "freq_b": 1581
+ },
+ {
+  "word": "確定",
+  "z": 16.549,
+  "doc_ratio_a": 0.00896,
+  "doc_ratio_b": 0.08628,
+  "freq_a": 99,
+  "freq_b": 1656
+ },
+ {
+  "word": "時点",
+  "z": 16.49,
+  "doc_ratio_a": 0.08566,
+  "doc_ratio_b": 0.25913,
+  "freq_a": 880,
+  "freq_b": 4904
+ },
+ {
+  "word": "幸い",
+  "z": -16.419,
+  "doc_ratio_a": 0.06853,
+  "doc_ratio_b": 0.05559,
+  "freq_a": 565,
+  "freq_b": 656
+ },
+ {
+  "word": "意図",
+  "z": 16.418,
+  "doc_ratio_a": 0.02505,
+  "doc_ratio_b": 0.14417,
+  "freq_a": 256,
+  "freq_b": 2308
+ },
+ {
+  "word": "継承",
+  "z": -16.349,
+  "doc_ratio_a": 0.02388,
+  "doc_ratio_b": 0.01908,
+  "freq_a": 402,
+  "freq_b": 367
+ },
+ {
+  "word": "ツイート-tweet",
+  "z": -16.345,
+  "doc_ratio_a": 0.00999,
+  "doc_ratio_b": 0.00212,
+  "freq_a": 219,
+  "freq_b": 63
+ },
+ {
+  "word": "用途",
+  "z": 16.327,
+  "doc_ratio_a": 0.02557,
+  "doc_ratio_b": 0.13569,
+  "freq_a": 269,
+  "freq_b": 2352
+ },
+ {
+  "word": "両方",
+  "z": 16.324,
+  "doc_ratio_a": 0.04491,
+  "doc_ratio_b": 0.18473,
+  "freq_a": 442,
+  "freq_b": 3096
+ },
+ {
+  "word": "消える",
+  "z": 16.311,
+  "doc_ratio_a": 0.02868,
+  "doc_ratio_b": 0.13247,
+  "freq_a": 294,
+  "freq_b": 2459
+ },
+ {
+  "word": "リスク-risk",
+  "z": 16.31,
+  "doc_ratio_a": 0.01531,
+  "doc_ratio_b": 0.11458,
+  "freq_a": 252,
+  "freq_b": 2275
+ },
+ {
+  "word": "カメラ-camera",
+  "z": -16.301,
+  "doc_ratio_a": 0.01999,
+  "doc_ratio_b": 0.0201,
+  "freq_a": 590,
+  "freq_b": 709
+ },
+ {
+  "word": "パスワード",
+  "z": -16.252,
+  "doc_ratio_a": 0.05672,
+  "doc_ratio_b": 0.05337,
+  "freq_a": 1057,
+  "freq_b": 1669
+ },
+ {
+  "word": "現実",
+  "z": 16.252,
+  "doc_ratio_a": 0.01726,
+  "doc_ratio_b": 0.11772,
+  "freq_a": 173,
+  "freq_b": 1919
+ },
+ {
+  "word": "社内",
+  "z": 16.229,
+  "doc_ratio_a": 0.01454,
+  "doc_ratio_b": 0.0944,
+  "freq_a": 160,
+  "freq_b": 1859
+ },
+ {
+  "word": "攻撃",
+  "z": 16.226,
+  "doc_ratio_a": 0.01103,
+  "doc_ratio_b": 0.05024,
+  "freq_a": 257,
+  "freq_b": 2285
+ },
+ {
+  "word": "然も",
+  "z": 16.224,
+  "doc_ratio_a": 0.01999,
+  "doc_ratio_b": 0.10878,
+  "freq_a": 173,
+  "freq_b": 1915
+ },
+ {
+  "word": "質問",
+  "z": 16.194,
+  "doc_ratio_a": 0.02946,
+  "doc_ratio_b": 0.1109,
+  "freq_a": 413,
+  "freq_b": 2954
+ },
+ {
+  "word": "以上",
+  "z": -16.189,
+  "doc_ratio_a": 0.2026,
+  "doc_ratio_b": 0.24622,
+  "freq_a": 2196,
+  "freq_b": 4311
+ },
+ {
+  "word": "ラズ-外国",
+  "z": -16.145,
+  "doc_ratio_a": 0.00818,
+  "doc_ratio_b": 0.00157,
+  "freq_a": 232,
+  "freq_b": 27
+ },
+ {
+  "word": "根拠",
+  "z": 16.125,
+  "doc_ratio_a": 0.00311,
+  "doc_ratio_b": 0.07319,
+  "freq_a": 31,
+  "freq_b": 1495
+ },
+ {
+  "word": "キーボード-keyboard",
+  "z": -16.099,
+  "doc_ratio_a": 0.02012,
+  "doc_ratio_b": 0.01881,
+  "freq_a": 394,
+  "freq_b": 363
+ },
+ {
+  "word": "コンストラクター-constructor",
+  "z": -16.073,
+  "doc_ratio_a": 0.01467,
+  "doc_ratio_b": 0.00498,
+  "freq_a": 234,
+  "freq_b": 105
+ },
+ {
+  "word": "適宜",
+  "z": -16.052,
+  "doc_ratio_a": 0.02466,
+  "doc_ratio_b": 0.00479,
+  "freq_a": 211,
+  "freq_b": 60
+ },
+ {
+  "word": "障害",
+  "z": 16.05,
+  "doc_ratio_a": 0.01194,
+  "doc_ratio_b": 0.07679,
+  "freq_a": 190,
+  "freq_b": 1965
+ },
+ {
+  "word": "基本",
+  "z": -16.034,
+  "doc_ratio_a": 0.17119,
+  "doc_ratio_b": 0.22502,
+  "freq_a": 2083,
+  "freq_b": 4057
+ },
+ {
+  "word": "場面",
+  "z": 16.007,
+  "doc_ratio_a": 0.01778,
+  "doc_ratio_b": 0.12085,
+  "freq_a": 180,
+  "freq_b": 1915
+ },
+ {
+  "word": "実施",
+  "z": -15.989,
+  "doc_ratio_a": 0.05788,
+  "doc_ratio_b": 0.06831,
+  "freq_a": 847,
+  "freq_b": 1241
+ },
+ {
+  "word": "通る",
+  "z": 15.975,
+  "doc_ratio_a": 0.02492,
+  "doc_ratio_b": 0.12196,
+  "freq_a": 256,
+  "freq_b": 2245
+ },
+ {
+  "word": "道具",
+  "z": 15.974,
+  "doc_ratio_a": 0.00311,
+  "doc_ratio_b": 0.05927,
+  "freq_a": 38,
+  "freq_b": 1441
+ },
+ {
+  "word": "人工",
+  "z": -15.973,
+  "doc_ratio_a": 0.00623,
+  "doc_ratio_b": 0.01005,
+  "freq_a": 266,
+  "freq_b": 159
+ },
+ {
+  "word": "原因",
+  "z": 15.956,
+  "doc_ratio_a": 0.0732,
+  "doc_ratio_b": 0.22714,
+  "freq_a": 822,
+  "freq_b": 4584
+ },
+ {
+  "word": "違う",
+  "z": 15.938,
+  "doc_ratio_a": 0.10733,
+  "doc_ratio_b": 0.26963,
+  "freq_a": 1101,
+  "freq_b": 5665
+ },
+ {
+  "word": "確かめる",
+  "z": 15.896,
+  "doc_ratio_a": 0.01181,
+  "doc_ratio_b": 0.07955,
+  "freq_a": 113,
+  "freq_b": 1612
+ },
+ {
+  "word": "減る",
+  "z": 15.852,
+  "doc_ratio_a": 0.01687,
+  "doc_ratio_b": 0.10785,
+  "freq_a": 140,
+  "freq_b": 1719
+ },
+ {
+  "word": "概要",
+  "z": -15.818,
+  "doc_ratio_a": 0.05646,
+  "doc_ratio_b": 0.03697,
+  "freq_a": 517,
+  "freq_b": 595
+ },
+ {
+  "word": "任意",
+  "z": -15.811,
+  "doc_ratio_a": 0.06632,
+  "doc_ratio_b": 0.06656,
+  "freq_a": 770,
+  "freq_b": 1093
+ },
+ {
+  "word": "可成",
+  "z": 15.779,
+  "doc_ratio_a": 0.07255,
+  "doc_ratio_b": 0.15109,
+  "freq_a": 734,
+  "freq_b": 4206
+ },
+ {
+  "word": "致す",
+  "z": -15.776,
+  "doc_ratio_a": 0.02726,
+  "doc_ratio_b": 0.01134,
+  "freq_a": 253,
+  "freq_b": 145
+ },
+ {
+  "word": "防ぐ",
+  "z": 15.76,
+  "doc_ratio_a": 0.02518,
+  "doc_ratio_b": 0.13413,
+  "freq_a": 248,
+  "freq_b": 2180
+ },
+ {
+  "word": "コンピューター-computer",
+  "z": -15.741,
+  "doc_ratio_a": 0.02713,
+  "doc_ratio_b": 0.026,
+  "freq_a": 475,
+  "freq_b": 521
+ },
+ {
+  "word": "監査",
+  "z": 15.68,
+  "doc_ratio_a": 0.00311,
+  "doc_ratio_b": 0.05328,
+  "freq_a": 57,
+  "freq_b": 1393
+ },
+ {
+  "word": "読み込む",
+  "z": -15.624,
+  "doc_ratio_a": 0.09033,
+  "doc_ratio_b": 0.11689,
+  "freq_a": 1302,
+  "freq_b": 2265
+ },
+ {
+  "word": "要件",
+  "z": 15.621,
+  "doc_ratio_a": 0.02544,
+  "doc_ratio_b": 0.11099,
+  "freq_a": 359,
+  "freq_b": 2641
+ },
+ {
+  "word": "絞る",
+  "z": 15.615,
+  "doc_ratio_a": 0.01687,
+  "doc_ratio_b": 0.112,
+  "freq_a": 155,
+  "freq_b": 1751
+ },
+ {
+  "word": "システム-system",
+  "z": 15.604,
+  "doc_ratio_a": 0.10318,
+  "doc_ratio_b": 0.26595,
+  "freq_a": 1984,
+  "freq_b": 8879
+ },
+ {
+  "word": "スペース-space",
+  "z": -15.588,
+  "doc_ratio_a": 0.02531,
+  "doc_ratio_b": 0.02065,
+  "freq_a": 409,
+  "freq_b": 409
+ },
+ {
+  "word": "信頼",
+  "z": 15.559,
+  "doc_ratio_a": 0.01415,
+  "doc_ratio_b": 0.10481,
+  "freq_a": 237,
+  "freq_b": 2104
+ },
+ {
+  "word": "技術",
+  "z": 15.554,
+  "doc_ratio_a": 0.07359,
+  "doc_ratio_b": 0.23249,
+  "freq_a": 1253,
+  "freq_b": 6172
+ },
+ {
+  "word": "無事",
+  "z": -15.551,
+  "doc_ratio_a": 0.02557,
+  "doc_ratio_b": 0.00848,
+  "freq_a": 225,
+  "freq_b": 108
+ },
+ {
+  "word": "成立",
+  "z": 15.535,
+  "doc_ratio_a": 0.00714,
+  "doc_ratio_b": 0.0825,
+  "freq_a": 75,
+  "freq_b": 1417
+ },
+ {
+  "word": "インポート-import",
+  "z": -15.524,
+  "doc_ratio_a": 0.03439,
+  "doc_ratio_b": 0.02065,
+  "freq_a": 455,
+  "freq_b": 494
+ },
+ {
+  "word": "事故",
+  "z": 15.494,
+  "doc_ratio_a": 0.0035,
+  "doc_ratio_b": 0.07043,
+  "freq_a": 51,
+  "freq_b": 1353
+ },
+ {
+  "word": "決まる",
+  "z": 15.49,
+  "doc_ratio_a": 0.02868,
+  "doc_ratio_b": 0.13339,
+  "freq_a": 273,
+  "freq_b": 2252
+ },
+ {
+  "word": "要約",
+  "z": 15.442,
+  "doc_ratio_a": 0.00688,
+  "doc_ratio_b": 0.06471,
+  "freq_a": 75,
+  "freq_b": 1403
+ },
+ {
+  "word": "中心",
+  "z": 15.412,
+  "doc_ratio_a": 0.02635,
+  "doc_ratio_b": 0.14307,
+  "freq_a": 308,
+  "freq_b": 2393
+ },
+ {
+  "word": "そう-伝聞",
+  "z": -15.392,
+  "doc_ratio_a": 0.03206,
+  "doc_ratio_b": 0.01779,
+  "freq_a": 336,
+  "freq_b": 291
+ },
+ {
+  "word": "プロット-plot",
+  "z": -15.349,
+  "doc_ratio_a": 0.00934,
+  "doc_ratio_b": 0.00424,
+  "freq_a": 199,
+  "freq_b": 70
+ },
+ {
+  "word": "走る",
+  "z": 15.279,
+  "doc_ratio_a": 0.02077,
+  "doc_ratio_b": 0.09771,
+  "freq_a": 214,
+  "freq_b": 1965
+ },
+ {
+  "word": "分離",
+  "z": 15.197,
+  "doc_ratio_a": 0.01765,
+  "doc_ratio_b": 0.11302,
+  "freq_a": 242,
+  "freq_b": 2077
+ },
+ {
+  "word": "応答",
+  "z": 15.193,
+  "doc_ratio_a": 0.01921,
+  "doc_ratio_b": 0.09043,
+  "freq_a": 283,
+  "freq_b": 2255
+ },
+ {
+  "word": "駄目",
+  "z": -15.178,
+  "doc_ratio_a": 0.03647,
+  "doc_ratio_b": 0.02471,
+  "freq_a": 358,
+  "freq_b": 336
+ },
+ {
+  "word": "コピペ",
+  "z": -15.108,
+  "doc_ratio_a": 0.03193,
+  "doc_ratio_b": 0.02185,
+  "freq_a": 346,
+  "freq_b": 318
+ },
+ {
+  "word": "命令",
+  "z": -15.09,
+  "doc_ratio_a": 0.017,
+  "doc_ratio_b": 0.02636,
+  "freq_a": 595,
+  "freq_b": 781
+ },
+ {
+  "word": "コレクション-collection",
+  "z": -15.078,
+  "doc_ratio_a": 0.00947,
+  "doc_ratio_b": 0.00719,
+  "freq_a": 257,
+  "freq_b": 173
+ },
+ {
+  "word": "資産",
+  "z": 15.052,
+  "doc_ratio_a": 0.00247,
+  "doc_ratio_b": 0.04342,
+  "freq_a": 34,
+  "freq_b": 1279
+ },
+ {
+  "word": "取り引き",
+  "z": 15.03,
+  "doc_ratio_a": 0.00467,
+  "doc_ratio_b": 0.0319,
+  "freq_a": 95,
+  "freq_b": 1417
+ },
+ {
+  "word": "要る",
+  "z": 14.999,
+  "doc_ratio_a": 0.01895,
+  "doc_ratio_b": 0.09569,
+  "freq_a": 165,
+  "freq_b": 1712
+ },
+ {
+  "word": "ウェブ-web",
+  "z": -14.997,
+  "doc_ratio_a": 0.02284,
+  "doc_ratio_b": 0.01143,
+  "freq_a": 278,
+  "freq_b": 209
+ },
+ {
+  "word": "共通",
+  "z": 14.993,
+  "doc_ratio_a": 0.03855,
+  "doc_ratio_b": 0.15173,
+  "freq_a": 422,
+  "freq_b": 2818
+ },
+ {
+  "word": "紹介",
+  "z": -14.991,
+  "doc_ratio_a": 0.14744,
+  "doc_ratio_b": 0.20999,
+  "freq_a": 1906,
+  "freq_b": 3752
+ },
+ {
+  "word": "測定",
+  "z": 14.973,
+  "doc_ratio_a": 0.01038,
+  "doc_ratio_b": 0.05144,
+  "freq_a": 121,
+  "freq_b": 1517
+ },
+ {
+  "word": "音声",
+  "z": 14.96,
+  "doc_ratio_a": 0.01233,
+  "doc_ratio_b": 0.04729,
+  "freq_a": 284,
+  "freq_b": 2228
+ },
+ {
+  "word": "手元",
+  "z": 14.957,
+  "doc_ratio_a": 0.01648,
+  "doc_ratio_b": 0.10269,
+  "freq_a": 171,
+  "freq_b": 1733
+ },
+ {
+  "word": "ブルー-blue",
+  "z": -14.948,
+  "doc_ratio_a": 0.00337,
+  "doc_ratio_b": 0.00212,
+  "freq_a": 186,
+  "freq_b": 31
+ },
+ {
+  "word": "仕様",
+  "z": 14.923,
+  "doc_ratio_a": 0.07086,
+  "doc_ratio_b": 0.19239,
+  "freq_a": 912,
+  "freq_b": 4762
+ },
+ {
+  "word": "ドル-dollar",
+  "z": 14.906,
+  "doc_ratio_a": 0.00545,
+  "doc_ratio_b": 0.03143,
+  "freq_a": 99,
+  "freq_b": 1416
+ },
+ {
+  "word": "単位",
+  "z": 14.883,
+  "doc_ratio_a": 0.04724,
+  "doc_ratio_b": 0.17985,
+  "freq_a": 602,
+  "freq_b": 3538
+ },
+ {
+  "word": "初心",
+  "z": -14.857,
+  "doc_ratio_a": 0.04906,
+  "doc_ratio_b": 0.04102,
+  "freq_a": 538,
+  "freq_b": 681
+ },
+ {
+  "word": "返る",
+  "z": 14.826,
+  "doc_ratio_a": 0.04322,
+  "doc_ratio_b": 0.15063,
+  "freq_a": 496,
+  "freq_b": 3100
+ },
+ {
+  "word": "プッシュ-push",
+  "z": -14.817,
+  "doc_ratio_a": 0.01428,
+  "doc_ratio_b": 0.00959,
+  "freq_a": 262,
+  "freq_b": 189
+ },
+ {
+  "word": "制約",
+  "z": 14.786,
+  "doc_ratio_a": 0.02829,
+  "doc_ratio_b": 0.12353,
+  "freq_a": 373,
+  "freq_b": 2584
+ },
+ {
+  "word": "改善",
+  "z": 14.76,
+  "doc_ratio_a": 0.044,
+  "doc_ratio_b": 0.13698,
+  "freq_a": 530,
+  "freq_b": 3229
+ },
+ {
+  "word": "若し",
+  "z": -14.73,
+  "doc_ratio_a": 0.09202,
+  "doc_ratio_b": 0.09882,
+  "freq_a": 872,
+  "freq_b": 1379
+ },
+ {
+  "word": "統合",
+  "z": 14.692,
+  "doc_ratio_a": 0.02116,
+  "doc_ratio_b": 0.08711,
+  "freq_a": 267,
+  "freq_b": 2119
+ },
+ {
+  "word": "入り口",
+  "z": 14.666,
+  "doc_ratio_a": 0.00415,
+  "doc_ratio_b": 0.07209,
+  "freq_a": 40,
+  "freq_b": 1208
+ },
+ {
+  "word": "優先",
+  "z": 14.662,
+  "doc_ratio_a": 0.0231,
+  "doc_ratio_b": 0.13459,
+  "freq_a": 337,
+  "freq_b": 2415
+ },
+ {
+  "word": "注意",
+  "z": -14.649,
+  "doc_ratio_a": 0.15691,
+  "doc_ratio_b": 0.20142,
+  "freq_a": 1685,
+  "freq_b": 3257
+ },
+ {
+  "word": "内容",
+  "z": -14.555,
+  "doc_ratio_a": 0.2331,
+  "doc_ratio_b": 0.32624,
+  "freq_a": 3270,
+  "freq_b": 7235
+ },
+ {
+  "word": "ハイパー-hyper",
+  "z": -14.527,
+  "doc_ratio_a": 0.00636,
+  "doc_ratio_b": 0.00516,
+  "freq_a": 205,
+  "freq_b": 108
+ },
+ {
+  "word": "主張",
+  "z": 14.517,
+  "doc_ratio_a": 0.00428,
+  "doc_ratio_b": 0.04517,
+  "freq_a": 45,
+  "freq_b": 1188
+ },
+ {
+  "word": "良く",
+  "z": -14.49,
+  "doc_ratio_a": 0.15315,
+  "doc_ratio_b": 0.20465,
+  "freq_a": 1660,
+  "freq_b": 3214
+ },
+ {
+  "word": "オリジナル-original",
+  "z": -14.488,
+  "doc_ratio_a": 0.0209,
+  "doc_ratio_b": 0.01106,
+  "freq_a": 226,
+  "freq_b": 142
+ },
+ {
+  "word": "観測",
+  "z": 14.488,
+  "doc_ratio_a": 0.01142,
+  "doc_ratio_b": 0.06296,
+  "freq_a": 202,
+  "freq_b": 1809
+ },
+ {
+  "word": "専門",
+  "z": 14.475,
+  "doc_ratio_a": 0.01064,
+  "doc_ratio_b": 0.06923,
+  "freq_a": 144,
+  "freq_b": 1552
+ },
+ {
+  "word": "矢張り",
+  "z": -14.467,
+  "doc_ratio_a": 0.04218,
+  "doc_ratio_b": 0.03208,
+  "freq_a": 383,
+  "freq_b": 407
+ },
+ {
+  "word": "入門",
+  "z": -14.433,
+  "doc_ratio_a": 0.03647,
+  "doc_ratio_b": 0.02931,
+  "freq_a": 420,
+  "freq_b": 476
+ },
+ {
+  "word": "価格",
+  "z": 14.415,
+  "doc_ratio_a": 0.01129,
+  "doc_ratio_b": 0.05015,
+  "freq_a": 185,
+  "freq_b": 1725
+ },
+ {
+  "word": "構築",
+  "z": -14.405,
+  "doc_ratio_a": 0.12174,
+  "doc_ratio_b": 0.18547,
+  "freq_a": 1999,
+  "freq_b": 4048
+ },
+ {
+  "word": "渡す",
+  "z": 14.37,
+  "doc_ratio_a": 0.09319,
+  "doc_ratio_b": 0.24825,
+  "freq_a": 1345,
+  "freq_b": 6296
+ },
+ {
+  "word": "拒否",
+  "z": 14.343,
+  "doc_ratio_a": 0.00753,
+  "doc_ratio_b": 0.059,
+  "freq_a": 76,
+  "freq_b": 1250
+ },
+ {
+  "word": "解凍",
+  "z": -14.3,
+  "doc_ratio_a": 0.01557,
+  "doc_ratio_b": 0.00498,
+  "freq_a": 181,
+  "freq_b": 76
+ },
+ {
+  "word": "追う",
+  "z": 14.285,
+  "doc_ratio_a": 0.01687,
+  "doc_ratio_b": 0.1002,
+  "freq_a": 149,
+  "freq_b": 1550
+ },
+ {
+  "word": "リダイレクト",
+  "z": -14.271,
+  "doc_ratio_a": 0.0157,
+  "doc_ratio_b": 0.01374,
+  "freq_a": 303,
+  "freq_b": 274
+ },
+ {
+  "word": "数える",
+  "z": 14.267,
+  "doc_ratio_a": 0.0096,
+  "doc_ratio_b": 0.06333,
+  "freq_a": 117,
+  "freq_b": 1408
+ },
+ {
+  "word": "頑張る",
+  "z": -14.253,
+  "doc_ratio_a": 0.03271,
+  "doc_ratio_b": 0.01991,
+  "freq_a": 289,
+  "freq_b": 251
+ },
+ {
+  "word": "差分",
+  "z": 14.251,
+  "doc_ratio_a": 0.0157,
+  "doc_ratio_b": 0.08278,
+  "freq_a": 223,
+  "freq_b": 1871
+ },
+ {
+  "word": "復元",
+  "z": 14.223,
+  "doc_ratio_a": 0.00753,
+  "doc_ratio_b": 0.04342,
+  "freq_a": 100,
+  "freq_b": 1330
+ },
+ {
+  "word": "ブート-boot",
+  "z": -14.214,
+  "doc_ratio_a": 0.00506,
+  "doc_ratio_b": 0.00636,
+  "freq_a": 219,
+  "freq_b": 139
+ },
+ {
+  "word": "安定",
+  "z": 14.214,
+  "doc_ratio_a": 0.02245,
+  "doc_ratio_b": 0.12279,
+  "freq_a": 298,
+  "freq_b": 2190
+ },
+ {
+  "word": "記入",
+  "z": -14.21,
+  "doc_ratio_a": 0.01518,
+  "doc_ratio_b": 0.00608,
+  "freq_a": 189,
+  "freq_b": 92
+ },
+ {
+  "word": "弄る",
+  "z": -14.205,
+  "doc_ratio_a": 0.02583,
+  "doc_ratio_b": 0.01466,
+  "freq_a": 246,
+  "freq_b": 182
+ },
+ {
+  "word": "維持",
+  "z": 14.177,
+  "doc_ratio_a": 0.0157,
+  "doc_ratio_b": 0.09366,
+  "freq_a": 160,
+  "freq_b": 1585
+ },
+ {
+  "word": "答え",
+  "z": 14.17,
+  "doc_ratio_a": 0.02544,
+  "doc_ratio_b": 0.112,
+  "freq_a": 348,
+  "freq_b": 2396
+ },
+ {
+  "word": "データーベース-database",
+  "z": -14.127,
+  "doc_ratio_a": 0.05853,
+  "doc_ratio_b": 0.08527,
+  "freq_a": 1272,
+  "freq_b": 2330
+ },
+ {
+  "word": "言葉",
+  "z": 14.1,
+  "doc_ratio_a": 0.02842,
+  "doc_ratio_b": 0.11523,
+  "freq_a": 321,
+  "freq_b": 2273
+ },
+ {
+  "word": "並ぶ",
+  "z": 14.068,
+  "doc_ratio_a": 0.01272,
+  "doc_ratio_b": 0.09043,
+  "freq_a": 120,
+  "freq_b": 1396
+ },
+ {
+  "word": "集計",
+  "z": 14.067,
+  "doc_ratio_a": 0.01337,
+  "doc_ratio_b": 0.06775,
+  "freq_a": 259,
+  "freq_b": 2004
+ },
+ {
+  "word": "支援",
+  "z": 14.035,
+  "doc_ratio_a": 0.00986,
+  "doc_ratio_b": 0.05909,
+  "freq_a": 104,
+  "freq_b": 1323
+ },
+ {
+  "word": "対策",
+  "z": 14.0,
+  "doc_ratio_a": 0.02998,
+  "doc_ratio_b": 0.12205,
+  "freq_a": 384,
+  "freq_b": 2524
+ },
+ {
+  "word": "一旦",
+  "z": -13.999,
+  "doc_ratio_a": 0.04426,
+  "doc_ratio_b": 0.03411,
+  "freq_a": 392,
+  "freq_b": 442
+ },
+ {
+  "word": "アイテム-item",
+  "z": -13.994,
+  "doc_ratio_a": 0.01337,
+  "doc_ratio_b": 0.01318,
+  "freq_a": 387,
+  "freq_b": 433
+ },
+ {
+  "word": "近い",
+  "z": 13.967,
+  "doc_ratio_a": 0.03348,
+  "doc_ratio_b": 0.1415,
+  "freq_a": 356,
+  "freq_b": 2403
+ },
+ {
+  "word": "短い",
+  "z": 13.961,
+  "doc_ratio_a": 0.02583,
+  "doc_ratio_b": 0.1109,
+  "freq_a": 241,
+  "freq_b": 1913
+ },
+ {
+  "word": "文献",
+  "z": -13.955,
+  "doc_ratio_a": 0.01986,
+  "doc_ratio_b": 0.00784,
+  "freq_a": 206,
+  "freq_b": 126
+ },
+ {
+  "word": "自社",
+  "z": 13.945,
+  "doc_ratio_a": 0.00753,
+  "doc_ratio_b": 0.0578,
+  "freq_a": 90,
+  "freq_b": 1253
+ },
+ {
+  "word": "平成",
+  "z": -13.912,
+  "doc_ratio_a": 0.01947,
+  "doc_ratio_b": 0.0012,
+  "freq_a": 166,
+  "freq_b": 23
+ },
+ {
+  "word": "一番",
+  "z": 13.887,
+  "doc_ratio_a": 0.08501,
+  "doc_ratio_b": 0.22603,
+  "freq_a": 890,
+  "freq_b": 4508
+ },
+ {
+  "word": "アクション-action",
+  "z": -13.879,
+  "doc_ratio_a": 0.03556,
+  "doc_ratio_b": 0.04047,
+  "freq_a": 743,
+  "freq_b": 1157
+ },
+ {
+  "word": "メトリック-Metrik",
+  "z": -13.875,
+  "doc_ratio_a": 0.00221,
+  "doc_ratio_b": 0.00166,
+  "freq_a": 163,
+  "freq_b": 58
+ },
+ {
+  "word": "表わす",
+  "z": -13.86,
+  "doc_ratio_a": 0.07203,
+  "doc_ratio_b": 0.09652,
+  "freq_a": 1188,
+  "freq_b": 2158
+ },
+ {
+  "word": "アルゴリズム-algorithm",
+  "z": -13.85,
+  "doc_ratio_a": 0.02777,
+  "doc_ratio_b": 0.04222,
+  "freq_a": 635,
+  "freq_b": 930
+ },
+ {
+  "word": "保証",
+  "z": 13.842,
+  "doc_ratio_a": 0.01895,
+  "doc_ratio_b": 0.09246,
+  "freq_a": 206,
+  "freq_b": 1746
+ },
+ {
+  "word": "ラーニング-learning",
+  "z": -13.832,
+  "doc_ratio_a": 0.00844,
+  "doc_ratio_b": 0.00332,
+  "freq_a": 184,
+  "freq_b": 95
+ },
+ {
+  "word": "リンク-link",
+  "z": -13.827,
+  "doc_ratio_a": 0.07346,
+  "doc_ratio_b": 0.0778,
+  "freq_a": 876,
+  "freq_b": 1451
+ },
+ {
+  "word": "共有",
+  "z": 13.822,
+  "doc_ratio_a": 0.06347,
+  "doc_ratio_b": 0.17109,
+  "freq_a": 808,
+  "freq_b": 4184
+ },
+ {
+  "word": "コメント-comment",
+  "z": -13.805,
+  "doc_ratio_a": 0.09098,
+  "doc_ratio_b": 0.09624,
+  "freq_a": 1170,
+  "freq_b": 2121
+ },
+ {
+  "word": "投資",
+  "z": 13.79,
+  "doc_ratio_a": 0.0035,
+  "doc_ratio_b": 0.0365,
+  "freq_a": 56,
+  "freq_b": 1107
+ },
+ {
+  "word": "エディター-editor",
+  "z": -13.788,
+  "doc_ratio_a": 0.04361,
+  "doc_ratio_b": 0.0389,
+  "freq_a": 602,
+  "freq_b": 865
+ },
+ {
+  "word": "寧ろ",
+  "z": 13.782,
+  "doc_ratio_a": 0.0096,
+  "doc_ratio_b": 0.07854,
+  "freq_a": 79,
+  "freq_b": 1188
+ },
+ {
+  "word": "材料",
+  "z": 13.752,
+  "doc_ratio_a": 0.00454,
+  "doc_ratio_b": 0.06315,
+  "freq_a": 66,
+  "freq_b": 1135
+ },
+ {
+  "word": "テーブル-table",
+  "z": -13.749,
+  "doc_ratio_a": 0.06334,
+  "doc_ratio_b": 0.08601,
+  "freq_a": 1668,
+  "freq_b": 3313
+ },
+ {
+  "word": "相手",
+  "z": 13.736,
+  "doc_ratio_a": 0.01337,
+  "doc_ratio_b": 0.07577,
+  "freq_a": 195,
+  "freq_b": 1685
+ },
+ {
+  "word": "最終",
+  "z": 13.734,
+  "doc_ratio_a": 0.06243,
+  "doc_ratio_b": 0.19414,
+  "freq_a": 670,
+  "freq_b": 3636
+ },
+ {
+  "word": "もう",
+  "z": 13.731,
+  "doc_ratio_a": 0.10668,
+  "doc_ratio_b": 0.25949,
+  "freq_a": 1045,
+  "freq_b": 5068
+ },
+ {
+  "word": "詳細",
+  "z": -13.726,
+  "doc_ratio_a": 0.11162,
+  "doc_ratio_b": 0.14648,
+  "freq_a": 1285,
+  "freq_b": 2397
+ },
+ {
+  "word": "答える",
+  "z": 13.716,
+  "doc_ratio_a": 0.01493,
+  "doc_ratio_b": 0.08472,
+  "freq_a": 158,
+  "freq_b": 1520
+ },
+ {
+  "word": "リモート-remote",
+  "z": -13.694,
+  "doc_ratio_a": 0.02946,
+  "doc_ratio_b": 0.03291,
+  "freq_a": 529,
+  "freq_b": 721
+ },
+ {
+  "word": "プロジェクト-project",
+  "z": -13.694,
+  "doc_ratio_a": 0.11759,
+  "doc_ratio_b": 0.19165,
+  "freq_a": 2479,
+  "freq_b": 5341
+ },
+ {
+  "word": "始める",
+  "z": 13.679,
+  "doc_ratio_a": 0.08345,
+  "doc_ratio_b": 0.24373,
+  "freq_a": 863,
+  "freq_b": 4372
+ },
+ {
+  "word": "方針",
+  "z": 13.659,
+  "doc_ratio_a": 0.01518,
+  "doc_ratio_b": 0.0967,
+  "freq_a": 170,
+  "freq_b": 1566
+ },
+ {
+  "word": "意味",
+  "z": 13.65,
+  "doc_ratio_a": 0.11888,
+  "doc_ratio_b": 0.27931,
+  "freq_a": 1432,
+  "freq_b": 6482
+ },
+ {
+  "word": "標本",
+  "z": -13.621,
+  "doc_ratio_a": 0.00376,
+  "doc_ratio_b": 0.00323,
+  "freq_a": 179,
+  "freq_b": 93
+ },
+ {
+  "word": "沢山",
+  "z": -13.621,
+  "doc_ratio_a": 0.03699,
+  "doc_ratio_b": 0.02636,
+  "freq_a": 324,
+  "freq_b": 333
+ },
+ {
+  "word": "方式",
+  "z": 13.588,
+  "doc_ratio_a": 0.02894,
+  "doc_ratio_b": 0.13449,
+  "freq_a": 545,
+  "freq_b": 3122
+ },
+ {
+  "word": "小数",
+  "z": -13.586,
+  "doc_ratio_a": 0.0122,
+  "doc_ratio_b": 0.01401,
+  "freq_a": 345,
+  "freq_b": 372
+ },
+ {
+  "word": "早い",
+  "z": 13.573,
+  "doc_ratio_a": 0.06788,
+  "doc_ratio_b": 0.191,
+  "freq_a": 739,
+  "freq_b": 3880
+ },
+ {
+  "word": "コロナ-corona",
+  "z": -13.549,
+  "doc_ratio_a": 0.0148,
+  "doc_ratio_b": 0.00166,
+  "freq_a": 161,
+  "freq_b": 20
+ },
+ {
+  "word": "限る",
+  "z": 13.546,
+  "doc_ratio_a": 0.03439,
+  "doc_ratio_b": 0.14298,
+  "freq_a": 301,
+  "freq_b": 2118
+ },
+ {
+  "word": "完結",
+  "z": 13.519,
+  "doc_ratio_a": 0.01077,
+  "doc_ratio_b": 0.08831,
+  "freq_a": 94,
+  "freq_b": 1217
+ },
+ {
+  "word": "呼び出す",
+  "z": -13.515,
+  "doc_ratio_a": 0.09409,
+  "doc_ratio_b": 0.14251,
+  "freq_a": 1542,
+  "freq_b": 3032
+ },
+ {
+  "word": "初め",
+  "z": -13.507,
+  "doc_ratio_a": 0.017,
+  "doc_ratio_b": 0.00461,
+  "freq_a": 155,
+  "freq_b": 56
+ },
+ {
+  "word": "比較",
+  "z": 13.507,
+  "doc_ratio_a": 0.08605,
+  "doc_ratio_b": 0.23119,
+  "freq_a": 1180,
+  "freq_b": 5532
+ },
+ {
+  "word": "戻す",
+  "z": 13.5,
+  "doc_ratio_a": 0.027,
+  "doc_ratio_b": 0.11034,
+  "freq_a": 279,
+  "freq_b": 2019
+ },
+ {
+  "word": "繋がる",
+  "z": 13.49,
+  "doc_ratio_a": 0.03141,
+  "doc_ratio_b": 0.1344,
+  "freq_a": 315,
+  "freq_b": 2170
+ },
+ {
+  "word": "増やす",
+  "z": 13.471,
+  "doc_ratio_a": 0.02648,
+  "doc_ratio_b": 0.12362,
+  "freq_a": 303,
+  "freq_b": 2117
+ },
+ {
+  "word": "本人",
+  "z": 13.465,
+  "doc_ratio_a": 0.00532,
+  "doc_ratio_b": 0.04517,
+  "freq_a": 49,
+  "freq_b": 1043
+ },
+ {
+  "word": "入手",
+  "z": -13.442,
+  "doc_ratio_a": 0.01778,
+  "doc_ratio_b": 0.0083,
+  "freq_a": 188,
+  "freq_b": 112
+ },
+ {
+  "word": "時代",
+  "z": 13.412,
+  "doc_ratio_a": 0.01687,
+  "doc_ratio_b": 0.07817,
+  "freq_a": 181,
+  "freq_b": 1585
+ },
+ {
+  "word": "タッチ-touch",
+  "z": -13.409,
+  "doc_ratio_a": 0.01856,
+  "doc_ratio_b": 0.01456,
+  "freq_a": 300,
+  "freq_b": 298
+ },
+ {
+  "word": "呉れる",
+  "z": -13.408,
+  "doc_ratio_a": 0.17781,
+  "doc_ratio_b": 0.21608,
+  "freq_a": 2151,
+  "freq_b": 4550
+ },
+ {
+  "word": "及び",
+  "z": -13.396,
+  "doc_ratio_a": 0.07735,
+  "doc_ratio_b": 0.08223,
+  "freq_a": 951,
+  "freq_b": 1651
+ },
+ {
+  "word": "採用",
+  "z": 13.367,
+  "doc_ratio_a": 0.03517,
+  "doc_ratio_b": 0.13735,
+  "freq_a": 425,
+  "freq_b": 2609
+ },
+ {
+  "word": "文章",
+  "z": 13.358,
+  "doc_ratio_a": 0.02726,
+  "doc_ratio_b": 0.09873,
+  "freq_a": 403,
+  "freq_b": 2518
+ },
+ {
+  "word": "出典",
+  "z": 13.349,
+  "doc_ratio_a": 0.00467,
+  "doc_ratio_b": 0.0354,
+  "freq_a": 54,
+  "freq_b": 1042
+ },
+ {
+  "word": "対話",
+  "z": 13.348,
+  "doc_ratio_a": 0.00921,
+  "doc_ratio_b": 0.06195,
+  "freq_a": 112,
+  "freq_b": 1274
+ },
+ {
+  "word": "例えば",
+  "z": 13.345,
+  "doc_ratio_a": 0.16833,
+  "doc_ratio_b": 0.28641,
+  "freq_a": 2166,
+  "freq_b": 9045
+ },
+ {
+  "word": "疑う",
+  "z": 13.312,
+  "doc_ratio_a": 0.00454,
+  "doc_ratio_b": 0.0625,
+  "freq_a": 36,
+  "freq_b": 997
+ },
+ {
+  "word": "最近",
+  "z": -13.308,
+  "doc_ratio_a": 0.07164,
+  "doc_ratio_b": 0.07863,
+  "freq_a": 693,
+  "freq_b": 1085
+ },
+ {
+  "word": "シナリオ-scenario",
+  "z": 13.29,
+  "doc_ratio_a": 0.00818,
+  "doc_ratio_b": 0.02802,
+  "freq_a": 154,
+  "freq_b": 1452
+ },
+ {
+  "word": "成る",
+  "z": -13.283,
+  "doc_ratio_a": 0.77521,
+  "doc_ratio_b": 0.89593,
+  "freq_a": 26338,
+  "freq_b": 72279
+ },
+ {
+  "word": "数字",
+  "z": 13.265,
+  "doc_ratio_a": 0.04361,
+  "doc_ratio_b": 0.13837,
+  "freq_a": 672,
+  "freq_b": 3575
+ },
+ {
+  "word": "一切",
+  "z": 13.25,
+  "doc_ratio_a": 0.01181,
+  "doc_ratio_b": 0.08545,
+  "freq_a": 95,
+  "freq_b": 1189
+ },
+ {
+  "word": "設置",
+  "z": -13.218,
+  "doc_ratio_a": 0.02154,
+  "doc_ratio_b": 0.01503,
+  "freq_a": 278,
+  "freq_b": 266
+ },
+ {
+  "word": "明記",
+  "z": 13.218,
+  "doc_ratio_a": 0.00545,
+  "doc_ratio_b": 0.06656,
+  "freq_a": 49,
+  "freq_b": 1010
+ },
+ {
+  "word": "凄い",
+  "z": -13.19,
+  "doc_ratio_a": 0.04153,
+  "doc_ratio_b": 0.02812,
+  "freq_a": 404,
+  "freq_b": 498
+ },
+ {
+  "word": "到達",
+  "z": 13.187,
+  "doc_ratio_a": 0.0109,
+  "doc_ratio_b": 0.07494,
+  "freq_a": 127,
+  "freq_b": 1321
+ },
+ {
+  "word": "土台",
+  "z": 13.187,
+  "doc_ratio_a": 0.0026,
+  "doc_ratio_b": 0.05854,
+  "freq_a": 24,
+  "freq_b": 987
+ },
+ {
+  "word": "アド-address",
+  "z": -13.183,
+  "doc_ratio_a": 0.00584,
+  "doc_ratio_b": 0.00774,
+  "freq_a": 202,
+  "freq_b": 141
+ },
+ {
+  "word": "従来",
+  "z": 13.183,
+  "doc_ratio_a": 0.01648,
+  "doc_ratio_b": 0.08822,
+  "freq_a": 183,
+  "freq_b": 1567
+ },
+ {
+  "word": "挿入",
+  "z": -13.167,
+  "doc_ratio_a": 0.02271,
+  "doc_ratio_b": 0.02065,
+  "freq_a": 337,
+  "freq_b": 373
+ },
+ {
+  "word": "件数",
+  "z": 13.166,
+  "doc_ratio_a": 0.0074,
+  "doc_ratio_b": 0.05623,
+  "freq_a": 101,
+  "freq_b": 1205
+ },
+ {
+  "word": "試し",
+  "z": -13.15,
+  "doc_ratio_a": 0.02726,
+  "doc_ratio_b": 0.01558,
+  "freq_a": 236,
+  "freq_b": 197
+ },
+ {
+  "word": "地域",
+  "z": 13.135,
+  "doc_ratio_a": 0.01415,
+  "doc_ratio_b": 0.02876,
+  "freq_a": 182,
+  "freq_b": 1557
+ },
+ {
+  "word": "自律",
+  "z": 13.131,
+  "doc_ratio_a": 0.00143,
+  "doc_ratio_b": 0.04886,
+  "freq_a": 16,
+  "freq_b": 1023
+ },
+ {
+  "word": "整合",
+  "z": 13.119,
+  "doc_ratio_a": 0.0074,
+  "doc_ratio_b": 0.06176,
+  "freq_a": 74,
+  "freq_b": 1086
+ },
+ {
+  "word": "相談",
+  "z": 13.103,
+  "doc_ratio_a": 0.00857,
+  "doc_ratio_b": 0.05642,
+  "freq_a": 83,
+  "freq_b": 1121
+ },
+ {
+  "word": "エンジニア-engineer",
+  "z": 13.096,
+  "doc_ratio_a": 0.04906,
+  "doc_ratio_b": 0.14021,
+  "freq_a": 690,
+  "freq_b": 3620
+ },
+ {
+  "word": "思考",
+  "z": 13.088,
+  "doc_ratio_a": 0.00467,
+  "doc_ratio_b": 0.04333,
+  "freq_a": 52,
+  "freq_b": 1002
+ },
+ {
+  "word": "課金",
+  "z": 13.086,
+  "doc_ratio_a": 0.01025,
+  "doc_ratio_b": 0.05393,
+  "freq_a": 143,
+  "freq_b": 1380
+ },
+ {
+  "word": "組み立てる",
+  "z": 13.06,
+  "doc_ratio_a": 0.00454,
+  "doc_ratio_b": 0.06287,
+  "freq_a": 46,
+  "freq_b": 981
+ },
+ {
+  "word": "要求",
+  "z": 13.037,
+  "doc_ratio_a": 0.02635,
+  "doc_ratio_b": 0.09108,
+  "freq_a": 328,
+  "freq_b": 2168
+ },
+ {
+  "word": "自身",
+  "z": 13.035,
+  "doc_ratio_a": 0.05957,
+  "doc_ratio_b": 0.18418,
+  "freq_a": 607,
+  "freq_b": 3289
+ },
+ {
+  "word": "依存",
+  "z": 13.024,
+  "doc_ratio_a": 0.05724,
+  "doc_ratio_b": 0.18529,
+  "freq_a": 809,
+  "freq_b": 4065
+ },
+ {
+  "word": "案内",
+  "z": 13.02,
+  "doc_ratio_a": 0.00402,
+  "doc_ratio_b": 0.05282,
+  "freq_a": 39,
+  "freq_b": 960
+ }
+]
