@@ -25,7 +25,8 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [word-trends-500.md](word-trends-500.md) | **頻出500語の12年推移。記事長の交絡に注意** |
 | [metaphor-vocabulary.md](metaphor-vocabulary.md) | **技術用語が和語・比喩に言い換えられた。「仕組み」36%** |
 | [sdk-vocabulary.md](sdk-vocabulary.md) | SDK系の語は11年間減り続けていた |
-| [advent-calendar.md](advent-calendar.md) | 12月は非常連が63%。普段書かない人ほど長く書く |
+| [advent-calendar.md](advent-calendar.md) | 12月の分析(2022年のみ)。**december-13years.md で一部訂正** |
+| [december-13years.md](december-13years.md) | **12月を13年分。常連と非常連の差は2022年から出た** |
 | [roundtrip-translation.md](roundtrip-translation.md) | 往復翻訳の仕組み。並行処理しても壊れない設計 |
 | [roundtrip-1332.md](roundtrip-1332.md) | **往復翻訳1,332件の結果。生き残り率で語が2層に分かれる** |
 | [izon-context.md](izon-context.md) | 「依存」は何の話で増えたか。用法の構成比は変わっていない |
