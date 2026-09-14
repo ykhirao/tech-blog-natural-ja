@@ -21,6 +21,10 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [monthly-baseline.md](monthly-baseline.md) | **AI以前の月次変動。漢字率は6か月で0.001しか動かない** |
 | [when-did-it-change.md](when-did-it-change.md) | **変化はいつ始まったか。2021年はまだAI以前と区別がつかない** |
 | [monthly-2022.md](monthly-2022.md) | **2022年を月次で見たら年次の見立てが崩れた。指標で時期が違う** |
+| [word-trends-500.md](word-trends-500.md) | **頻出500語の12年推移。記事長の交絡に注意** |
+| [metaphor-vocabulary.md](metaphor-vocabulary.md) | **技術用語が和語・比喩に言い換えられた。「仕組み」36%** |
+| [sdk-vocabulary.md](sdk-vocabulary.md) | SDK系の語は11年間減り続けていた |
+| [advent-calendar.md](advent-calendar.md) | 12月は非常連が63%。普段書かない人ほど長く書く |
 
 成果物は [`../src/`](../src/) にある(プロファイル・textlintルール・プロンプト)。
 
