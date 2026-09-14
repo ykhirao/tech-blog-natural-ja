@@ -25,7 +25,8 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [metaphor-vocabulary.md](metaphor-vocabulary.md) | **技術用語が和語・比喩に言い換えられた。「仕組み」36%** |
 | [sdk-vocabulary.md](sdk-vocabulary.md) | SDK系の語は11年間減り続けていた |
 | [advent-calendar.md](advent-calendar.md) | 12月は非常連が63%。普段書かない人ほど長く書く |
-| [roundtrip-translation.md](roundtrip-translation.md) | **往復翻訳で語の対応関係を辿る。5000件を並行処理する仕組み** |
+| [roundtrip-translation.md](roundtrip-translation.md) | 往復翻訳の仕組み。並行処理しても壊れない設計 |
+| [roundtrip-1332.md](roundtrip-1332.md) | **往復翻訳1,332件の結果。生き残り率で語が2層に分かれる** |
 
 成果物は [`../src/`](../src/) にある(プロファイル・textlintルール・プロンプト)。
 

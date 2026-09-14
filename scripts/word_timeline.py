@@ -55,10 +55,20 @@ def is_target(lemma: str, pos: str) -> bool:
     return True
 
 
-def scan_year(year: str, tagger) -> tuple[Counter, int]:
-    """その年8月の記事で、語ごとの「含む記事数」を数える。"""
+def scan_year(year: str, tagger) -> tuple[Counter, int, Counter, int]:
+    """その年8月の記事を数える。
+
+    戻り値は (含む記事数, 記事数, 延べ出現数, 地の文の総文字数)。
+
+    記事出現率(含む記事数 / 記事数)だけだと、記事が長くなるだけで上がる。
+    実際 2022年1,061字 → 2026年2,036字 と1.92倍に伸びており、
+    「置く」1.63倍のように記事長で説明できる見かけの増加が混ざっていた。
+    そこで延べ出現数と総文字数も返し、千字あたりでも測れるようにする。
+    """
     doc_freq: Counter = Counter()
+    raw_freq: Counter = Counter()
     n = 0
+    total_chars = 0
     for f in sorted(RAW.glob(f"qiita_{year}-08-*.jsonl")):
         for line in f.open(encoding="utf-8"):
             item = json.loads(line)
@@ -68,17 +78,20 @@ def scan_year(year: str, tagger) -> tuple[Counter, int]:
             if not body.strip():
                 continue
             text = clean_inline("\n".join(split_markdown(body)["body_lines"]))
-            if len(re.sub(r"\s", "", text)) < 300:
+            chars = len(re.sub(r"\s", "", text))
+            if chars < 300:
                 continue
             n += 1
+            total_chars += chars
             seen: set[str] = set()
             for w in tagger(text):
                 lemma = getattr(w.feature, "lemma", None) or w.surface
                 if is_target(lemma, w.feature.pos1):
                     seen.add(lemma)
+                    raw_freq[lemma] += 1
             for lemma in seen:
                 doc_freq[lemma] += 1
-    return doc_freq, n
+    return doc_freq, n, raw_freq, total_chars
 
 
 def sparkline(vals: list[float]) -> str:
@@ -97,6 +110,8 @@ def main() -> int:
     ap.add_argument("--min-docs", type=int, default=30,
                     help="どの年かでこの記事数に達しない語は除く")
     ap.add_argument("--ai-year", default="2022", help="この年までをAI以前とする")
+    ap.add_argument("--normalize", action="store_true",
+                    help="千字あたりの出現数で測る(記事長の影響を除く)")
     args = ap.parse_args()
 
     import fugashi
@@ -111,10 +126,13 @@ def main() -> int:
     print(f"対象年: {', '.join(years)}", file=sys.stderr)
     data: dict[str, Counter] = {}
     counts: dict[str, int] = {}
+    raw: dict[str, Counter] = {}
+    chars: dict[str, int] = {}
     for y in years:
-        df, n = scan_year(y, tagger)
-        data[y], counts[y] = df, n
-        print(f"  {y}: {n:,}記事 / {len(df):,}語", file=sys.stderr)
+        df, n, rf, tc = scan_year(y, tagger)
+        data[y], counts[y], raw[y], chars[y] = df, n, rf, tc
+        print(f"  {y}: {n:,}記事 / {len(df):,}語 / 平均{tc//max(1,n):,}字",
+              file=sys.stderr)
 
     # 全年の合計頻度から上位N語を選ぶ
     total: Counter = Counter()
@@ -122,9 +140,19 @@ def main() -> int:
         total.update(data[y])
     vocab = [w for w, _ in total.most_common(args.top * 3)]
 
+    def value(w: str, y: str) -> float:
+        """正規化の有無で測り方を切り替える。
+
+        normalize=False: 記事出現率(%)。記事が長くなるだけで上がる
+        normalize=True:  千字あたりの延べ出現数。長さの影響を受けない
+        """
+        if args.normalize:
+            return raw[y].get(w, 0) / max(1, chars[y]) * 1000
+        return data[y].get(w, 0) / counts[y] * 100
+
     rows = []
     for w in vocab:
-        series = [data[y].get(w, 0) / counts[y] * 100 for y in years]
+        series = [value(w, y) for y in years]
         if max(data[y].get(w, 0) for y in years) < args.min_docs:
             continue
         pre = [y for y in years if y <= args.ai_year]
@@ -146,7 +174,7 @@ def main() -> int:
 
     OUT.mkdir(parents=True, exist_ok=True)
     payload = {"years": years, "article_counts": counts, "words": rows}
-    (OUT / "word_timeline.json").write_text(
+    (OUT / ("word_timeline_norm.json" if args.normalize else "word_timeline.json")).write_text(
         json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n保存: data/processed/word_timeline.json ({len(rows)}語)", file=sys.stderr)
 
