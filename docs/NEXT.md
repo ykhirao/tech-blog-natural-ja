@@ -25,6 +25,23 @@ AI以前の傾きもマイナス(-0.8前後)だった。見かけの増加。
 `scripts/word_timeline.py` に `--normalize` を足すのが早い。
 地の文の文字数は `metrics_*.jsonl` の `chars_body` にある。
 
+### 1.5. 往復翻訳を5,000件回す（仕組みは完成・未実行）
+
+`scripts/roundtrip_queue.py` が動く状態。並行実行しても壊れないことを
+2プロセスで検証済み(重複0件)。
+
+```bash
+./scripts/roundtrip_queue.py build --count 5000 --mode article
+./scripts/roundtrip_queue.py work &   # 3〜4プロセス並行が目安
+./scripts/roundtrip_queue.py report
+```
+
+1件あたり往復2回で20〜60秒(article モードは長い)。
+5,000件を4並行で回すと7〜20時間。まず500件で傾向を見るのが現実的。
+
+集めたいのは「語ごとの生き残り率」。往復しても同じ語が残る割合が低い語は、
+英語に対応物がなく、日本語側で選ばれた語ということになる。
+
 ### 2. グラフの画像化（未着手）
 
 いまはスパークライン(`▁▁▁▁█`)だけ。SVG で折れ線グラフを出したい。
