@@ -40,6 +40,7 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [sentence-endings.md](sentence-endings.md) | **体言止めの行き先は「です」だった。2.2倍に増えている** |
 | [heading-trend.md](heading-trend.md) | **見出しの長さは11年間9〜10字で不変。2025年から動き、階層は逆に浅くなった** |
 | [code-trend.md](code-trend.md) | **コード行数は半減し、`text` タグが12倍に。コードでないものが枠に入る** |
+| [list-trend.md](list-trend.md) | **箇条書きは14個に増えたが入れ子は3分の1に。2026年2〜4月に落ちた** |
 
 成果物は [`../src/`](../src/) にある(プロファイル・textlintルール・プロンプト)。
 

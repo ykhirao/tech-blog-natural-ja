@@ -73,18 +73,20 @@ textlint ルールは単体で動く。`package.json` の `name` を
 
 ### A. すぐ測れる(データも道具もある)
 
-> 見出し([heading-trend.md](heading-trend.md))と
-> コードブロック([code-trend.md](code-trend.md))は測った。
+> 測り終わったもの: 見出し([heading-trend.md](heading-trend.md))、
+> コードブロック([code-trend.md](code-trend.md))、
+> 箇条書きとリンク([list-trend.md](list-trend.md))、
+> 文末表現([sentence-endings.md](sentence-endings.md))。
 
-**箇条書きの深さ。** 箇条書きの割合は測っているが、入れ子の深さは見ていない。
-AI の文章は階層が深いという印象があるが、実測していない。
+**引用の使い方。** `>` で始まる行は `split_markdown` が分けているが、
+量も長さも測っていない。AI の文章は引用を多用するという印象があるが、実測していない。
 
-**リンクの張り方。** `n_links` は metrics にあるが分析していない。
-外部リンクと Qiita 内リンクの比率、公式ドキュメントへのリンクの割合など。
+**段落の長さ。** `paragraph_sentences_mean` は metrics にあるが分析していない。
+1段落あたりの文数が変わっていれば、読ませ方の変化になる。
 
-**文末表現の分布。** 「です・ます」比率は測っているが、
-「〜ます」「〜ました」「〜ています」の内訳は見ていない。
-体言止めが減ったぶんが何に置き換わったのかが分かる。
+**画像の使い方。** `n_images` と `images_per_1k` がある。
+[元記事](qiita-writing-before-after-ai.md)で画像が減ったと分かっているが、
+どこで減ったのか(スクリーンショットか図か)は見ていない。
 
 ### B. 交絡の補正が要る
 
