@@ -163,6 +163,47 @@ def check_commands(files: list[Path]) -> list[str]:
     return problems
 
 
+def check_numbers(files: list[Path]) -> list[str]:
+    """記事と docs に書いた数字が、いまのデータと合っているか。
+
+    check_article.py に任せる。データを測り直すたびに数字がずれるので、
+    公開前にはここも通したい。data/processed が無い環境では黙って飛ばす。
+    """
+    if not (ROOT / "data" / "processed").exists():
+        return []
+    checker = ROOT / "scripts" / "check_article.py"
+    if not checker.exists():
+        return []
+    targets = [f.relative_to(ROOT) for f in files
+               if f.suffix == ".md" and f.exists()
+               and f.parent.name in {"docs", "article"}]
+    if not targets:
+        return []
+    # 189か月の読み込みが重いので、まとめて1回だけ起動する。
+    # ファイルごとに呼ぶと24ファイルで5分を超えた。
+    argv = [str(checker)]
+    for t in targets:
+        argv += ["--file", str(t)]
+    try:
+        r = subprocess.run(argv, cwd=ROOT, capture_output=True,
+                           text=True, timeout=600)
+    except Exception as e:  # noqa: BLE001 — 点検を止めたくない
+        return [f"数字の照合が動かない: {e}"]
+    if r.returncode == 0:
+        return []
+    problems = []
+    current = ""
+    for line in r.stdout.splitlines():
+        m = re.match(r"## (\S+) — ", line)
+        if m:
+            current = m.group(1)
+            continue
+        s = line.strip()
+        if s and s[0].isdigit() and "行目" in s:
+            problems.append(f"{current}:{s}")
+    return problems
+
+
 def check_entrypoints() -> list[str]:
     """外から来た人が最初に開くファイルがあるか。"""
     problems = []
@@ -181,6 +222,7 @@ def main() -> int:
 
     files = tracked_files()
     checks = [
+        ("記事とdocsの数字", check_numbers(files)),
         ("入口のファイル", check_entrypoints()),
         ("Markdown のリンク", check_links(files)),
         ("追跡外への参照", check_untracked_refs(files)),
