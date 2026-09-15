@@ -57,6 +57,27 @@ SCOPED_RE = re.compile(r"\(\s*(?:\d+\s*-\s*\d+|\d+月|[^)]*日)\s*\)")
 DERIVED_RE = re.compile(r"(?:差|比|変化|倍|残存|%|\(件\)|件数)\s*\**\s*$")
 
 
+
+def field_of(header: str) -> str | None:
+    """列名から metrics のフィールドを決める。合わなければ None。
+
+    指標名の直前に別の語があったら、本文の指標ではないと見なす。
+    「題の漢字率」はタイトルの漢字率で、本文の kanji_ratio とは別物。
+    部分一致だけで拾うと、これを本文の値と突き合わせて誤検知になる。
+    """
+    h = header.strip().strip("*").strip()
+    for lbl, f in LABELS.items():
+        i = h.find(lbl)
+        if i < 0:
+            continue
+        # 指標名の前にあるのが記号や空白だけなら、その指標そのものとみなす
+        before = h[:i].strip()
+        if before and not all(ch in "（(【[「 　" for ch in before):
+            return None
+        return f
+    return None
+
+
 def load_months() -> dict[str, list[dict]]:
     out: dict[str, list[dict]] = {}
     for p in sorted(PROC.glob("metrics_????-??.jsonl")):
@@ -158,7 +179,7 @@ def check_monthly(text: str, data: dict[str, list[dict]]) -> list[str]:
                 break
             if SCOPED_RE.search(header[j]) or DERIVED_RE.search(header[j]):
                 continue  # 期間の限定つき、または差分・比率の列
-            field = next((f for lbl, f in LABELS.items() if lbl in header[j]), None)
+            field = field_of(header[j])
             if not field:
                 continue
             num = re.fullmatch(r"\*{0,2}(-?[\d,]+(?:\.\d+)?)\*{0,2}", c)
@@ -207,7 +228,7 @@ def check_yearly(text: str, data: dict[str, list[dict]]) -> list[str]:
                 break
             if SCOPED_RE.search(header[j]) or DERIVED_RE.search(header[j]):
                 continue  # 期間の限定つき、または差分・比率の列
-            field = next((f for lbl, f in LABELS.items() if lbl in header[j]), None)
+            field = field_of(header[j])
             if not field:
                 continue
             num = re.fullmatch(r"\*{0,2}(-?[\d,]+(?:\.\d+)?)\*{0,2}", c)
