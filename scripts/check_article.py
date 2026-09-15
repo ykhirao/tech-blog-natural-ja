@@ -54,7 +54,7 @@ SCOPED_RE = re.compile(r"\(\s*(?:\d+\s*-\s*\d+|\d+月|[^)]*日)\s*\)")
 
 # 「体言止め差」のように差分を載せた列。値そのものではないので照合しない。
 # 「〜の変化」「〜比」も同じ理由で外す。
-DERIVED_RE = re.compile(r"(?:差|比|変化|倍|残存|%)\s*\**\s*$")
+DERIVED_RE = re.compile(r"(?:差|比|変化|倍|残存|%|\(件\)|件数)\s*\**\s*$")
 
 
 def load_months() -> dict[str, list[dict]]:
