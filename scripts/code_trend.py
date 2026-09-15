@@ -13,6 +13,7 @@
   コード行数   1記事あたり何行か
   言語指定     ```python のように言語を書いているか
   言語の内訳   何が書かれているか
+  日本語率     中身が日本語のブロックの割合。コードなら日本語は出ない
 
 生データを直接読むので、build_dataset.py を通していない月でも使える。
 
@@ -37,6 +38,12 @@ RAW = ROOT / "data" / "raw"
 
 # ```python や ~~~js の開始行。言語名は省略できる。
 FENCE = re.compile(r"^\s{0,3}(?:```|~~~)\s*([A-Za-z0-9_+#.-]*)")
+# ブロックの中身が日本語かを見る。コードなら日本語はほとんど出ない。
+JA = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
+# 日本語がこの割合を超えたら「コードではない」とみなす
+JA_THRESHOLD = 0.30
+# 短すぎるブロックは割合が安定しないので除く
+MIN_BLOCK_CHARS = 20
 
 DEFAULT_DAYS = 8
 
@@ -52,6 +59,8 @@ def scan(pattern: str, days: int) -> tuple[dict, Counter, int]:
     langs: Counter = Counter()
     nolang = 0
     total = 0
+    ja_blocks = 0
+    measured = 0
     for f in sorted(RAW.glob(pattern))[:days]:
         for line in f.open(encoding="utf-8"):
             body = json.loads(line).get("body") or ""
@@ -61,6 +70,7 @@ def scan(pattern: str, days: int) -> tuple[dict, Counter, int]:
             cnt = 0
             cl = 0
             inside = False
+            buf: list[str] = []
             for raw in body.splitlines():
                 m = FENCE.match(raw)
                 if m:
@@ -72,9 +82,17 @@ def scan(pattern: str, days: int) -> tuple[dict, Counter, int]:
                             langs[lang] += 1
                         else:
                             nolang += 1
+                        buf = []
+                    else:
+                        text = "".join(buf)
+                        if len(text) >= MIN_BLOCK_CHARS:
+                            measured += 1
+                            if len(JA.findall(text)) / len(text) >= JA_THRESHOLD:
+                                ja_blocks += 1
                     inside = not inside
                 elif inside:
                     cl += 1
+                    buf.append(raw)
             blocks.append(cnt)
             code_lines.append(cl)
     if not n:
@@ -84,12 +102,14 @@ def scan(pattern: str, days: int) -> tuple[dict, Counter, int]:
         "blocks": statistics.median(blocks),
         "lines": statistics.median(code_lines),
         "nolang": nolang / max(1, total) * 100,
+        "ja": ja_blocks / max(1, measured) * 100,
         "total": total,
     }, langs, total
 
 
 COLS = [("n", "記事数", "{:,}"), ("blocks", "ブロック数", "{:.0f}"),
-        ("lines", "コード行数", "{:.0f}"), ("nolang", "言語指定なし%", "{:.1f}")]
+        ("lines", "コード行数", "{:.0f}"), ("nolang", "言語指定なし%", "{:.1f}"),
+        ("ja", "日本語ブロック%", "{:.1f}")]
 
 
 def main() -> int:
