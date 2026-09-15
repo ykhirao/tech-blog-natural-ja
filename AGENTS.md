@@ -47,7 +47,19 @@ scripts/            資産。すべて uv 単体実行(PEP 723)で依存を自�
   inspect_outliers.py  分布と外れ値の診断。スクリプト改善のための道具
   timeline.py          月をまたいだ推移。形態素解析を使わないので軽い
   roundtrip_queue.py   往復翻訳のジョブキュー。並行実行しても壊れない
+  weekly.py            週ごとの推移。月次で見つけたら必ずこれで確かめる
   check_repo.py        公開前の点検。リンク・コマンド・混入を機械で見る
+  check_article.py     記事の数字を実データと照合する
+  confounds.py         対抗仮説をまとめて潰す(話題・書き手・人気・分野)
+  by_domain.py         タグで分野に分けて測る。分野の定義もここ
+  title_trend.py       タイトルの推移。数字の用法も分類する
+  heading_trend.py     見出しの数・長さ・階層
+  code_trend.py        コードブロックの量と言語指定
+  list_trend.py        箇条書きの入れ子とリンク
+  structure_trend.py   引用・段落・画像
+  edit_rate.py         公開後に直しているか(updated_at を使う)
+  verify_ai_words.py   p1ass 辞書を実測で検証する
+  rule_hits.py         textlint ルールの年ごとの検出率
 data/
   raw/         API の生データ。qiita_YYYY-MM-DD.jsonl + .manifest.json
   interim/     試行錯誤の中間物
@@ -81,7 +93,7 @@ commit の前ではなく、**公開の前に** `./scripts/check_repo.py` を通
 
 ## 記事の数字は目視で追わない
 
-記事は1,400行を超え、データを測り直すたびに数字がずれる。
+記事は2,000行を超え、データを測り直すたびに数字がずれる。
 `scripts/check_article.py` が実データと照合する(`check_repo.py` から呼ばれる)。
 
 拾えるのは決まった書き方だけなので、**これを通しても保証にはならない**。
@@ -160,6 +172,22 @@ commit の前ではなく、**公開の前に** `./scripts/check_repo.py` を通
 `data/` は共有したいので、worktree を切るときは
 `data/` を実体のあるパスへ symlink するか、`--range` で月を分けて取る。
 同じ日を2プロセスが同時に書いても、`.tmp` → `rename` なので壊れはしない。
+
+## 月次で見つけたら、週次で確かめる
+
+月の区切りは分析上の都合であって、変化がそこで起きる理由はない。
+
+実際にやらかした例。引用と箇条書きの入れ子が「2026年3月に跳ねた」ように
+見えたので、複数の指標が同じ月を指していると書きかけた。
+週ごとに測り直すと**2月上旬から連続して動いていた**だけだった
+([docs/structure-trend.md](docs/structure-trend.md))。
+
+```bash
+./scripts/weekly.py --from 2026-01 --to 2026-06
+```
+
+`--min-articles` の既定は300。年末年始や取得の切れ目で薄い週ができるので、
+そのまま並べると跳ねて見える。
 
 ## 方針
 
