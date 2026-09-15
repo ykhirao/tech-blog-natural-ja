@@ -38,6 +38,8 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [title-trend.md](title-trend.md) | **タイトルは本文より遅れて2024〜2025年に動いた。12年間28〜31字だった** |
 | [edit-rate.md](edit-rate.md) | **公開後に直さない記事が2倍に。2017年に底を打ち、生成AIより5年早い** |
 | [sentence-endings.md](sentence-endings.md) | **体言止めの行き先は「です」だった。2.2倍に増えている** |
+| [heading-trend.md](heading-trend.md) | **見出しの長さは11年間9〜10字で不変。2025年から動き、階層は逆に浅くなった** |
+| [code-trend.md](code-trend.md) | **コード行数は半減し、`text` タグが12倍に。コードでないものが枠に入る** |
 
 成果物は [`../src/`](../src/) にある(プロファイル・textlintルール・プロンプト)。
 
