@@ -48,6 +48,7 @@ scripts/            資産。すべて uv 単体実行(PEP 723)で依存を自�
   timeline.py          月をまたいだ推移。形態素解析を使わないので軽い
   roundtrip_queue.py   往復翻訳のジョブキュー。並行実行しても壊れない
   weekly.py            週ごとの推移。月次で見つけたら必ずこれで確かめる
+  split_by.py          ある特徴で記事を分けて全指標を比べる(指標どうしの関係)
   check_repo.py        公開前の点検。リンク・コマンド・混入を機械で見る
   check_article.py     記事の数字を実データと照合する
   confounds.py         対抗仮説をまとめて潰す(話題・書き手・人気・分野)
