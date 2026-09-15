@@ -12,7 +12,7 @@
 | 項目 | 結果 |
 |------|------|
 | 全期間の取得 | 完了。2011-01〜2026-08、122万件・9.8GB |
-| 全期間の月次分析 | 完了。182か月・747,948本([full-timeline.md](full-timeline.md)) |
+| 全期間の月次分析 | 完了。189か月・811,379本([full-timeline.md](full-timeline.md)) |
 | 12月の13年分析 | 完了([december-13years.md](december-13years.md))。**前の結論を訂正** |
 | 往復翻訳 | 1,744件([roundtrip-1332.md](roundtrip-1332.md)) |
 | 辞書との突き合わせ | 完了([survival-vs-dictionary.md](survival-vs-dictionary.md))。役割が重ならない |
