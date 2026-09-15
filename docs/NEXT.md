@@ -76,17 +76,22 @@ textlint ルールは単体で動く。`package.json` の `name` を
 > 測り終わったもの: 見出し([heading-trend.md](heading-trend.md))、
 > コードブロック([code-trend.md](code-trend.md))、
 > 箇条書きとリンク([list-trend.md](list-trend.md))、
-> 文末表現([sentence-endings.md](sentence-endings.md))。
+> 文末表現([sentence-endings.md](sentence-endings.md))、
+> 引用・段落・画像([structure-trend.md](structure-trend.md))。
 
-**引用の使い方。** `>` で始まる行は `split_markdown` が分けているが、
-量も長さも測っていない。AI の文章は引用を多用するという印象があるが、実測していない。
+**引用の中身。** 引用を使う記事が2倍になった
+([structure-trend.md](structure-trend.md))が、何を引用しているかは見ていない。
+エラーメッセージか、他の記事か、AI の出力か。
 
-**段落の長さ。** `paragraph_sentences_mean` は metrics にあるが分析していない。
-1段落あたりの文数が変わっていれば、読ませ方の変化になる。
+**外部画像がU字で戻った理由。** 2013年15.4% → 2024年1.9% → 2026年14.8%。
+GitHub と Zenn が上位に来るが、なぜ Qiita に直接上げなくなったのかは分からない。
 
-**画像の使い方。** `n_images` と `images_per_1k` がある。
-[元記事](qiita-writing-before-after-ai.md)で画像が減ったと分かっているが、
-どこで減ったのか(スクリーンショットか図か)は見ていない。
+**text ブロックの中身の分類。** `text` タグが12倍になった
+([code-trend.md](code-trend.md))。ファイル一覧・実行結果・ディレクトリ構成が
+混ざっているが、どれが増えたのかは数えていない。
+
+**2026年3月に何が起きたか。** 引用・箇条書きの入れ子・段落の文数が
+そろってこの月に動いている。指標をまたいで同じ月を指しているのは珍しい。
 
 ### B. 交絡の補正が要る
 
