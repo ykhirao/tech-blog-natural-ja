@@ -3,7 +3,7 @@
 このファイルを読めば作業を再開できる。
 全体像は [../README.md](../README.md) と [../src/CAPABILITIES.md](../src/CAPABILITIES.md)。
 
-最終更新: 2026-09-15
+最終更新: 2026-09-17
 
 ---
 
@@ -21,6 +21,7 @@
 | 「使う人の割合」 | [zero-users.md](zero-users.md)。中央値と同じ2021年で向きが変わる |
 | 記事の執筆 | 1,590行、自前 lint 0件、数字の照合 0件 |
 | 公開の準備 | README/LICENSE、履歴から記事本文を除去、点検スクリプト2本 |
+| 引用の中身 | [quote-kinds.md](quote-kinds.md)。囲みが14倍。引く→囲むに変わった |
 
 ---
 
@@ -77,11 +78,15 @@ textlint ルールは単体で動く。`package.json` の `name` を
 > コードブロック([code-trend.md](code-trend.md))、
 > 箇条書きとリンク([list-trend.md](list-trend.md))、
 > 文末表現([sentence-endings.md](sentence-endings.md))、
-> 引用・段落・画像([structure-trend.md](structure-trend.md))。
+> 引用・段落・画像([structure-trend.md](structure-trend.md))、
+> 引用の中身([quote-kinds.md](quote-kinds.md))。
 
-**引用の中身。** 引用を使う記事が2倍になった
-([structure-trend.md](structure-trend.md))が、何を引用しているかは見ていない。
-エラーメッセージか、他の記事か、AI の出力か。
+**引用の第10週(2026年3月2〜8日)だけ囲みが跳ねた理由。**
+翌週には戻っている([quote-kinds.md](quote-kinds.md))。
+1週だけなので後付けになりやすい。やるなら先に見る記事群を決めてから。
+
+**囲みの増加を全期間に広げる。** いまは各年8月の先頭8日分だけ。
+`quote_kinds.py --months` で月を足せる。189か月は時間がかかる。
 
 **外部画像がU字で戻った理由。** 2013年15.4% → 2024年1.9% → 2026年14.8%。
 GitHub と Zenn が上位に来るが、なぜ Qiita に直接上げなくなったのかは分からない。
@@ -96,10 +101,6 @@ GitHub と Zenn が上位に来るが、なぜ Qiita に直接上げなくなっ
 
 **画像だけ逆側にある理由。** 画像を使う記事は太字が少なく体言止めが多い。
 「見せる」手段と「囲って目立たせる」手段の違いに見えるが、検証していない。
-
-**引用の中身。** 引用を使う記事が2倍になった
-([structure-trend.md](structure-trend.md))が、何を引用しているかは見ていない。
-日本語ブロックと同じで、引用も「枠で囲う」手段のひとつかもしれない。
 
 ### B. 交絡の補正が要る
 
