@@ -28,7 +28,7 @@
 
 ### 1. 記事を Qiita に投稿する
 
-`article/draft.md` は投稿できる状態。
+`article/article01.md` は投稿できる状態。
 
 - 自前 textlint: 0件
 - `check_article.py`: 0件(数字が実データと合っている)
@@ -212,8 +212,8 @@ npm install --no-save textlint@15 textlint-rule-preset-ai-words-ja
 ./scripts/roundtrip_queue.py report
 
 # 記事の検査
-npx textlint --rulesdir ./src/textlint --config .textlintrc.json article/draft.md
-./scripts/style_distance.py article/draft.md
+npx textlint --rulesdir ./src/textlint --config .textlintrc.json article/article01.md
+./scripts/style_distance.py article/article01.md
 ```
 
 `.env` に `QIITA_API_TOKEN` が要る(認証ありで 1000 req/時)。

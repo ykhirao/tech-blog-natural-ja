@@ -20,7 +20,7 @@
 
 使い方:
     ./scripts/check_article.py
-    ./scripts/check_article.py --file article/draft.md
+    ./scripts/check_article.py --file article/article01.md
 """
 
 from __future__ import annotations
@@ -251,11 +251,11 @@ def main() -> int:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
     ap.add_argument("--file", action="append", default=[],
-                    help="対象ファイル。複数指定できる(既定: article/draft.md)")
+                    help="対象ファイル。複数指定できる(既定: article/article01.md)")
     ap.add_argument("--verbose", action="store_true")
     args = ap.parse_args()
 
-    targets = args.file or ["article/draft.md"]
+    targets = args.file or ["article/article01.md"]
     # データの読み込みが重い(189か月)ので、1回だけ読んで全ファイルに使う
     data = load_months()
     if not data:

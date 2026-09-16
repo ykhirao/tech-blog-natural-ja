@@ -17,7 +17,7 @@ Qiita の技術記事 **811,379本・189か月分**(2011〜2026年)を実測し�
 - 漢字率は AI 以前の2013年から14年間ずっと上がり続けていた
 - 2026年に**2度目の変化**が起きている。2年ぶんの変化が7か月で進んだ
 
-詳細は [article/draft.md](article/draft.md)(記事本体)と [docs/](docs/) にある。
+詳細は [article/article01.md](article/article01.md)(記事本体)と [docs/](docs/) にある。
 
 ## どこを見ればいいか
 
@@ -26,7 +26,7 @@ Qiita の技術記事 **811,379本・189か月分**(2011〜2026年)を実測し�
 | **道具を使いたい** | [src/README.md](src/README.md) — textlint ルール・プロンプト・参照分布 |
 | **何ができるか知りたい** | [src/CAPABILITIES.md](src/CAPABILITIES.md) — できること・できないこと |
 | **分析の中身を読みたい** | [docs/README.md](docs/README.md) — 22本の調査記録 |
-| **記事として読みたい** | [article/draft.md](article/draft.md) |
+| **記事として読みたい** | [article/article01.md](article/article01.md) |
 | **自分で測り直したい** | [scripts/](scripts/) と下の「再現する」 |
 | **開発の作法を知りたい** | [AGENTS.md](AGENTS.md) |
 

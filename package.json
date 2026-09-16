@@ -7,7 +7,7 @@
   },
   "scripts": {
     "lint": "textlint --rulesdir ./src/textlint",
-    "lint:article": "textlint --rulesdir ./src/textlint article/draft.md"
+    "lint:article": "textlint --rulesdir ./src/textlint article/article01.md"
   },
   "keywords": [
     "textlint",
