@@ -1,4 +1,4 @@
-# code-natural-ja
+# tech-blog-natural-ja
 
 Qiita の記事を大規模に計測して、**技術記事に特化した日本語の文体プロファイル**を作る。
 最終的な成果物は、実測に基づく閾値・textlint 設定・Agent Skill。

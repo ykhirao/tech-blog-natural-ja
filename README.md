@@ -1,4 +1,4 @@
-# code-natural-ja
+# tech-blog-natural-ja
 
 Qiita の技術記事 **811,379本・189か月分**(2011〜2026年)を実測して作った、
 日本語技術記事のための**文体プロファイルと textlint ルール**。

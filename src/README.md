@@ -1,4 +1,4 @@
-# code-natural-ja — 公開成果物
+# tech-blog-natural-ja — 公開成果物
 
 Qiita の記事を実測して作った、**日本語技術記事のための文体プロファイルと道具**。
 

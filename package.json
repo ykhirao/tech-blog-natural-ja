@@ -1,5 +1,5 @@
 {
-  "name": "code-natural-ja",
+  "name": "tech-blog-natural-ja",
   "version": "1.0.0",
   "description": "Qiita の技術記事を実測して作った、日本語技術記事のための文体プロファイルと textlint ルール",
   "directories": {
