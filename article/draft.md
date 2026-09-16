@@ -1,4 +1,13 @@
-# 生成AIより先に、日本語が変わっていた — Qiita 81万記事を15年分測った話
+---
+title: Qiita 81万記事・13億字・8.8GBを15年分測ったら、生成AIより先に日本語が変わっていた
+tags: AI Qiita Python DeepLearning OSS
+private: false
+updated_at: ''
+id: 7add751aafbdb201358d
+organization_url_name:
+slide: false
+ignorePublish: false
+---
 
 ## はじめに
 
