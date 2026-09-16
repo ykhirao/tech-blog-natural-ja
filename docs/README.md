@@ -34,7 +34,7 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [verify-ai-words.md](verify-ai-words.md) | **AI語彙辞書を実測で検証。45語すべて増加、対照群は減少。2026年に2度目の変化** |
 | [confounds-2026.md](confounds-2026.md) | **2026年の急変に対抗仮説を4つぶつけた。同じ人が半年で書き方を変えている** |
 | [profile-2020-still-valid.md](profile-2020-still-valid.md) | **2020年の参照分布はまだ使えるか。分位点はずれたがルールは保っている** |
-| [zero-users.md](zero-users.md) | **「1回も使わない人の割合」も2021年で折れた。太字だけ2024年末から動く** |
+| [zero-users.md](zero-users.md) | **「1回も使わない人の割合」も2021年で向きが変わった。太字だけ2024年末から動く** |
 | [title-trend.md](title-trend.md) | **タイトルは本文より遅れて2024〜2025年に動いた。12年間28〜31字だった** |
 | [edit-rate.md](edit-rate.md) | **公開後に直さない記事が2倍に。2017年に底を打ち、生成AIより5年早い** |
 | [sentence-endings.md](sentence-endings.md) | **体言止めの行き先は「です」だった。2.2倍に増えている** |

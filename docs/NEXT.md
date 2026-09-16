@@ -18,7 +18,7 @@
 | AI語彙辞書の外部検証 | [verify-ai-words.md](verify-ai-words.md)。45語すべて増加、対照群は減少 |
 | 2026年の急変 | [confounds-2026.md](confounds-2026.md)。対抗仮説を5つ潰した |
 | 参照分布の妥当性 | [profile-2020-still-valid.md](profile-2020-still-valid.md)。2020年基準のまま使える |
-| 「使う人の割合」 | [zero-users.md](zero-users.md)。中央値と同じ2021年で折れる |
+| 「使う人の割合」 | [zero-users.md](zero-users.md)。中央値と同じ2021年で向きが変わる |
 | 記事の執筆 | 1,590行、自前 lint 0件、数字の照合 0件 |
 | 公開の準備 | README/LICENSE、履歴から記事本文を除去、点検スクリプト2本 |
 
