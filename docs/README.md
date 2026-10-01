@@ -34,6 +34,7 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [verify-ai-words.md](verify-ai-words.md) | **AI語彙辞書を実測で検証。45語すべて増加、対照群は減少。2026年に2度目の変化** |
 | [verify-slop-words.md](verify-slop-words.md) | yomiyasu の語彙リストを検証。44語中30語は実測に届かず、9語は出現0件 |
 | [sahen-density.md](sahen-density.md) | 漢語サ変名詞の密度。11年で上昇、AI以前から。本人内でも60%が上げている |
+| [sahen-compression.md](sahen-compression.md) | サ変名詞は増えたが「する」は減った。動詞でなく名詞で圧縮する方向 |
 | [confounds-2026.md](confounds-2026.md) | **2026年の急変に対抗仮説を4つぶつけた。同じ人が半年で書き方を変えている** |
 | [profile-2020-still-valid.md](profile-2020-still-valid.md) | **2020年の参照分布はまだ使えるか。分位点はずれたがルールは保っている** |
 | [zero-users.md](zero-users.md) | **「1回も使わない人の割合」も2021年で向きが変わった。太字だけ2024年末から動く** |

@@ -18,9 +18,17 @@
 
 形態素解析が重いので記事を間引く。既定は各月500本、本文は先頭6,000字。
 
+事象名詞主語(--subject)も測れる。「設計が崩れる」「検知が走る」のように
+サ変名詞が「が」格に立つ文のこと。非生物主語の一部だけを見ていることに注意
+(「キューが」のような外来語の主語は拾えない)。
+
+対照として「を」格も数える。サ変名詞そのものが増えているだけなら両方が同じ
+倍率で増えるので、「が」だけが速ければ主語の位置の話だと言える。
+
 使い方:
     ./scripts/kango_density.py --years 2015,2020,2022,2024,2026
     ./scripts/kango_density.py --within 2020-08 2026-08
+    ./scripts/kango_density.py --subject 2015,2020,2022,2024,2026
     ./scripts/kango_density.py --years 2015,2020,2026 --md
 """
 
@@ -77,6 +85,57 @@ def measure(texts: list[str], tg) -> tuple[float, float, float, float] | None:
     if not total or not lex:
         return None
     return sahen / total, lex.count("漢") / len(lex), chains / total * 1000, verbs / total
+
+
+def measure_case(texts: list[str], tg) -> tuple[float, float, float] | None:
+    """サ変名詞の直後の格助詞を数える。
+
+    返すもの: (が格/千語, を格/千語, が/(が+を))
+
+    「設計が」を数えるだけなので、その文の述語まで見ていない。
+    非生物主語の割合そのものではなく、その代理になる値。
+    """
+    ga = wo = total = 0
+    for t in texts:
+        ws = list(tg(t))
+        if len(ws) < MIN_TOKENS:
+            continue
+        total += len(ws)
+        for i in range(len(ws) - 1):
+            if getattr(ws[i].feature, "pos3", None) != "サ変可能":
+                continue
+            nxt = ws[i + 1]
+            if nxt.feature.pos1 != "助詞":
+                continue
+            if nxt.surface == "が":
+                ga += 1
+            elif nxt.surface == "を":
+                wo += 1
+    if not total or (ga + wo) == 0:
+        return None
+    return ga / total * 1000, wo / total * 1000, ga / (ga + wo)
+
+
+def run_subject(years: list[str], n: int, md: bool) -> None:
+    tg = tagger()
+    rows = []
+    for y in years:
+        texts = [t for _, t in bodies(f"qiita_{y}-08-*.jsonl")]
+        random.seed(42)
+        random.shuffle(texts)
+        texts = texts[:n]
+        rs = [r for r in (measure_case([t], tg) for t in texts) if r]
+        rows.append((y, len(rs), *[statistics.fmean(x[i] for x in rs) for i in range(3)]))
+    if md:
+        print("| 年 | 記事 | サ変+が/千語 | サ変+を/千語 | が/(が+を) |")
+        print("|---|---|---|---|---|")
+        for y, c, g, w, r in rows:
+            print(f"| {y} | {c} | {g:.3f} | {w:.3f} | {r:.3f} |")
+    else:
+        print(f"{'年':<6}{'記事':>7}{'サ変+が/千語':>14}{'サ変+を/千語':>14}{'が率':>9}")
+        print("-" * 52)
+        for y, c, g, w, r in rows:
+            print(f"{y:<6}{c:>7}{g:>14.3f}{w:>14.3f}{r:>9.3f}")
 
 
 def run_years(years: list[str], n: int, md: bool) -> None:
@@ -138,12 +197,20 @@ def main() -> int:
     ap.add_argument("--years", help="各年8月を比べる(カンマ区切り)")
     ap.add_argument("--within", nargs=2, metavar=("A", "B"),
                     help="2つの月(YYYY-MM)で本人内の変化を見る")
+    ap.add_argument("--subject", help="事象名詞主語を各年8月で比べる(カンマ区切り)")
     ap.add_argument("-n", type=int, default=500, help="1か月あたりの記事数")
     ap.add_argument("--md", action="store_true", help="Markdown で出す")
     args = ap.parse_args()
 
     if args.within:
         run_within(*args.within)
+    elif args.subject:
+        years = [y.strip() for y in args.subject.split(",")]
+        years = [y for y in years if list(RAW.glob(f"qiita_{y}-08-*.jsonl"))]
+        if not years:
+            print("データがありません", file=sys.stderr)
+            return 1
+        run_subject(years, args.n, args.md)
     elif args.years:
         years = [y.strip() for y in args.years.split(",")]
         years = [y for y in years if list(RAW.glob(f"qiita_{y}-08-*.jsonl"))]
