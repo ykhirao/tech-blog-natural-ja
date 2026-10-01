@@ -16,6 +16,7 @@
 | 12月の13年分析 | [december-13years.md](december-13years.md)。**前の結論を訂正** |
 | 往復翻訳 | 1,744件([roundtrip-1332.md](roundtrip-1332.md)) |
 | AI語彙辞書の外部検証 | [verify-ai-words.md](verify-ai-words.md)。45語すべて増加、対照群は減少 |
+| yomiyasu の語彙検証 | [verify-slop-words.md](verify-slop-words.md)。44語中30語が実測に届かない |
 | 2026年の急変 | [confounds-2026.md](confounds-2026.md)。対抗仮説を5つ潰した |
 | 参照分布の妥当性 | [profile-2020-still-valid.md](profile-2020-still-valid.md)。2020年基準のまま使える |
 | 「使う人の割合」 | [zero-users.md](zero-users.md)。中央値と同じ2021年で向きが変わる |

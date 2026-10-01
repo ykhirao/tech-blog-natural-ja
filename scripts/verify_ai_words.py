@@ -20,10 +20,17 @@
 実際、頻出500語の分析では正規化前の結論が誤りだった
 (docs/word-trends-500.md)。同じ罠を踏まないよう両方を出す。
 
+辞書は2つ選べる。どちらも「AI が多用する語」を観察で集めたもので、
+実測で校正されていない点が同じなので、同じ土俵で検証できる。
+
+    p1ass     textlint-rule-preset-ai-words-ja (node_modules から読む)
+    yomiyasu  nanaism/yomiyasu の SLOP_WORDS + 比喩動詞パターン (下に転記)
+
 使い方:
     ./scripts/verify_ai_words.py
     ./scripts/verify_ai_words.py --years 2015,2018,2020,2022,2024,2026
     ./scripts/verify_ai_words.py --md > docs/verify-ai-words.md
+    ./scripts/verify_ai_words.py --dict yomiyasu --md > docs/verify-slop-words.md
 """
 
 from __future__ import annotations
@@ -80,6 +87,32 @@ CONJUGATE = {
 }
 
 
+# nanaism/yomiyasu (MIT) の scripts/yomiyasu_lint.py から転記した語彙。
+# SLOP_WORDS と METAPHOR_VERB_PATTERNS の2つを合わせている。
+# 比喩動詞のほうは正規表現なので、そのまま使う(to_pattern を通さない)。
+YOMIYASU_SLOP = [
+    "手触り", "肌感", "肌感覚", "体温", "温度感", "熱量", "血の通った", "泥臭い", "泥臭さ",
+    "解像度", "腹落ち", "メンタルモデル", "本質的", "地に足のついた", "等身大",
+    "営み", "装置", "意思決定OS", "土台", "羅針盤", "起爆剤", "触媒",
+    "真理", "虚飾", "境地", "美学", "深淵", "冷徹", "禁欲的", "優美", "極致", "宿命",
+    "正本",
+]
+
+YOMIYASU_VERB_PATTERNS = {
+    "効く(地味に/よく/じわじわ)": r"(地味に|よく|じわじわ)効[きくいた]",
+    "静かに壊れる": r"静かに(壊れ|落ち|失敗|沈黙)",
+    "黙って無視される": r"黙って(無視|捨て|スキップ|破棄)",
+    "〜側に倒す": r"側に倒[すしせ]",
+    "時間を溶かす": r"時間[をに]溶か[したす]",
+    "1つずつ潰す": r"(1つずつ|一つずつ)潰[していく]",
+    "〜した瞬間": r"した瞬間に?",
+    "前提が崩れる": r"(前提|基盤)が崩れ[るた]",
+    "文化が醸成される": r"文化が醸成",
+    "プロセスが定着する": r"プロセスが定着",
+    "事例が残した": r"事例が残した",
+}
+
+
 # 対照群。辞書に入っておらず、AI とは関係のない一般的な技術語。
 # 辞書語が全部増えたとき、「正規化が効いていないだけ」を疑う必要がある。
 # 対照語が同じように増えていたら測り方の問題、減っていれば本物。
@@ -104,6 +137,8 @@ def load_dictionary() -> list[str]:
 
 
 def to_pattern(word: str) -> str:
+    if word in YOMIYASU_VERB_PATTERNS:
+        return YOMIYASU_VERB_PATTERNS[word]
     if word in SPECIAL:
         return SPECIAL[word]
     if word in CONJUGATE:
@@ -148,15 +183,21 @@ def main() -> int:
     ap.add_argument("--years", default="2015,2017,2019,2020,2021,2022,2023,2024,2025,2026")
     ap.add_argument("--ai-year", default="2022",
                     help="この年までを AI 以前とする")
+    ap.add_argument("--dict", default="p1ass", choices=["p1ass", "yomiyasu"],
+                    help="検証する辞書")
     ap.add_argument("--md", action="store_true", help="Markdown で出す")
     ap.add_argument("--min-docs", type=int, default=30,
                     help="どの年でもこの記事数に届かない語は除く")
     args = ap.parse_args()
 
-    words = load_dictionary()
+    if args.dict == "yomiyasu":
+        words = YOMIYASU_SLOP + list(YOMIYASU_VERB_PATTERNS)
+    else:
+        words = load_dictionary()
     controls = [c for c in CONTROL if c not in words]
     pats = {w: re.compile(to_pattern(w)) for w in words + controls}
-    print(f"辞書の語: {len(words)} / 対照群: {len(controls)}", file=sys.stderr)
+    print(f"辞書[{args.dict}]の語: {len(words)} / 対照群: {len(controls)}",
+          file=sys.stderr)
 
     years = [y.strip() for y in args.years.split(",")]
     years = [y for y in years if list(RAW.glob(f"qiita_{y}-08-*.jsonl"))]
