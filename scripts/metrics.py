@@ -324,6 +324,30 @@ def analyze_with_pos(md: str) -> dict:
     if pos:
         for p in ("名詞", "動詞", "助詞", "助動詞", "形容詞", "副詞", "接続詞"):
             m[f"pos_{p}_ratio"] = round(pos.count(p) / len(pos), 4)
+
+    # サ変名詞率と漢語率。
+    #
+    # 「AIっぽさを直す」と称する書き換えが、かわりに漢語サ変名詞の密度を
+    # 上げてしまうという指摘がある(docs/sahen-density.md)。
+    # 「二重送信の発生を検知し」のように、動詞でなく名詞で事象を並べると
+    # 1語ごとに意味を取る必要が出て、文としては読みにくくなる。
+    # 書き換えの前後で測れるようにしておく。
+    #
+    #   サ変名詞  UniDic の pos3 == "サ変可能"(送信、発生、検知、実装…)
+    #   漢語      UniDic の goshu == "漢"
+    #   数珠つなぎ サ変名詞が助詞を挟まず直接続く箇所(「影響範囲特定」)
+    sahen = [w for w in words if getattr(w.feature, "pos3", None) == "サ変可能"]
+    m["sahen_noun_ratio"] = round(len(sahen) / len(words), 4) if words else None
+
+    goshu = [getattr(w.feature, "goshu", None) for w in words]
+    lexical = [g for g in goshu if g in ("漢", "和", "外", "混")]
+    m["kango_ratio"] = (round(lexical.count("漢") / len(lexical), 4)
+                        if lexical else None)
+
+    is_sahen = [getattr(w.feature, "pos3", None) == "サ変可能" for w in words]
+    chains = sum(1 for i in range(1, len(is_sahen)) if is_sahen[i] and is_sahen[i - 1])
+    m["sahen_chain_per_1000"] = (round(chains / len(words) * 1000, 2)
+                                 if words else None)
     return m
 
 

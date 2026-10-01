@@ -17,6 +17,7 @@
 | 往復翻訳 | 1,744件([roundtrip-1332.md](roundtrip-1332.md)) |
 | AI語彙辞書の外部検証 | [verify-ai-words.md](verify-ai-words.md)。45語すべて増加、対照群は減少 |
 | yomiyasu の語彙検証 | [verify-slop-words.md](verify-slop-words.md)。44語中30語が実測に届かない |
+| 漢語サ変名詞の密度 | [sahen-density.md](sahen-density.md)。11年で上昇。AI以前から同じ向き |
 | 2026年の急変 | [confounds-2026.md](confounds-2026.md)。対抗仮説を5つ潰した |
 | 参照分布の妥当性 | [profile-2020-still-valid.md](profile-2020-still-valid.md)。2020年基準のまま使える |
 | 「使う人の割合」 | [zero-users.md](zero-users.md)。中央値と同じ2021年で向きが変わる |
@@ -98,6 +99,11 @@ GitHub と Zenn が上位に来るが、なぜ Qiita に直接上げなくなっ
 2022年の変化は書き手の入れ替わりだった([within-author-2022.md](within-author-2022.md))。
 ただし新規著者率は動いていない([confounds-2026.md](confounds-2026.md))ので、
 単純な新規流入では説明できない。どの層が増えたのかは見ていない。
+
+**非生物主語の割合。** 「キューが」「設計が」のように道具や概念を主語に
+置く文がどれだけあるか。[sahen-density.md](sahen-density.md) で足せなかった軸で、
+係り受け解析が要る。文中の名詞密度(サ変名詞率)までは測れたが、
+その名詞が主語の位置にあるかは分けられていない。
 
 **初投稿の装飾量が2025年に跳ねた理由。** 13年間ちょうど 0.000 だった
 初投稿の太字が、2025年に 0.568、2026年に 1.578
