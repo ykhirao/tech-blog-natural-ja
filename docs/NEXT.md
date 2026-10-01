@@ -20,6 +20,7 @@
 | 漢語サ変名詞の密度 | [sahen-density.md](sahen-density.md)。11年で上昇。AI以前から同じ向き |
 | サ変名詞の行き先 | [sahen-compression.md](sahen-compression.md)。「する」は減り、名詞連結が増えた |
 | 2022年に入ってきた人 | [entry-cohorts.md](entry-cohorts.md)。初投稿から違う。文→装飾の順に外れる |
+| MTLDが上がった仕組み | [lexical-diversity.md](lexical-diversity.md)。最頻語の繰り返しが減った。2025年から |
 | 2026年の急変 | [confounds-2026.md](confounds-2026.md)。対抗仮説を5つ潰した |
 | 参照分布の妥当性 | [profile-2020-still-valid.md](profile-2020-still-valid.md)。2020年基準のまま使える |
 | 「使う人の割合」 | [zero-users.md](zero-users.md)。中央値と同じ2021年で向きが変わる |
@@ -113,9 +114,13 @@ GitHub と Zenn が上位に来るが、なぜ Qiita に直接上げなくなっ
 見出しが外れ、太字と MTLD は2025年まで基準の中にいた
 ([entry-cohorts.md](entry-cohorts.md))。なぜ順番があるのか。
 
-**入ってくる人の MTLD が2025年に跳ねた理由。** 11年 44.5 前後で動かなかった
-語彙の多様性が、2025年に 50.4、2026年に 53.8
-([entry-cohorts.md](entry-cohorts.md))。語彙が単調になるという通説と逆向き。
+**なぜ語を繰り返さなくなったのか。** 最頻語の占有率が2025年から下がっている
+([lexical-diversity.md](lexical-diversity.md))。言い換えが増えたのか、
+話題が広がったのか、推敲の仕方が変わったのかを分けられていない。
+
+**地の文の英字が2026年に減った理由。** 0.17〜0.20 で動かなかったものが
+2026年8月に 0.1433([lexical-diversity.md](lexical-diversity.md))。
+語彙の多様化より1年遅いので別の変化に見える。
 
 **初投稿の装飾量が2025年に跳ねた理由。** 13年間ちょうど 0.000 だった
 初投稿の太字が、2025年に 0.568、2026年に 1.578
