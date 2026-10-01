@@ -56,6 +56,11 @@ SCOPED_RE = re.compile(r"\(\s*(?:\d+\s*-\s*\d+|\d+月|[^)]*日)\s*\)")
 # 「〜の変化」「〜比」も同じ理由で外す。
 DERIVED_RE = re.compile(r"(?:差|比|変化|倍|残存|%|\(件\)|件数)\s*\**\s*$")
 
+# 1列目が「デビュー年」のような層の名前なら、行は年の全体ではない。
+# 「2022 | 0.1762」は2022年の全記事ではなく、2022年にデビューした人の
+# 初投稿だけの値(docs/entry-cohorts.md)。年の中央値と比べると必ず外れる。
+COHORT_RE = re.compile(r"デビュー|コホート|層|群|世代|期別")
+
 
 
 def field_of(header: str) -> str | None:
@@ -219,6 +224,8 @@ def check_yearly(text: str, data: dict[str, list[dict]]) -> list[str]:
         m = re.fullmatch(r"\*{0,2}(\d{4})(?:年)?\*{0,2}", cells[0] if cells else "")
         if not m or not header:
             continue
+        if COHORT_RE.search(header[0]):
+            continue  # 年ではなく層の名前。年の全体とは別物
         year = m.group(1)
         rows = by_year.get(year)
         if not rows:
