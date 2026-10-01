@@ -21,6 +21,7 @@
 | サ変名詞の行き先 | [sahen-compression.md](sahen-compression.md)。「する」は減り、名詞連結が増えた |
 | 2022年に入ってきた人 | [entry-cohorts.md](entry-cohorts.md)。初投稿から違う。文→装飾の順に外れる |
 | MTLDが上がった仕組み | [lexical-diversity.md](lexical-diversity.md)。最頻語の繰り返しが減った。2025年から |
+| 地の文の英字の減少 | [english-in-prose.md](english-in-prose.md)。囲んだのではなく日本語で書くようになった |
 | 2026年の急変 | [confounds-2026.md](confounds-2026.md)。対抗仮説を5つ潰した |
 | 参照分布の妥当性 | [profile-2020-still-valid.md](profile-2020-still-valid.md)。2020年基準のまま使える |
 | 「使う人の割合」 | [zero-users.md](zero-users.md)。中央値と同じ2021年で向きが変わる |
@@ -118,9 +119,13 @@ GitHub と Zenn が上位に来るが、なぜ Qiita に直接上げなくなっ
 ([lexical-diversity.md](lexical-diversity.md))。言い換えが増えたのか、
 話題が広がったのか、推敲の仕方が変わったのかを分けられていない。
 
-**地の文の英字が2026年に減った理由。** 0.17〜0.20 で動かなかったものが
-2026年8月に 0.1433([lexical-diversity.md](lexical-diversity.md))。
-語彙の多様化より1年遅いので別の変化に見える。
+**英字が減り始めた時期。** 2025年8月 0.2069 → 2026年2月 0.1846 →
+8月 0.1565([english-in-prose.md](english-in-prose.md))。月次でしか見ていないので
+`weekly.py` で週次に落とす。
+
+**なぜ英語を使わなくなったのか。** カタカナも一緒に減っているので、
+英語をカタカナに開いたのではなく漢語に置き換えている
+([english-in-prose.md](english-in-prose.md))。理由は分けられていない。
 
 **初投稿の装飾量が2025年に跳ねた理由。** 13年間ちょうど 0.000 だった
 初投稿の太字が、2025年に 0.568、2026年に 1.578

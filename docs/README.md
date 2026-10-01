@@ -37,6 +37,7 @@ Qiita の技術記事を実測して、日本語技術記事の文体プロフ�
 | [sahen-compression.md](sahen-compression.md) | サ変名詞は増えたが「する」は減った。動詞でなく名詞で圧縮する方向 |
 | [entry-cohorts.md](entry-cohorts.md) | **2022年にデビューした人は初投稿から違う。**文→装飾の順に、3年かけて外れていく |
 | [lexical-diversity.md](lexical-diversity.md) | MTLDの上昇は長さのせいではない。最頻語の繰り返しが2025年から減った |
+| [english-in-prose.md](english-in-prose.md) | 地の文の英字が減ったのは囲んだからではない。英字とカタカナが減り漢字が増えた |
 | [confounds-2026.md](confounds-2026.md) | **2026年の急変に対抗仮説を4つぶつけた。同じ人が半年で書き方を変えている** |
 | [profile-2020-still-valid.md](profile-2020-still-valid.md) | **2020年の参照分布はまだ使えるか。分位点はずれたがルールは保っている** |
 | [zero-users.md](zero-users.md) | **「1回も使わない人の割合」も2021年で向きが変わった。太字だけ2024年末から動く** |
