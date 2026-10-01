@@ -100,7 +100,16 @@ def summarize(month: str, field: str) -> dict[str, list[float]]:
 DEBUT_FIELDS = [
     ("nominal_ending_ratio", "体言止め", "{:.4f}"),
     ("ten_per_sentence", "読点/文", "{:.3f}"),
+    ("mean_sentence_chars", "平均文長", "{:.1f}"),
+    ("burstiness_mora", "メリハリ", "{:.3f}"),
+    ("kanji_ratio", "漢字率", "{:.4f}"),
+    ("mtld", "MTLD", "{:.1f}"),
+    ("desumasu_ratio", "ですます", "{:.3f}"),
     ("bold_per_1k", "太字/千字", "{:.3f}"),
+    ("list_ratio", "箇条書き", "{:.3f}"),
+    ("n_headings", "見出し数", "{:.1f}"),
+    ("images_per_1k", "画像/千字", "{:.3f}"),
+    ("chars_body", "地の文字数", "{:.0f}"),
 ]
 
 
