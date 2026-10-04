@@ -15,8 +15,12 @@
 1 を切り分けるため、囲まれた英字も数えて合計を出す。
 合計が減っていれば、囲んだだけでは説明できない。
 
+月次で何かを見つけたら週次で確かめる(../AGENTS.md)。--weekly を使う。
+weekly.py は data/processed を読むので文字種の指標を持っていない。
+
 使い方:
     ./scripts/char_classes.py --months 2015-08,2020-08,2024-08,2026-08
+    ./scripts/char_classes.py --weekly 2025-06 2026-09
     ./scripts/char_classes.py --within 2024-08 2026-08
     ./scripts/char_classes.py --months 2020-08,2026-08 --md
 """
@@ -24,6 +28,7 @@
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
 import random
 import re
@@ -47,7 +52,7 @@ INLINE_CODE = re.compile(r"`[^`\n]+`")
 EN_TOKEN = re.compile(r"[A-Za-z][A-Za-z0-9_.-]*")
 
 
-def articles(month: str):
+def articles(month: str, with_date: bool = False):
     """(著者, 地の文, 装飾を残した本文) を返す。コードブロックは除いてある。"""
     for f in sorted(RAW.glob(f"qiita_{month}-*.jsonl")):
         for line in f.open(encoding="utf-8"):
@@ -57,7 +62,11 @@ def articles(month: str):
                 continue
             raw = "\n".join(split_markdown(body)["body_lines"])
             plain = clean_inline(raw)
-            if len(plain) >= 300:
+            if len(plain) < 300:
+                continue
+            if with_date:
+                yield it.get("created_at") or "", plain, raw
+            else:
                 yield it.get("user_id") or "", plain, raw
 
 
@@ -109,6 +118,47 @@ def run_months(months: list[str], n: int, md: bool) -> None:
             print(f"{m:<10}{c:>7,}" + cells)
 
 
+def run_weekly(since: str, until: str, min_articles: int, md: bool) -> None:
+    """ISO 週ごとにまとめる。薄い週は落とす(年末年始や取得の切れ目で跳ねる)。"""
+    buckets: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    y, m = (int(x) for x in since.split("-"))
+    ey, em = (int(x) for x in until.split("-"))
+    while (y, m) <= (ey, em):
+        for created, plain, raw in articles(f"{y:04d}-{m:02d}", with_date=True):
+            if not created:
+                continue
+            try:
+                d = datetime.date.fromisoformat(created[:10])
+            except ValueError:
+                continue
+            iso = d.isocalendar()
+            buckets[f"{iso[0]}-W{iso[1]:02d}"].append((plain, raw))
+        m += 1
+        if m > 12:
+            y, m = y + 1, 1
+
+    rows = [(w, len(v), profile(v)) for w, v in sorted(buckets.items())
+            if len(v) >= min_articles]
+    if not rows:
+        print(f"{min_articles}本に届く週がありません", file=sys.stderr)
+        return
+    show = ["英字", "カタカナ", "漢字", "code/千字", "合計英字"]
+    idx = [COLS.index(c) for c in show]
+    if md:
+        print("| 週 | 記事 | " + " | ".join(show) + " |")
+        print("|---|---|" + "|".join(["---"] * len(show)) + "|")
+        for w, c, v in rows:
+            cells = [f"{v[i]:.4f}" if i < len(CLASSES) else f"{v[i]:.2f}" for i in idx]
+            print(f"| {w} | {c:,} | " + " | ".join(cells) + " |")
+    else:
+        print(f"{'週':<11}{'記事':>7}" + "".join(f"{c:>13}" for c in show))
+        print("-" * (18 + 13 * len(show)))
+        for w, c, v in rows:
+            cells = "".join(f"{v[i]:>13.4f}" if i < len(CLASSES) else f"{v[i]:>13.2f}"
+                            for i in idx)
+            print(f"{w:<11}{c:>7,}" + cells)
+
+
 def run_within(a: str, b: str) -> None:
     groups = {}
     for month in (a, b):
@@ -138,10 +188,15 @@ def main() -> int:
     )
     ap.add_argument("--months", help="YYYY-MM をカンマ区切りで")
     ap.add_argument("--within", nargs=2, metavar=("A", "B"))
+    ap.add_argument("--weekly", nargs=2, metavar=("FROM", "TO"),
+                    help="週ごとに出す(YYYY-MM YYYY-MM)")
+    ap.add_argument("--min-articles", type=int, default=300)
     ap.add_argument("-n", type=int, default=3000)
     ap.add_argument("--md", action="store_true")
     args = ap.parse_args()
-    if args.within:
+    if args.weekly:
+        run_weekly(*args.weekly, args.min_articles, args.md)
+    elif args.within:
         run_within(*args.within)
     elif args.months:
         run_months([m.strip() for m in args.months.split(",")], args.n, args.md)

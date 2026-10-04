@@ -21,7 +21,7 @@
 | サ変名詞の行き先 | [sahen-compression.md](sahen-compression.md)。「する」は減り、名詞連結が増えた |
 | 2022年に入ってきた人 | [entry-cohorts.md](entry-cohorts.md)。初投稿から違う。文→装飾の順に外れる |
 | MTLDが上がった仕組み | [lexical-diversity.md](lexical-diversity.md)。最頻語の繰り返しが減った。2025年から |
-| 地の文の英字の減少 | [english-in-prose.md](english-in-prose.md)。囲んだのではなく日本語で書くようになった |
+| 地の文の英字の減少 | [english-in-prose.md](english-in-prose.md)。囲んだのではない。週次で連続、12月に季節性 |
 | 2026年の急変 | [confounds-2026.md](confounds-2026.md)。対抗仮説を5つ潰した |
 | 参照分布の妥当性 | [profile-2020-still-valid.md](profile-2020-still-valid.md)。2020年基準のまま使える |
 | 「使う人の割合」 | [zero-users.md](zero-users.md)。中央値と同じ2021年で向きが変わる |
@@ -119,9 +119,11 @@ GitHub と Zenn が上位に来るが、なぜ Qiita に直接上げなくなっ
 ([lexical-diversity.md](lexical-diversity.md))。言い換えが増えたのか、
 話題が広がったのか、推敲の仕方が変わったのかを分けられていない。
 
-**英字が減り始めた時期。** 2025年8月 0.2069 → 2026年2月 0.1846 →
-8月 0.1565([english-in-prose.md](english-in-prose.md))。月次でしか見ていないので
-`weekly.py` で週次に落とす。
+**英字率の12月の季節性を他の指標でも確かめる。** 英字は3年とも12月に下がって
+1月に戻る([english-in-prose.md](english-in-prose.md))。
+[advent-calendar.md](advent-calendar.md) は文体の指標を見ているが、
+文字種は見ていない。他の指標にも同じ季節性があるなら、
+月次の読み方を見直す必要がある。
 
 **なぜ英語を使わなくなったのか。** カタカナも一緒に減っているので、
 英語をカタカナに開いたのではなく漢語に置き換えている
