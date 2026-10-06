@@ -18,14 +18,19 @@
 大きさを比べられるよう、各指標の**12月以外の月のばらつき(SD)**で割る。
 何年も同じ向きに出れば季節性と見てよい。
 
+--all-months は同じ計算を12か月ぶん回す。12月だけが特別なのかを確かめる。
+
 使い方:
     ./scripts/december_effect.py
+    ./scripts/december_effect.py --regulars
+    ./scripts/december_effect.py --all-months
     ./scripts/december_effect.py --years 2016-2025 --md
 """
 
 from __future__ import annotations
 
 import argparse
+import functools
 import json
 import statistics
 import sys
@@ -50,20 +55,22 @@ FIELDS = [
 ]
 
 
-def authors(month: str) -> set[str]:
+@functools.lru_cache(maxsize=None)
+def authors(month: str) -> frozenset[str]:
     p = PROC / f"metrics_{month}.jsonl"
     if not p.exists():
-        return set()
+        return frozenset()
     out = set()
     with p.open(encoding="utf-8") as f:
         for line in f:
             u = json.loads(line).get("user_id")
             if u:
                 out.add(u)
-    return out
+    return frozenset(out)
 
 
-def month_mean(month: str, only: set[str] | None = None) -> dict[str, float]:
+@functools.lru_cache(maxsize=None)
+def month_mean(month: str, only: frozenset[str] | None = None) -> dict[str, float]:
     p = PROC / f"metrics_{month}.jsonl"
     if not p.exists():
         return {}
@@ -80,6 +87,55 @@ def month_mean(month: str, only: set[str] | None = None) -> dict[str, float]:
     return {k: statistics.fmean(v) for k, v in acc.items() if v}
 
 
+def gap_for(target: int, k: str, years: list[int],
+            reg_month: str | None) -> list[float]:
+    """その月と、前後の月の平均との差を年ごとに出す。"""
+    out = []
+    for y in years:
+        py, pm = (y - 1, 12) if target == 1 else (y, target - 1)
+        ny, nm = (y + 1, 1) if target == 12 else (y, target + 1)
+        reg = authors(f"{y}-{reg_month}") if reg_month else None
+        cur = month_mean(f"{y}-{target:02d}", reg).get(k)
+        prev = month_mean(f"{py}-{pm:02d}", reg).get(k)
+        nxt = month_mean(f"{ny}-{nm:02d}", reg).get(k)
+        if cur is None or prev is None or nxt is None:
+            continue
+        out.append(cur - (prev + nxt) / 2)
+    return out
+
+
+def show_all_months(years: list[int], md: bool) -> None:
+    """12か月ぶん。各指標について、前後の月から最も離れる月を探す。"""
+    # 基準のばらつきは、その指標の全月平均の散らばりを使う
+    base: dict[str, list[float]] = {k: [] for k, _ in FIELDS}
+    for y in years:
+        for m in range(1, 13):
+            for k, v in month_mean(f"{y}-{m:02d}").items():
+                base[k].append(v)
+    sd = {k: statistics.pstdev(v) for k, v in base.items() if len(v) > 1}
+
+    header = [f"{m}月" for m in range(1, 13)]
+    if md:
+        print("| 指標 | " + " | ".join(header) + " |")
+        print("|---|" + "|".join(["---"] * 12) + "|")
+    else:
+        print(f"{'指標':<14}" + "".join(f"{h:>7}" for h in header))
+        print("-" * (14 + 7 * 12))
+    for k, label in FIELDS:
+        if not sd.get(k):
+            continue
+        cells = []
+        for m in range(1, 13):
+            g = gap_for(m, k, years, None)
+            cells.append(statistics.fmean(g) / sd[k] if g else None)
+        if md:
+            print(f"| {label} | " + " | ".join(
+                f"{c:+.2f}" if c is not None else "-" for c in cells) + " |")
+        else:
+            print(f"{label:<14}" + "".join(
+                f"{c:>+7.2f}" if c is not None else f"{'-':>7}" for c in cells))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -87,11 +143,17 @@ def main() -> int:
     ap.add_argument("--years", default="2014-2025", help="例 2016-2025")
     ap.add_argument("--regulars", action="store_true",
                     help="その年の8月にも投稿した著者だけで測る")
+    ap.add_argument("--all-months", action="store_true",
+                    help="12か月ぶん回して、12月だけが特別かを見る")
     ap.add_argument("--md", action="store_true")
     args = ap.parse_args()
 
     lo, hi = (int(x) for x in args.years.split("-"))
     years = list(range(lo, hi + 1))
+
+    if args.all_months:
+        show_all_months(years, args.md)
+        return 0
 
     # 12月以外の月のばらつき。基準にする
     base: dict[str, list[float]] = {k: [] for k, _ in FIELDS}
