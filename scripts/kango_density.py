@@ -66,9 +66,12 @@ def bodies(glob: str, min_body: int = 1000) -> list[tuple[str, str]]:
     return out
 
 
-def measure(texts: list[str], tg) -> tuple[float, float, float, float] | None:
+SURU = ("する", "し", "した", "します", "される", "され", "して")
+
+
+def measure(texts: list[str], tg) -> tuple[float, ...] | None:
     """まとめて1つの値にする。著者単位で使うので記事をつなげて数える。"""
-    sahen = verbs = total = 0
+    sahen = verbs = total = suru = 0
     lex: list[str] = []
     chains = 0
     for t in texts:
@@ -78,13 +81,16 @@ def measure(texts: list[str], tg) -> tuple[float, float, float, float] | None:
         flags = [getattr(w.feature, "pos3", None) == "サ変可能" for w in ws]
         sahen += sum(flags)
         chains += sum(1 for i in range(1, len(flags)) if flags[i] and flags[i - 1])
+        suru += sum(1 for i in range(len(ws) - 1)
+                    if flags[i] and ws[i + 1].surface in SURU)
         verbs += sum(1 for w in ws if w.feature.pos1 == "動詞")
         total += len(ws)
         lex += [g for g in (getattr(w.feature, "goshu", None) for w in ws)
                 if g in ("漢", "和", "外", "混")]
-    if not total or not lex:
+    if not total or not lex or not sahen:
         return None
-    return sahen / total, lex.count("漢") / len(lex), chains / total * 1000, verbs / total
+    return (sahen / total, lex.count("漢") / len(lex), chains / total * 1000,
+            verbs / total, suru / sahen)
 
 
 def measure_case(texts: list[str], tg) -> tuple[float, float, float] | None:
@@ -147,18 +153,22 @@ def run_years(years: list[str], n: int, md: bool) -> None:
         random.shuffle(texts)
         texts = texts[:n]
         rs = [r for r in (measure([t], tg) for t in texts) if r]
-        rows.append((y, len(rs), *[statistics.fmean(x[i] for x in rs) for i in range(4)]))
+        rows.append((y, len(rs),
+                     *[statistics.fmean(x[i] for x in rs) for i in range(5)]))
+    heads = ["サ変名詞率", "漢語率", "数珠つなぎ/千語", "動詞率", "する率"]
     if md:
-        print("| 年 | 記事 | サ変名詞率 | 漢語率 | 数珠つなぎ/千語 | 動詞率 |")
-        print("|---|---|---|---|---|---|")
-        for y, c, s, k, ch, v in rows:
-            print(f"| {y} | {c} | {s:.4f} | {k:.4f} | {ch:.2f} | {v:.4f} |")
+        print("| 年 | 記事 | " + " | ".join(heads) + " |")
+        print("|---|---|" + "|".join(["---"] * len(heads)) + "|")
+        for y, c, *v in rows:
+            cells = [f"{v[0]:.4f}", f"{v[1]:.4f}", f"{v[2]:.2f}",
+                     f"{v[3]:.4f}", f"{v[4]:.4f}"]
+            print(f"| {y} | {c} | " + " | ".join(cells) + " |")
     else:
-        print(f"{'年':<6}{'記事':>7}{'サ変名詞率':>12}{'漢語率':>10}"
-              f"{'数珠/千語':>12}{'動詞率':>10}")
-        print("-" * 57)
-        for y, c, s, k, ch, v in rows:
-            print(f"{y:<6}{c:>7}{s:>12.4f}{k:>10.4f}{ch:>12.2f}{v:>10.4f}")
+        print(f"{'年':<6}{'記事':>7}" + "".join(f"{h:>14}" for h in heads))
+        print("-" * (13 + 14 * len(heads)))
+        for y, c, *v in rows:
+            print(f"{y:<6}{c:>7}{v[0]:>14.4f}{v[1]:>14.4f}{v[2]:>14.2f}"
+                  f"{v[3]:>14.4f}{v[4]:>14.4f}")
 
 
 def run_within(a: str, b: str) -> None:
@@ -181,7 +191,7 @@ def run_within(a: str, b: str) -> None:
         print("両方の月に投稿した著者が見つかりません", file=sys.stderr)
         return
     print(f"{a} と {b} の両方に投稿した著者: {len(both)}人 / 測れた: {len(rows)}人\n")
-    for i, name in enumerate(["サ変名詞率", "漢語率", "数珠つなぎ", "動詞率"]):
+    for i, name in enumerate(["サ変名詞率", "漢語率", "数珠つなぎ", "動詞率", "する率"]):
         xs = [r[0][i] for r in rows]
         ys = [r[1][i] for r in rows]
         up = sum(1 for x, y in zip(xs, ys) if y > x)

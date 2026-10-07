@@ -18,7 +18,7 @@
 | AI語彙辞書の外部検証 | [verify-ai-words.md](verify-ai-words.md)。45語すべて増加、対照群は減少 |
 | yomiyasu の語彙検証 | [verify-slop-words.md](verify-slop-words.md)。44語中30語が実測に届かない |
 | 漢語サ変名詞の密度 | [sahen-density.md](sahen-density.md)。11年で上昇。AI以前から同じ向き |
-| サ変名詞の行き先 | [sahen-compression.md](sahen-compression.md)。「する」は減り、名詞連結が増えた |
+| サ変名詞の行き先 | [sahen-compression.md](sahen-compression.md)。「する」は減り名詞連結が増えた。本人内でも動く |
 | 2022年に入ってきた人 | [entry-cohorts.md](entry-cohorts.md)。初投稿から違う。文→装飾の順に外れる |
 | MTLDが上がった仕組み | [lexical-diversity.md](lexical-diversity.md)。最頻語の繰り返しが減った。2025年から |
 | 地の文の英字の減少 | [english-in-prose.md](english-in-prose.md)。囲んだのではない。週次で連続、12月に季節性 |
@@ -106,11 +106,6 @@ GitHub と Zenn が上位に来るが、なぜ Qiita に直接上げなくなっ
 ([sahen-compression.md](sahen-compression.md))が、外来語の主語
 (「キューが」「コンテナが」)は拾えていない。述語との関係も見ていないので、
 非生物主語そのものの割合はまだ出ていない。係り受け解析が要る。
-
-**サ変名詞の圧縮が本人内に出てこない理由。** 漢語率は60%が上げているのに、
-数珠つなぎ52%・する率45%で偶然と区別がつかない
-([sahen-compression.md](sahen-compression.md))。n=130 が少ないせいかもしれない。
-[decoration-entry.md](decoration-entry.md) のように窓を2年に広げて確かめる。
 
 **入り口で文が先に動き、装飾が3年遅れた理由。** 2022年に体言止め・読点・
 見出しが外れ、太字と MTLD は2025年まで基準の中にいた
