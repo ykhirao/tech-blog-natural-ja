@@ -69,6 +69,7 @@ data/
   roundtrip/   往復翻訳の入出力。記事本文が入る
 docs/          調査メモ
 src/           公開成果物(textlint ルール・プロンプト・集計値)
+skill/         Agent Skill。~/.claude/skills/ へ symlink して使う
 article/       Qiita 投稿用の記事
 ```
 
@@ -169,7 +170,7 @@ commit の前ではなく、**公開の前に** `./scripts/check_repo.py` を通
 | 指標 | `scripts/metrics.py` | `data/raw` があれば可 |
 | 集計・可視化 | 新規 `scripts/aggregate.py` | `data/processed` |
 | textlint 連携 | 新規 `textlint/` | 閾値が決まってから |
-| Skill 化 | 新規 `skill/` | 閾値が決まってから |
+| Skill 化 | `skill/qiita-style/` | 済(閾値確定後に作成) |
 
 `data/` は共有したいので、worktree を切るときは
 `data/` を実体のあるパスへ symlink するか、`--range` で月を分けて取る。
